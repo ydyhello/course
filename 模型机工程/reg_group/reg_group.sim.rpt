@@ -1,0 +1,286 @@
+Simulator report for reg_group
+Sat Dec 03 16:48:19 2022
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 90 nodes     ;
+; Simulation Coverage         ;      51.11 % ;
+; Total Number of Transitions ; 273          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C5T144C8  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      51.11 % ;
+; Total nodes checked                                 ; 90           ;
+; Total output ports checked                          ; 90           ;
+; Total output ports with complete 1/0-value coverage ; 46           ;
+; Total output ports with no 1/0-value coverage       ; 32           ;
+; Total output ports with no 1-value coverage         ; 34           ;
+; Total output ports with no 0-value coverage         ; 42           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-----------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                           ;
++------------------------+---------------------------+------------------+
+; Node Name              ; Output Port Name          ; Output Port Type ;
++------------------------+---------------------------+------------------+
+; |reg_group|r~26        ; |reg_group|r~26           ; combout          ;
+; |reg_group|r~17        ; |reg_group|r~17           ; regout           ;
+; |reg_group|r~27        ; |reg_group|r~27           ; combout          ;
+; |reg_group|r~28        ; |reg_group|r~28           ; combout          ;
+; |reg_group|r~29        ; |reg_group|r~29           ; combout          ;
+; |reg_group|r~11        ; |reg_group|r~11           ; regout           ;
+; |reg_group|r~30        ; |reg_group|r~30           ; combout          ;
+; |reg_group|r~31        ; |reg_group|r~31           ; combout          ;
+; |reg_group|r~32        ; |reg_group|r~32           ; combout          ;
+; |reg_group|r~33        ; |reg_group|r~33           ; combout          ;
+; |reg_group|r~5         ; |reg_group|r~5            ; regout           ;
+; |reg_group|r~34        ; |reg_group|r~34           ; combout          ;
+; |reg_group|r~35        ; |reg_group|r~35           ; combout          ;
+; |reg_group|r~42        ; |reg_group|r~42           ; combout          ;
+; |reg_group|r~43        ; |reg_group|r~43           ; combout          ;
+; |reg_group|r~44        ; |reg_group|r~44           ; combout          ;
+; |reg_group|r~45        ; |reg_group|r~45           ; combout          ;
+; |reg_group|r~46        ; |reg_group|r~46           ; combout          ;
+; |reg_group|r~47        ; |reg_group|r~47           ; combout          ;
+; |reg_group|r~48        ; |reg_group|r~48           ; combout          ;
+; |reg_group|r~49        ; |reg_group|r~49           ; combout          ;
+; |reg_group|r~50        ; |reg_group|r~50           ; combout          ;
+; |reg_group|r~51        ; |reg_group|r~51           ; combout          ;
+; |reg_group|r~56        ; |reg_group|r~56           ; combout          ;
+; |reg_group|r~57        ; |reg_group|r~57           ; combout          ;
+; |reg_group|r~58        ; |reg_group|r~58           ; combout          ;
+; |reg_group|s[1]        ; |reg_group|s[1]           ; padio            ;
+; |reg_group|s[2]        ; |reg_group|s[2]           ; padio            ;
+; |reg_group|s[3]        ; |reg_group|s[3]           ; padio            ;
+; |reg_group|s[4]        ; |reg_group|s[4]           ; padio            ;
+; |reg_group|s[5]        ; |reg_group|s[5]           ; padio            ;
+; |reg_group|d[1]        ; |reg_group|d[1]           ; padio            ;
+; |reg_group|d[2]        ; |reg_group|d[2]           ; padio            ;
+; |reg_group|d[3]        ; |reg_group|d[3]           ; padio            ;
+; |reg_group|d[4]        ; |reg_group|d[4]           ; padio            ;
+; |reg_group|d[5]        ; |reg_group|d[5]           ; padio            ;
+; |reg_group|raa[0]      ; |reg_group|raa[0]~corein  ; combout          ;
+; |reg_group|raa[1]      ; |reg_group|raa[1]~corein  ; combout          ;
+; |reg_group|rwba[0]     ; |reg_group|rwba[0]~corein ; combout          ;
+; |reg_group|rwba[1]     ; |reg_group|rwba[1]~corein ; combout          ;
+; |reg_group|clk         ; |reg_group|clk~corein     ; combout          ;
+; |reg_group|we          ; |reg_group|we~corein      ; combout          ;
+; |reg_group|i[2]        ; |reg_group|i[2]~corein    ; combout          ;
+; |reg_group|i[4]        ; |reg_group|i[4]~corein    ; combout          ;
+; |reg_group|i[5]        ; |reg_group|i[5]~corein    ; combout          ;
+; |reg_group|clk~clkctrl ; |reg_group|clk~clkctrl    ; outclk           ;
++------------------------+---------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------------------+
+; Missing 1-Value Coverage                                    ;
++-----------------+------------------------+------------------+
+; Node Name       ; Output Port Name       ; Output Port Type ;
++-----------------+------------------------+------------------+
+; |reg_group|r~8  ; |reg_group|r~8         ; regout           ;
+; |reg_group|r~0  ; |reg_group|r~0         ; regout           ;
+; |reg_group|r~24 ; |reg_group|r~24        ; combout          ;
+; |reg_group|r~16 ; |reg_group|r~16        ; regout           ;
+; |reg_group|r~25 ; |reg_group|r~25        ; combout          ;
+; |reg_group|r~19 ; |reg_group|r~19        ; regout           ;
+; |reg_group|r~4  ; |reg_group|r~4         ; regout           ;
+; |reg_group|r~14 ; |reg_group|r~14        ; regout           ;
+; |reg_group|r~6  ; |reg_group|r~6         ; regout           ;
+; |reg_group|r~36 ; |reg_group|r~36        ; combout          ;
+; |reg_group|r~22 ; |reg_group|r~22        ; regout           ;
+; |reg_group|r~37 ; |reg_group|r~37        ; combout          ;
+; |reg_group|r~15 ; |reg_group|r~15        ; regout           ;
+; |reg_group|r~7  ; |reg_group|r~7         ; regout           ;
+; |reg_group|r~38 ; |reg_group|r~38        ; combout          ;
+; |reg_group|r~23 ; |reg_group|r~23        ; regout           ;
+; |reg_group|r~39 ; |reg_group|r~39        ; combout          ;
+; |reg_group|r~40 ; |reg_group|r~40        ; combout          ;
+; |reg_group|r~41 ; |reg_group|r~41        ; combout          ;
+; |reg_group|r~52 ; |reg_group|r~52        ; combout          ;
+; |reg_group|r~53 ; |reg_group|r~53        ; combout          ;
+; |reg_group|r~54 ; |reg_group|r~54        ; combout          ;
+; |reg_group|r~55 ; |reg_group|r~55        ; combout          ;
+; |reg_group|s[0] ; |reg_group|s[0]        ; padio            ;
+; |reg_group|s[6] ; |reg_group|s[6]        ; padio            ;
+; |reg_group|s[7] ; |reg_group|s[7]        ; padio            ;
+; |reg_group|d[0] ; |reg_group|d[0]        ; padio            ;
+; |reg_group|d[6] ; |reg_group|d[6]        ; padio            ;
+; |reg_group|d[7] ; |reg_group|d[7]        ; padio            ;
+; |reg_group|i[0] ; |reg_group|i[0]~corein ; combout          ;
+; |reg_group|i[1] ; |reg_group|i[1]~corein ; combout          ;
+; |reg_group|i[3] ; |reg_group|i[3]~corein ; combout          ;
+; |reg_group|i[6] ; |reg_group|i[6]~corein ; combout          ;
+; |reg_group|i[7] ; |reg_group|i[7]~corein ; combout          ;
++-----------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------------------+
+; Missing 0-Value Coverage                                    ;
++-----------------+------------------------+------------------+
+; Node Name       ; Output Port Name       ; Output Port Type ;
++-----------------+------------------------+------------------+
+; |reg_group|r~8  ; |reg_group|r~8         ; regout           ;
+; |reg_group|r~0  ; |reg_group|r~0         ; regout           ;
+; |reg_group|r~24 ; |reg_group|r~24        ; combout          ;
+; |reg_group|r~16 ; |reg_group|r~16        ; regout           ;
+; |reg_group|r~25 ; |reg_group|r~25        ; combout          ;
+; |reg_group|r~9  ; |reg_group|r~9         ; regout           ;
+; |reg_group|r~1  ; |reg_group|r~1         ; regout           ;
+; |reg_group|r~10 ; |reg_group|r~10        ; regout           ;
+; |reg_group|r~2  ; |reg_group|r~2         ; regout           ;
+; |reg_group|r~18 ; |reg_group|r~18        ; regout           ;
+; |reg_group|r~3  ; |reg_group|r~3         ; regout           ;
+; |reg_group|r~19 ; |reg_group|r~19        ; regout           ;
+; |reg_group|r~12 ; |reg_group|r~12        ; regout           ;
+; |reg_group|r~4  ; |reg_group|r~4         ; regout           ;
+; |reg_group|r~20 ; |reg_group|r~20        ; regout           ;
+; |reg_group|r~13 ; |reg_group|r~13        ; regout           ;
+; |reg_group|r~21 ; |reg_group|r~21        ; regout           ;
+; |reg_group|r~14 ; |reg_group|r~14        ; regout           ;
+; |reg_group|r~6  ; |reg_group|r~6         ; regout           ;
+; |reg_group|r~36 ; |reg_group|r~36        ; combout          ;
+; |reg_group|r~22 ; |reg_group|r~22        ; regout           ;
+; |reg_group|r~37 ; |reg_group|r~37        ; combout          ;
+; |reg_group|r~15 ; |reg_group|r~15        ; regout           ;
+; |reg_group|r~7  ; |reg_group|r~7         ; regout           ;
+; |reg_group|r~38 ; |reg_group|r~38        ; combout          ;
+; |reg_group|r~23 ; |reg_group|r~23        ; regout           ;
+; |reg_group|r~39 ; |reg_group|r~39        ; combout          ;
+; |reg_group|r~40 ; |reg_group|r~40        ; combout          ;
+; |reg_group|r~41 ; |reg_group|r~41        ; combout          ;
+; |reg_group|r~52 ; |reg_group|r~52        ; combout          ;
+; |reg_group|r~53 ; |reg_group|r~53        ; combout          ;
+; |reg_group|r~54 ; |reg_group|r~54        ; combout          ;
+; |reg_group|r~55 ; |reg_group|r~55        ; combout          ;
+; |reg_group|s[0] ; |reg_group|s[0]        ; padio            ;
+; |reg_group|s[6] ; |reg_group|s[6]        ; padio            ;
+; |reg_group|s[7] ; |reg_group|s[7]        ; padio            ;
+; |reg_group|d[0] ; |reg_group|d[0]        ; padio            ;
+; |reg_group|d[6] ; |reg_group|d[6]        ; padio            ;
+; |reg_group|d[7] ; |reg_group|d[7]        ; padio            ;
+; |reg_group|i[0] ; |reg_group|i[0]~corein ; combout          ;
+; |reg_group|i[6] ; |reg_group|i[6]~corein ; combout          ;
+; |reg_group|i[7] ; |reg_group|i[7]~corein ; combout          ;
++-----------------+------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Dec 03 16:48:19 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off reg_group -c reg_group
+Info: Using vector source file "E:/电子电路/实验/4/reg_group/reg_group.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of reg_group.vwf called reg_group.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      51.11 %
+Info: Number of transitions in simulation is 273
+Info: Vector file reg_group.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 161 megabytes
+    Info: Processing ended: Sat Dec 03 16:48:19 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

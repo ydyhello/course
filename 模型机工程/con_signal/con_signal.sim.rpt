@@ -1,0 +1,250 @@
+Simulator report for con_signal
+Mon Dec 05 14:06:56 2022
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 88 nodes     ;
+; Simulation Coverage         ;      95.40 % ;
+; Total Number of Transitions ; 310          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; FLEX10K      ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      95.40 % ;
+; Total nodes checked                                 ; 88           ;
+; Total output ports checked                          ; 87           ;
+; Total output ports with complete 1/0-value coverage ; 83           ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 3            ;
+; Total output ports with no 0-value coverage         ; 1            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                        ;
++------------------------+------------------------+------------------+
+; Node Name              ; Output Port Name       ; Output Port Type ;
++------------------------+------------------------+------------------+
+; |con_signal|pc_ld~0    ; |con_signal|pc_ld~0    ; out0             ;
+; |con_signal|pc_ld~1    ; |con_signal|pc_ld~1    ; out0             ;
+; |con_signal|pc_ld~2    ; |con_signal|pc_ld~2    ; out0             ;
+; |con_signal|pc_ld~3    ; |con_signal|pc_ld~3    ; out0             ;
+; |con_signal|pc_inc~0   ; |con_signal|pc_inc~0   ; out0             ;
+; |con_signal|pc_inc~1   ; |con_signal|pc_inc~1   ; out0             ;
+; |con_signal|pc_inc~2   ; |con_signal|pc_inc~2   ; out0             ;
+; |con_signal|pc_inc~3   ; |con_signal|pc_inc~3   ; out0             ;
+; |con_signal|reg_we~0   ; |con_signal|reg_we~0   ; out0             ;
+; |con_signal|reg_we~1   ; |con_signal|reg_we~1   ; out0             ;
+; |con_signal|reg_we~2   ; |con_signal|reg_we~2   ; out0             ;
+; |con_signal|reg_we~3   ; |con_signal|reg_we~3   ; out0             ;
+; |con_signal|reg_we~4   ; |con_signal|reg_we~4   ; out0             ;
+; |con_signal|reg_we~5   ; |con_signal|reg_we~5   ; out0             ;
+; |con_signal|reg_we~6   ; |con_signal|reg_we~6   ; out0             ;
+; |con_signal|reg_we~7   ; |con_signal|reg_we~7   ; out0             ;
+; |con_signal|reg_we~8   ; |con_signal|reg_we~8   ; out0             ;
+; |con_signal|ram_dl~0   ; |con_signal|ram_dl~0   ; out0             ;
+; |con_signal|ram_dl~1   ; |con_signal|ram_dl~1   ; out0             ;
+; |con_signal|ram_dl~2   ; |con_signal|ram_dl~2   ; out0             ;
+; |con_signal|ram_dl~3   ; |con_signal|ram_dl~3   ; out0             ;
+; |con_signal|alu_m~0    ; |con_signal|alu_m~0    ; out0             ;
+; |con_signal|alu_m~1    ; |con_signal|alu_m~1    ; out0             ;
+; |con_signal|alu_m~2    ; |con_signal|alu_m~2    ; out0             ;
+; |con_signal|shi_fbus~1 ; |con_signal|shi_fbus~1 ; out0             ;
+; |con_signal|shi_fbus~2 ; |con_signal|shi_fbus~2 ; out0             ;
+; |con_signal|shi_fbus~3 ; |con_signal|shi_fbus~3 ; out0             ;
+; |con_signal|shi_fbus~4 ; |con_signal|shi_fbus~4 ; out0             ;
+; |con_signal|shi_fbus~5 ; |con_signal|shi_fbus~5 ; out0             ;
+; |con_signal|cf_en~0    ; |con_signal|cf_en~0    ; out0             ;
+; |con_signal|cf_en~1    ; |con_signal|cf_en~1    ; out0             ;
+; |con_signal|cf_en~2    ; |con_signal|cf_en~2    ; out0             ;
+; |con_signal|always0~0  ; |con_signal|always0~0  ; out0             ;
+; |con_signal|always0~1  ; |con_signal|always0~1  ; out0             ;
+; |con_signal|madd~0     ; |con_signal|madd~0     ; out              ;
+; |con_signal|movb       ; |con_signal|movb       ; out              ;
+; |con_signal|movc       ; |con_signal|movc       ; out              ;
+; |con_signal|add        ; |con_signal|add        ; out              ;
+; |con_signal|sub        ; |con_signal|sub        ; out              ;
+; |con_signal|and1       ; |con_signal|and1       ; out              ;
+; |con_signal|not1       ; |con_signal|not1       ; out              ;
+; |con_signal|rsr        ; |con_signal|rsr        ; out              ;
+; |con_signal|rsl        ; |con_signal|rsl        ; out              ;
+; |con_signal|jmp        ; |con_signal|jmp        ; out              ;
+; |con_signal|jz         ; |con_signal|jz         ; out              ;
+; |con_signal|z          ; |con_signal|z          ; out              ;
+; |con_signal|jc         ; |con_signal|jc         ; out              ;
+; |con_signal|c          ; |con_signal|c          ; out              ;
+; |con_signal|in1        ; |con_signal|in1        ; out              ;
+; |con_signal|out1       ; |con_signal|out1       ; out              ;
+; |con_signal|halt       ; |con_signal|halt       ; out              ;
+; |con_signal|ir[0]      ; |con_signal|ir[0]      ; out              ;
+; |con_signal|ir[1]      ; |con_signal|ir[1]      ; out              ;
+; |con_signal|ir[2]      ; |con_signal|ir[2]      ; out              ;
+; |con_signal|ir[3]      ; |con_signal|ir[3]      ; out              ;
+; |con_signal|ir[4]      ; |con_signal|ir[4]      ; out              ;
+; |con_signal|ir[5]      ; |con_signal|ir[5]      ; out              ;
+; |con_signal|ir[6]      ; |con_signal|ir[6]      ; out              ;
+; |con_signal|ir[7]      ; |con_signal|ir[7]      ; out              ;
+; |con_signal|reg_ra[0]  ; |con_signal|reg_ra[0]  ; pin_out          ;
+; |con_signal|reg_ra[1]  ; |con_signal|reg_ra[1]  ; pin_out          ;
+; |con_signal|reg_wa[0]  ; |con_signal|reg_wa[0]  ; pin_out          ;
+; |con_signal|reg_wa[1]  ; |con_signal|reg_wa[1]  ; pin_out          ;
+; |con_signal|madd[0]    ; |con_signal|madd[0]    ; pin_out          ;
+; |con_signal|madd[1]    ; |con_signal|madd[1]    ; pin_out          ;
+; |con_signal|alu_s[0]   ; |con_signal|alu_s[0]   ; pin_out          ;
+; |con_signal|alu_s[1]   ; |con_signal|alu_s[1]   ; pin_out          ;
+; |con_signal|alu_s[2]   ; |con_signal|alu_s[2]   ; pin_out          ;
+; |con_signal|alu_s[3]   ; |con_signal|alu_s[3]   ; pin_out          ;
+; |con_signal|pc_ld      ; |con_signal|pc_ld      ; pin_out          ;
+; |con_signal|pc_inc     ; |con_signal|pc_inc     ; pin_out          ;
+; |con_signal|alu_m      ; |con_signal|alu_m      ; pin_out          ;
+; |con_signal|cf_en      ; |con_signal|cf_en      ; pin_out          ;
+; |con_signal|zf_en      ; |con_signal|zf_en      ; pin_out          ;
+; |con_signal|sm_en      ; |con_signal|sm_en      ; pin_out          ;
+; |con_signal|reg_we     ; |con_signal|reg_we     ; pin_out          ;
+; |con_signal|ram_xl     ; |con_signal|ram_xl     ; pin_out          ;
+; |con_signal|ram_dl     ; |con_signal|ram_dl     ; pin_out          ;
+; |con_signal|shi_fbus   ; |con_signal|shi_fbus   ; pin_out          ;
+; |con_signal|shi_flbus  ; |con_signal|shi_flbus  ; pin_out          ;
+; |con_signal|shi_frbus  ; |con_signal|shi_frbus  ; pin_out          ;
+; |con_signal|in_en      ; |con_signal|in_en      ; pin_out          ;
+; |con_signal|out_en     ; |con_signal|out_en     ; pin_out          ;
++------------------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------+
+; Missing 1-Value Coverage                                           ;
++------------------------+------------------------+------------------+
+; Node Name              ; Output Port Name       ; Output Port Type ;
++------------------------+------------------------+------------------+
+; |con_signal|shi_fbus~0 ; |con_signal|shi_fbus~0 ; out0             ;
+; |con_signal|mova       ; |con_signal|mova       ; out              ;
+; |con_signal|sm         ; |con_signal|sm         ; out              ;
++------------------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------+
+; Missing 0-Value Coverage                                 ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |con_signal|ir_ld ; |con_signal|ir_ld ; pin_out          ;
++-------------------+-------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Dec 05 14:06:56 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off con_signal -c con_signal
+Info: Using vector source file "E:/电子电路/实验/3/con_signal/con_signal.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of con_signal.vwf called con_signal.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      95.40 %
+Info: Number of transitions in simulation is 310
+Info: Vector file con_signal.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 155 megabytes
+    Info: Processing ended: Mon Dec 05 14:06:56 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

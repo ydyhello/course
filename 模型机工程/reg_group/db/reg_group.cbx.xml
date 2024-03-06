@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="reg_group">
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_0" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_13" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_4" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_8" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_1" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_10" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_14" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_5" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_9" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_11" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_15" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_2" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_6" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_12" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_3" CBX_FILE_NAME="mux_umc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|reg_group|lpm_mux:r_rtl_7" CBX_FILE_NAME="mux_umc.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

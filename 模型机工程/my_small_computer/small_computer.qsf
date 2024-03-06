@@ -1,0 +1,102 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+# Date created = 00:08:48  February 02, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		small_computer_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C5T144C8
+set_global_assignment -name TOP_LEVEL_ENTITY small_computer
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:08:48  FEBRUARY 02, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP1"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE AREA
+set_global_assignment -name VERILOG_FILE ../sm/sm.v
+set_global_assignment -name VERILOG_FILE ../shift/shift.v
+set_global_assignment -name VERILOG_FILE ../reg_group/reg_group.v
+set_global_assignment -name VERILOG_FILE ../psw/psw.v
+set_global_assignment -name VERILOG_FILE ../pc/pc.v
+set_global_assignment -name VERILOG_FILE ../mux3_1/mux3_1.v
+set_global_assignment -name VERILOG_FILE ../ir/ir.v
+set_global_assignment -name VERILOG_FILE ../Decoder/decoder.v
+set_global_assignment -name VERILOG_FILE ../con_signal/con_signal.v
+set_global_assignment -name VERILOG_FILE ../ALU/ALU.v
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name MIF_FILE ram1.mif
+set_global_assignment -name BDF_FILE small_computer.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE small_computer.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_59 -to in[7]
+set_location_assignment PIN_58 -to in[6]
+set_location_assignment PIN_57 -to in[5]
+set_location_assignment PIN_55 -to in[4]
+set_location_assignment PIN_53 -to in[3]
+set_location_assignment PIN_52 -to in[2]
+set_location_assignment PIN_51 -to in[1]
+set_location_assignment PIN_48 -to in[0]
+set_location_assignment PIN_100 -to order[7]
+set_location_assignment PIN_99 -to order[6]
+set_location_assignment PIN_97 -to order[5]
+set_location_assignment PIN_96 -to order[4]
+set_location_assignment PIN_94 -to order[3]
+set_location_assignment PIN_93 -to order[2]
+set_location_assignment PIN_92 -to order[1]
+set_location_assignment PIN_87 -to order[0]
+set_location_assignment PIN_118 -to out[7]
+set_location_assignment PIN_115 -to out[6]
+set_location_assignment PIN_114 -to out[5]
+set_location_assignment PIN_113 -to out[4]
+set_location_assignment PIN_112 -to out[3]
+set_location_assignment PIN_104 -to out[2]
+set_location_assignment PIN_103 -to out[1]
+set_location_assignment PIN_101 -to out[0]
+set_location_assignment PIN_89 -to clk
+set_global_assignment -name MISC_FILE "E:/电子电路/实验/模型机/模型机工程+202107030125+姚丁钰/my_small_computer/small_computer.dpf"
+set_location_assignment PIN_86 -to address[7]
+set_location_assignment PIN_81 -to address[6]
+set_location_assignment PIN_80 -to address[5]
+set_location_assignment PIN_79 -to address[4]
+set_location_assignment PIN_75 -to address[3]
+set_location_assignment PIN_74 -to address[2]
+set_location_assignment PIN_73 -to address[1]
+set_location_assignment PIN_72 -to address[0]

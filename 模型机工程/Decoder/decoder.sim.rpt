@@ -1,0 +1,314 @@
+Simulator report for decoder
+Wed Nov 16 23:19:25 2022
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 143 nodes    ;
+; Simulation Coverage         ;      81.12 % ;
+; Total Number of Transitions ; 326          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                       ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+; Option                                                                                     ; Setting     ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+; Simulation mode                                                                            ; Functional  ; Timing        ;
+; Start time                                                                                 ; 0 ns        ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF        ;               ;
+; Vector input source                                                                        ; decoder.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On          ; On            ;
+; Check outputs                                                                              ; Off         ; Off           ;
+; Report simulation coverage                                                                 ; On          ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On          ; On            ;
+; Display missing 1-value coverage report                                                    ; On          ; On            ;
+; Display missing 0-value coverage report                                                    ; On          ; On            ;
+; Detect setup and hold time violations                                                      ; Off         ; Off           ;
+; Detect glitches                                                                            ; Off         ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off         ; Off           ;
+; Generate Signal Activity File                                                              ; Off         ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off         ; Off           ;
+; Group bus channels in simulation results                                                   ; Off         ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On          ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE  ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off         ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto        ; Auto          ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      81.12 % ;
+; Total nodes checked                                 ; 143          ;
+; Total output ports checked                          ; 143          ;
+; Total output ports with complete 1/0-value coverage ; 116          ;
+; Total output ports with no 1/0-value coverage       ; 10           ;
+; Total output ports with no 1-value coverage         ; 14           ;
+; Total output ports with no 0-value coverage         ; 23           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                ;
++--------------------+--------------------+------------------+
+; Node Name          ; Output Port Name   ; Output Port Type ;
++--------------------+--------------------+------------------+
+; |decoder|mova~0    ; |decoder|mova~0    ; out              ;
+; |decoder|movc~0    ; |decoder|movc~0    ; out              ;
+; |decoder|rsl~0     ; |decoder|rsl~0     ; out              ;
+; |decoder|jc~0      ; |decoder|jc~0      ; out              ;
+; |decoder|jz~0      ; |decoder|jz~0      ; out              ;
+; |decoder|jc~1      ; |decoder|jc~1      ; out              ;
+; |decoder|nop~0     ; |decoder|nop~0     ; out              ;
+; |decoder|out1~0    ; |decoder|out1~0    ; out              ;
+; |decoder|nop~1     ; |decoder|nop~1     ; out              ;
+; |decoder|jmp~0     ; |decoder|jmp~0     ; out              ;
+; |decoder|jz~1      ; |decoder|jz~1      ; out              ;
+; |decoder|in1~0     ; |decoder|in1~0     ; out              ;
+; |decoder|out1~1    ; |decoder|out1~1    ; out              ;
+; |decoder|nop~2     ; |decoder|nop~2     ; out              ;
+; |decoder|rsr~0     ; |decoder|rsr~0     ; out              ;
+; |decoder|rsl~1     ; |decoder|rsl~1     ; out              ;
+; |decoder|jmp~1     ; |decoder|jmp~1     ; out              ;
+; |decoder|jz~2      ; |decoder|jz~2      ; out              ;
+; |decoder|in1~1     ; |decoder|in1~1     ; out              ;
+; |decoder|out1~2    ; |decoder|out1~2    ; out              ;
+; |decoder|nop~3     ; |decoder|nop~3     ; out              ;
+; |decoder|rsr~1     ; |decoder|rsr~1     ; out              ;
+; |decoder|rsl~2     ; |decoder|rsl~2     ; out              ;
+; |decoder|jmp~2     ; |decoder|jmp~2     ; out              ;
+; |decoder|jz~3      ; |decoder|jz~3      ; out              ;
+; |decoder|in1~2     ; |decoder|in1~2     ; out              ;
+; |decoder|out1~3    ; |decoder|out1~3    ; out              ;
+; |decoder|nop~4     ; |decoder|nop~4     ; out              ;
+; |decoder|not1~0    ; |decoder|not1~0    ; out              ;
+; |decoder|rsr~2     ; |decoder|rsr~2     ; out              ;
+; |decoder|rsl~3     ; |decoder|rsl~3     ; out              ;
+; |decoder|jmp~3     ; |decoder|jmp~3     ; out              ;
+; |decoder|jz~4      ; |decoder|jz~4      ; out              ;
+; |decoder|in1~3     ; |decoder|in1~3     ; out              ;
+; |decoder|out1~4    ; |decoder|out1~4    ; out              ;
+; |decoder|nop~5     ; |decoder|nop~5     ; out              ;
+; |decoder|and1~0    ; |decoder|and1~0    ; out              ;
+; |decoder|not1~1    ; |decoder|not1~1    ; out              ;
+; |decoder|rsr~3     ; |decoder|rsr~3     ; out              ;
+; |decoder|rsl~4     ; |decoder|rsl~4     ; out              ;
+; |decoder|jmp~4     ; |decoder|jmp~4     ; out              ;
+; |decoder|jz~5      ; |decoder|jz~5      ; out              ;
+; |decoder|in1~4     ; |decoder|in1~4     ; out              ;
+; |decoder|out1~5    ; |decoder|out1~5    ; out              ;
+; |decoder|nop~6     ; |decoder|nop~6     ; out              ;
+; |decoder|sub~0     ; |decoder|sub~0     ; out              ;
+; |decoder|and1~1    ; |decoder|and1~1    ; out              ;
+; |decoder|not1~2    ; |decoder|not1~2    ; out              ;
+; |decoder|rsr~4     ; |decoder|rsr~4     ; out              ;
+; |decoder|rsl~5     ; |decoder|rsl~5     ; out              ;
+; |decoder|jmp~5     ; |decoder|jmp~5     ; out              ;
+; |decoder|jz~6      ; |decoder|jz~6      ; out              ;
+; |decoder|in1~5     ; |decoder|in1~5     ; out              ;
+; |decoder|out1~6    ; |decoder|out1~6    ; out              ;
+; |decoder|nop~7     ; |decoder|nop~7     ; out              ;
+; |decoder|movb~0    ; |decoder|movb~0    ; out              ;
+; |decoder|movc~1    ; |decoder|movc~1    ; out              ;
+; |decoder|add~0     ; |decoder|add~0     ; out              ;
+; |decoder|sub~1     ; |decoder|sub~1     ; out              ;
+; |decoder|and1~2    ; |decoder|and1~2    ; out              ;
+; |decoder|not1~3    ; |decoder|not1~3    ; out              ;
+; |decoder|rsr~5     ; |decoder|rsr~5     ; out              ;
+; |decoder|rsl~6     ; |decoder|rsl~6     ; out              ;
+; |decoder|jmp~6     ; |decoder|jmp~6     ; out              ;
+; |decoder|jz~7      ; |decoder|jz~7      ; out              ;
+; |decoder|in1~6     ; |decoder|in1~6     ; out              ;
+; |decoder|out1~7    ; |decoder|out1~7    ; out              ;
+; |decoder|nop~8     ; |decoder|nop~8     ; out              ;
+; |decoder|movb~1    ; |decoder|movb~1    ; out              ;
+; |decoder|movc~2    ; |decoder|movc~2    ; out              ;
+; |decoder|add~1     ; |decoder|add~1     ; out              ;
+; |decoder|sub~2     ; |decoder|sub~2     ; out              ;
+; |decoder|and1~3    ; |decoder|and1~3    ; out              ;
+; |decoder|not1~4    ; |decoder|not1~4    ; out              ;
+; |decoder|rsr~6     ; |decoder|rsr~6     ; out              ;
+; |decoder|rsl~7     ; |decoder|rsl~7     ; out              ;
+; |decoder|jmp~7     ; |decoder|jmp~7     ; out              ;
+; |decoder|jz~8      ; |decoder|jz~8      ; out              ;
+; |decoder|in1~7     ; |decoder|in1~7     ; out              ;
+; |decoder|out1~8    ; |decoder|out1~8    ; out              ;
+; |decoder|nop~9     ; |decoder|nop~9     ; out              ;
+; |decoder|ir[0]     ; |decoder|ir[0]     ; out              ;
+; |decoder|ir[1]     ; |decoder|ir[1]     ; out              ;
+; |decoder|ir[2]     ; |decoder|ir[2]     ; out              ;
+; |decoder|ir[3]     ; |decoder|ir[3]     ; out              ;
+; |decoder|ir[4]     ; |decoder|ir[4]     ; out              ;
+; |decoder|ir[5]     ; |decoder|ir[5]     ; out              ;
+; |decoder|ir[6]     ; |decoder|ir[6]     ; out              ;
+; |decoder|ir[7]     ; |decoder|ir[7]     ; out              ;
+; |decoder|movb      ; |decoder|movb      ; pin_out          ;
+; |decoder|movc      ; |decoder|movc      ; pin_out          ;
+; |decoder|add       ; |decoder|add       ; pin_out          ;
+; |decoder|sub       ; |decoder|sub       ; pin_out          ;
+; |decoder|and1      ; |decoder|and1      ; pin_out          ;
+; |decoder|not1      ; |decoder|not1      ; pin_out          ;
+; |decoder|rsr       ; |decoder|rsr       ; pin_out          ;
+; |decoder|rsl       ; |decoder|rsl       ; pin_out          ;
+; |decoder|jmp       ; |decoder|jmp       ; pin_out          ;
+; |decoder|jz        ; |decoder|jz        ; pin_out          ;
+; |decoder|in1       ; |decoder|in1       ; pin_out          ;
+; |decoder|out1      ; |decoder|out1      ; pin_out          ;
+; |decoder|nop       ; |decoder|nop       ; pin_out          ;
+; |decoder|Equal1~0  ; |decoder|Equal1~0  ; out0             ;
+; |decoder|Equal2~0  ; |decoder|Equal2~0  ; out0             ;
+; |decoder|Equal3~0  ; |decoder|Equal3~0  ; out0             ;
+; |decoder|Equal4~0  ; |decoder|Equal4~0  ; out0             ;
+; |decoder|Equal5~0  ; |decoder|Equal5~0  ; out0             ;
+; |decoder|Equal6~0  ; |decoder|Equal6~0  ; out0             ;
+; |decoder|Equal7~0  ; |decoder|Equal7~0  ; out0             ;
+; |decoder|Equal8~0  ; |decoder|Equal8~0  ; out0             ;
+; |decoder|Equal9~0  ; |decoder|Equal9~0  ; out0             ;
+; |decoder|Equal10~0 ; |decoder|Equal10~0 ; out0             ;
+; |decoder|Equal11~0 ; |decoder|Equal11~0 ; out0             ;
+; |decoder|Equal12~0 ; |decoder|Equal12~0 ; out0             ;
+; |decoder|Equal13~0 ; |decoder|Equal13~0 ; out0             ;
+; |decoder|Equal14~0 ; |decoder|Equal14~0 ; out0             ;
++--------------------+--------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------+
+; Missing 1-Value Coverage                                 ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |decoder|jc~2     ; |decoder|jc~2     ; out              ;
+; |decoder|jc~3     ; |decoder|jc~3     ; out              ;
+; |decoder|jc~4     ; |decoder|jc~4     ; out              ;
+; |decoder|jc~5     ; |decoder|jc~5     ; out              ;
+; |decoder|jc~6     ; |decoder|jc~6     ; out              ;
+; |decoder|jc~7     ; |decoder|jc~7     ; out              ;
+; |decoder|mova~1   ; |decoder|mova~1   ; out              ;
+; |decoder|jc~8     ; |decoder|jc~8     ; out              ;
+; |decoder|mova~2   ; |decoder|mova~2   ; out              ;
+; |decoder|jc~9     ; |decoder|jc~9     ; out              ;
+; |decoder|en       ; |decoder|en       ; out              ;
+; |decoder|mova     ; |decoder|mova     ; pin_out          ;
+; |decoder|jc       ; |decoder|jc       ; pin_out          ;
+; |decoder|Equal0~0 ; |decoder|Equal0~0 ; out0             ;
++-------------------+-------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------+
+; Missing 0-Value Coverage                                   ;
++--------------------+--------------------+------------------+
+; Node Name          ; Output Port Name   ; Output Port Type ;
++--------------------+--------------------+------------------+
+; |decoder|halt~0    ; |decoder|halt~0    ; out              ;
+; |decoder|halt~1    ; |decoder|halt~1    ; out              ;
+; |decoder|halt~2    ; |decoder|halt~2    ; out              ;
+; |decoder|jc~2      ; |decoder|jc~2      ; out              ;
+; |decoder|halt~3    ; |decoder|halt~3    ; out              ;
+; |decoder|jc~3      ; |decoder|jc~3      ; out              ;
+; |decoder|halt~4    ; |decoder|halt~4    ; out              ;
+; |decoder|jc~4      ; |decoder|jc~4      ; out              ;
+; |decoder|halt~5    ; |decoder|halt~5    ; out              ;
+; |decoder|jc~5      ; |decoder|jc~5      ; out              ;
+; |decoder|halt~6    ; |decoder|halt~6    ; out              ;
+; |decoder|jc~6      ; |decoder|jc~6      ; out              ;
+; |decoder|halt~7    ; |decoder|halt~7    ; out              ;
+; |decoder|jc~7      ; |decoder|jc~7      ; out              ;
+; |decoder|halt~8    ; |decoder|halt~8    ; out              ;
+; |decoder|jc~8      ; |decoder|jc~8      ; out              ;
+; |decoder|halt~9    ; |decoder|halt~9    ; out              ;
+; |decoder|jc~9      ; |decoder|jc~9      ; out              ;
+; |decoder|halt~10   ; |decoder|halt~10   ; out              ;
+; |decoder|en        ; |decoder|en        ; out              ;
+; |decoder|jc        ; |decoder|jc        ; pin_out          ;
+; |decoder|halt      ; |decoder|halt      ; pin_out          ;
+; |decoder|Equal15~0 ; |decoder|Equal15~0 ; out0             ;
++--------------------+--------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 16 23:19:25 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off decoder -c decoder
+Info: Using vector source file "E:/电子电路/实验/2/实验二指令译码器+202107030125+姚丁钰/Decoder/decoder.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      81.12 %
+Info: Number of transitions in simulation is 326
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 156 megabytes
+    Info: Processing ended: Wed Nov 16 23:19:25 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

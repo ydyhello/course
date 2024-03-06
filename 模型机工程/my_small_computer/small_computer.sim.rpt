@@ -1,0 +1,824 @@
+Simulator report for small_computer
+Fri Feb 24 21:48:31 2023
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ALTSYNCRAM
+  6. Coverage Summary
+  7. Complete 1/0-Value Coverage
+  8. Missing 1-Value Coverage
+  9. Missing 0-Value Coverage
+ 10. Simulator INI Usage
+ 11. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 597 nodes    ;
+; Simulation Coverage         ;      83.92 % ;
+; Total Number of Transitions ; 5044         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++------------------------------------------------------------------------------------------------------------+
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ALTSYNCRAM ;
++------------------------------------------------------------------------------------------------------------+
+Memory report data cannot be output to ASCII.
+Please use Quartus II to view the memory report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      83.92 % ;
+; Total nodes checked                                 ; 597          ;
+; Total output ports checked                          ; 597          ;
+; Total output ports with complete 1/0-value coverage ; 501          ;
+; Total output ports with no 1/0-value coverage       ; 56           ;
+; Total output ports with no 1-value coverage         ; 70           ;
+; Total output ports with no 0-value coverage         ; 82           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                                              ;
++--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                    ; Output Port Name                                                                                       ; Output Port Type ;
++--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+------------------+
+; |small_computer|sm                                                                                           ; |small_computer|sm                                                                                     ; pin_out          ;
+; |small_computer|clk                                                                                          ; |small_computer|clk                                                                                    ; out              ;
+; |small_computer|gdfx_temp0[7]                                                                                ; |small_computer|gdfx_temp0[7]                                                                          ; out0             ;
+; |small_computer|gdfx_temp0[6]                                                                                ; |small_computer|gdfx_temp0[6]                                                                          ; out0             ;
+; |small_computer|gdfx_temp0[5]                                                                                ; |small_computer|gdfx_temp0[5]                                                                          ; out0             ;
+; |small_computer|gdfx_temp0[4]                                                                                ; |small_computer|gdfx_temp0[4]                                                                          ; out0             ;
+; |small_computer|gdfx_temp0[3]                                                                                ; |small_computer|gdfx_temp0[3]                                                                          ; out0             ;
+; |small_computer|gdfx_temp0[2]                                                                                ; |small_computer|gdfx_temp0[2]                                                                          ; out0             ;
+; |small_computer|gdfx_temp0[1]                                                                                ; |small_computer|gdfx_temp0[1]                                                                          ; out0             ;
+; |small_computer|gdfx_temp0[0]                                                                                ; |small_computer|gdfx_temp0[0]                                                                          ; out0             ;
+; |small_computer|inst20                                                                                       ; |small_computer|inst20                                                                                 ; out0             ;
+; |small_computer|address[3]                                                                                   ; |small_computer|address[3]                                                                             ; pin_out          ;
+; |small_computer|address[2]                                                                                   ; |small_computer|address[2]                                                                             ; pin_out          ;
+; |small_computer|address[1]                                                                                   ; |small_computer|address[1]                                                                             ; pin_out          ;
+; |small_computer|address[0]                                                                                   ; |small_computer|address[0]                                                                             ; pin_out          ;
+; |small_computer|order[7]                                                                                     ; |small_computer|order[7]                                                                               ; pin_out          ;
+; |small_computer|order[6]                                                                                     ; |small_computer|order[6]                                                                               ; pin_out          ;
+; |small_computer|order[5]                                                                                     ; |small_computer|order[5]                                                                               ; pin_out          ;
+; |small_computer|order[4]                                                                                     ; |small_computer|order[4]                                                                               ; pin_out          ;
+; |small_computer|order[3]                                                                                     ; |small_computer|order[3]                                                                               ; pin_out          ;
+; |small_computer|order[2]                                                                                     ; |small_computer|order[2]                                                                               ; pin_out          ;
+; |small_computer|order[1]                                                                                     ; |small_computer|order[1]                                                                               ; pin_out          ;
+; |small_computer|order[0]                                                                                     ; |small_computer|order[0]                                                                               ; pin_out          ;
+; |small_computer|out[7]                                                                                       ; |small_computer|out[7]                                                                                 ; pin_out          ;
+; |small_computer|out[6]                                                                                       ; |small_computer|out[6]                                                                                 ; pin_out          ;
+; |small_computer|out[5]                                                                                       ; |small_computer|out[5]                                                                                 ; pin_out          ;
+; |small_computer|out[3]                                                                                       ; |small_computer|out[3]                                                                                 ; pin_out          ;
+; |small_computer|out[2]                                                                                       ; |small_computer|out[2]                                                                                 ; pin_out          ;
+; |small_computer|out[1]                                                                                       ; |small_computer|out[1]                                                                                 ; pin_out          ;
+; |small_computer|out[0]                                                                                       ; |small_computer|out[0]                                                                                 ; pin_out          ;
+; |small_computer|inst22[7]                                                                                    ; |small_computer|inst22[7]                                                                              ; out              ;
+; |small_computer|inst22[6]                                                                                    ; |small_computer|inst22[6]                                                                              ; out              ;
+; |small_computer|inst22[5]                                                                                    ; |small_computer|inst22[5]                                                                              ; out              ;
+; |small_computer|inst22[3]                                                                                    ; |small_computer|inst22[3]                                                                              ; out              ;
+; |small_computer|inst22[2]                                                                                    ; |small_computer|inst22[2]                                                                              ; out              ;
+; |small_computer|inst22[1]                                                                                    ; |small_computer|inst22[1]                                                                              ; out              ;
+; |small_computer|inst22[0]                                                                                    ; |small_computer|inst22[0]                                                                              ; out              ;
+; |small_computer|psw:inst19|z                                                                                 ; |small_computer|psw:inst19|z                                                                           ; regout           ;
+; |small_computer|pc:inst1|add[0]                                                                              ; |small_computer|pc:inst1|add[0]                                                                        ; regout           ;
+; |small_computer|pc:inst1|always0~0                                                                           ; |small_computer|pc:inst1|always0~0                                                                     ; out0             ;
+; |small_computer|pc:inst1|always0~1                                                                           ; |small_computer|pc:inst1|always0~1                                                                     ; out0             ;
+; |small_computer|pc:inst1|add~1                                                                               ; |small_computer|pc:inst1|add~1                                                                         ; out              ;
+; |small_computer|pc:inst1|add~2                                                                               ; |small_computer|pc:inst1|add~2                                                                         ; out              ;
+; |small_computer|pc:inst1|add~3                                                                               ; |small_computer|pc:inst1|add~3                                                                         ; out              ;
+; |small_computer|pc:inst1|add~4                                                                               ; |small_computer|pc:inst1|add~4                                                                         ; out              ;
+; |small_computer|pc:inst1|add~5                                                                               ; |small_computer|pc:inst1|add~5                                                                         ; out              ;
+; |small_computer|pc:inst1|add~6                                                                               ; |small_computer|pc:inst1|add~6                                                                         ; out              ;
+; |small_computer|pc:inst1|add~7                                                                               ; |small_computer|pc:inst1|add~7                                                                         ; out              ;
+; |small_computer|pc:inst1|add~9                                                                               ; |small_computer|pc:inst1|add~9                                                                         ; out              ;
+; |small_computer|pc:inst1|add~10                                                                              ; |small_computer|pc:inst1|add~10                                                                        ; out              ;
+; |small_computer|pc:inst1|add~11                                                                              ; |small_computer|pc:inst1|add~11                                                                        ; out              ;
+; |small_computer|pc:inst1|add~12                                                                              ; |small_computer|pc:inst1|add~12                                                                        ; out              ;
+; |small_computer|pc:inst1|add~13                                                                              ; |small_computer|pc:inst1|add~13                                                                        ; out              ;
+; |small_computer|pc:inst1|add~14                                                                              ; |small_computer|pc:inst1|add~14                                                                        ; out              ;
+; |small_computer|pc:inst1|add~15                                                                              ; |small_computer|pc:inst1|add~15                                                                        ; out              ;
+; |small_computer|pc:inst1|add[1]                                                                              ; |small_computer|pc:inst1|add[1]                                                                        ; regout           ;
+; |small_computer|pc:inst1|add[2]                                                                              ; |small_computer|pc:inst1|add[2]                                                                        ; regout           ;
+; |small_computer|pc:inst1|add[3]                                                                              ; |small_computer|pc:inst1|add[3]                                                                        ; regout           ;
+; |small_computer|mux3_1:inst3|y~0                                                                             ; |small_computer|mux3_1:inst3|y~0                                                                       ; out              ;
+; |small_computer|mux3_1:inst3|y~2                                                                             ; |small_computer|mux3_1:inst3|y~2                                                                       ; out              ;
+; |small_computer|mux3_1:inst3|y~3                                                                             ; |small_computer|mux3_1:inst3|y~3                                                                       ; out              ;
+; |small_computer|mux3_1:inst3|y~4                                                                             ; |small_computer|mux3_1:inst3|y~4                                                                       ; out              ;
+; |small_computer|mux3_1:inst3|y~5                                                                             ; |small_computer|mux3_1:inst3|y~5                                                                       ; out              ;
+; |small_computer|mux3_1:inst3|y~8                                                                             ; |small_computer|mux3_1:inst3|y~8                                                                       ; out              ;
+; |small_computer|mux3_1:inst3|y~14                                                                            ; |small_computer|mux3_1:inst3|y~14                                                                      ; out              ;
+; |small_computer|mux3_1:inst3|y~15                                                                            ; |small_computer|mux3_1:inst3|y~15                                                                      ; out              ;
+; |small_computer|mux3_1:inst3|y[7]                                                                            ; |small_computer|mux3_1:inst3|y[7]                                                                      ; out              ;
+; |small_computer|mux3_1:inst3|y[3]                                                                            ; |small_computer|mux3_1:inst3|y[3]                                                                      ; out              ;
+; |small_computer|mux3_1:inst3|y[2]                                                                            ; |small_computer|mux3_1:inst3|y[2]                                                                      ; out              ;
+; |small_computer|mux3_1:inst3|y[1]                                                                            ; |small_computer|mux3_1:inst3|y[1]                                                                      ; out              ;
+; |small_computer|mux3_1:inst3|y[0]                                                                            ; |small_computer|mux3_1:inst3|y[0]                                                                      ; out              ;
+; |small_computer|lpm_ram_io:inst|_~1                                                                          ; |small_computer|lpm_ram_io:inst|_~1                                                                    ; out0             ;
+; |small_computer|lpm_ram_io:inst|datatri[7]                                                                   ; |small_computer|lpm_ram_io:inst|datatri[7]                                                             ; out              ;
+; |small_computer|lpm_ram_io:inst|datatri[6]                                                                   ; |small_computer|lpm_ram_io:inst|datatri[6]                                                             ; out              ;
+; |small_computer|lpm_ram_io:inst|datatri[5]                                                                   ; |small_computer|lpm_ram_io:inst|datatri[5]                                                             ; out              ;
+; |small_computer|lpm_ram_io:inst|datatri[4]                                                                   ; |small_computer|lpm_ram_io:inst|datatri[4]                                                             ; out              ;
+; |small_computer|lpm_ram_io:inst|datatri[3]                                                                   ; |small_computer|lpm_ram_io:inst|datatri[3]                                                             ; out              ;
+; |small_computer|lpm_ram_io:inst|datatri[2]                                                                   ; |small_computer|lpm_ram_io:inst|datatri[2]                                                             ; out              ;
+; |small_computer|lpm_ram_io:inst|datatri[1]                                                                   ; |small_computer|lpm_ram_io:inst|datatri[1]                                                             ; out              ;
+; |small_computer|lpm_ram_io:inst|datatri[0]                                                                   ; |small_computer|lpm_ram_io:inst|datatri[0]                                                             ; out              ;
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ram_block1a0 ; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|q_a[0] ; portadataout0    ;
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ram_block1a1 ; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|q_a[1] ; portadataout0    ;
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ram_block1a2 ; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|q_a[2] ; portadataout0    ;
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ram_block1a3 ; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|q_a[3] ; portadataout0    ;
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ram_block1a4 ; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|q_a[4] ; portadataout0    ;
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ram_block1a5 ; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|q_a[5] ; portadataout0    ;
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ram_block1a6 ; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|q_a[6] ; portadataout0    ;
+; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|ram_block1a7 ; |small_computer|lpm_ram_io:inst|altram:sram|altsyncram:ram_block|altsyncram_4h91:auto_generated|q_a[7] ; portadataout0    ;
+; |small_computer|reg_group:inst14|s~0                                                                         ; |small_computer|reg_group:inst14|s~0                                                                   ; out              ;
+; |small_computer|reg_group:inst14|s~5                                                                         ; |small_computer|reg_group:inst14|s~5                                                                   ; out              ;
+; |small_computer|reg_group:inst14|s~6                                                                         ; |small_computer|reg_group:inst14|s~6                                                                   ; out              ;
+; |small_computer|reg_group:inst14|s~7                                                                         ; |small_computer|reg_group:inst14|s~7                                                                   ; out              ;
+; |small_computer|reg_group:inst14|s[7]                                                                        ; |small_computer|reg_group:inst14|s[7]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|s[6]                                                                        ; |small_computer|reg_group:inst14|s[6]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|s[5]                                                                        ; |small_computer|reg_group:inst14|s[5]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|s[4]                                                                        ; |small_computer|reg_group:inst14|s[4]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|s[3]                                                                        ; |small_computer|reg_group:inst14|s[3]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|s[2]                                                                        ; |small_computer|reg_group:inst14|s[2]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|s[1]                                                                        ; |small_computer|reg_group:inst14|s[1]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|s[0]                                                                        ; |small_computer|reg_group:inst14|s[0]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|d~0                                                                         ; |small_computer|reg_group:inst14|d~0                                                                   ; out              ;
+; |small_computer|reg_group:inst14|d~2                                                                         ; |small_computer|reg_group:inst14|d~2                                                                   ; out              ;
+; |small_computer|reg_group:inst14|d~3                                                                         ; |small_computer|reg_group:inst14|d~3                                                                   ; out              ;
+; |small_computer|reg_group:inst14|d~4                                                                         ; |small_computer|reg_group:inst14|d~4                                                                   ; out              ;
+; |small_computer|reg_group:inst14|d~5                                                                         ; |small_computer|reg_group:inst14|d~5                                                                   ; out              ;
+; |small_computer|reg_group:inst14|d~6                                                                         ; |small_computer|reg_group:inst14|d~6                                                                   ; out              ;
+; |small_computer|reg_group:inst14|d~7                                                                         ; |small_computer|reg_group:inst14|d~7                                                                   ; out              ;
+; |small_computer|reg_group:inst14|d[7]                                                                        ; |small_computer|reg_group:inst14|d[7]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|d[6]                                                                        ; |small_computer|reg_group:inst14|d[6]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|d[5]                                                                        ; |small_computer|reg_group:inst14|d[5]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|d[4]                                                                        ; |small_computer|reg_group:inst14|d[4]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|d[3]                                                                        ; |small_computer|reg_group:inst14|d[3]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|d[2]                                                                        ; |small_computer|reg_group:inst14|d[2]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|d[1]                                                                        ; |small_computer|reg_group:inst14|d[1]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|d[0]                                                                        ; |small_computer|reg_group:inst14|d[0]                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r2~0                                                                        ; |small_computer|reg_group:inst14|r2~0                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r2~1                                                                        ; |small_computer|reg_group:inst14|r2~1                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r2~2                                                                        ; |small_computer|reg_group:inst14|r2~2                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r2~5                                                                        ; |small_computer|reg_group:inst14|r2~5                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r2~6                                                                        ; |small_computer|reg_group:inst14|r2~6                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~0                                                                        ; |small_computer|reg_group:inst14|r3~0                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~1                                                                        ; |small_computer|reg_group:inst14|r3~1                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~2                                                                        ; |small_computer|reg_group:inst14|r3~2                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~3                                                                        ; |small_computer|reg_group:inst14|r3~3                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~4                                                                        ; |small_computer|reg_group:inst14|r3~4                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~5                                                                        ; |small_computer|reg_group:inst14|r3~5                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~6                                                                        ; |small_computer|reg_group:inst14|r3~6                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~7                                                                        ; |small_computer|reg_group:inst14|r3~7                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r1~0                                                                        ; |small_computer|reg_group:inst14|r1~0                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r1~1                                                                        ; |small_computer|reg_group:inst14|r1~1                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r1~2                                                                        ; |small_computer|reg_group:inst14|r1~2                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r1~3                                                                        ; |small_computer|reg_group:inst14|r1~3                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r1~4                                                                        ; |small_computer|reg_group:inst14|r1~4                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r1~5                                                                        ; |small_computer|reg_group:inst14|r1~5                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r1~6                                                                        ; |small_computer|reg_group:inst14|r1~6                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r1~7                                                                        ; |small_computer|reg_group:inst14|r1~7                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r2~8                                                                        ; |small_computer|reg_group:inst14|r2~8                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r2~9                                                                        ; |small_computer|reg_group:inst14|r2~9                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r2~10                                                                       ; |small_computer|reg_group:inst14|r2~10                                                                 ; out              ;
+; |small_computer|reg_group:inst14|r2~13                                                                       ; |small_computer|reg_group:inst14|r2~13                                                                 ; out              ;
+; |small_computer|reg_group:inst14|r2~14                                                                       ; |small_computer|reg_group:inst14|r2~14                                                                 ; out              ;
+; |small_computer|reg_group:inst14|r3~9                                                                        ; |small_computer|reg_group:inst14|r3~9                                                                  ; out              ;
+; |small_computer|reg_group:inst14|r3~10                                                                       ; |small_computer|reg_group:inst14|r3~10                                                                 ; out              ;
+; |small_computer|reg_group:inst14|r3~12                                                                       ; |small_computer|reg_group:inst14|r3~12                                                                 ; out              ;
+; |small_computer|reg_group:inst14|r3~13                                                                       ; |small_computer|reg_group:inst14|r3~13                                                                 ; out              ;
+; |small_computer|reg_group:inst14|r3~14                                                                       ; |small_computer|reg_group:inst14|r3~14                                                                 ; out              ;
+; |small_computer|reg_group:inst14|r3~15                                                                       ; |small_computer|reg_group:inst14|r3~15                                                                 ; out              ;
+; |small_computer|reg_group:inst14|r2[2]                                                                       ; |small_computer|reg_group:inst14|r2[2]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r2[7]                                                                       ; |small_computer|reg_group:inst14|r2[7]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r1[0]                                                                       ; |small_computer|reg_group:inst14|r1[0]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r1[1]                                                                       ; |small_computer|reg_group:inst14|r1[1]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r1[2]                                                                       ; |small_computer|reg_group:inst14|r1[2]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r1[3]                                                                       ; |small_computer|reg_group:inst14|r1[3]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r1[4]                                                                       ; |small_computer|reg_group:inst14|r1[4]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r1[5]                                                                       ; |small_computer|reg_group:inst14|r1[5]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r1[6]                                                                       ; |small_computer|reg_group:inst14|r1[6]                                                                 ; regout           ;
+; |small_computer|reg_group:inst14|r1[7]                                                                       ; |small_computer|reg_group:inst14|r1[7]                                                                 ; regout           ;
+; |small_computer|simple:inst13|always0~0                                                                      ; |small_computer|simple:inst13|always0~0                                                                ; out0             ;
+; |small_computer|simple:inst13|t~0                                                                            ; |small_computer|simple:inst13|t~0                                                                      ; out              ;
+; |small_computer|simple:inst13|t~5                                                                            ; |small_computer|simple:inst13|t~5                                                                      ; out              ;
+; |small_computer|simple:inst13|t~6                                                                            ; |small_computer|simple:inst13|t~6                                                                      ; out              ;
+; |small_computer|simple:inst13|t~7                                                                            ; |small_computer|simple:inst13|t~7                                                                      ; out              ;
+; |small_computer|simple:inst13|t~8                                                                            ; |small_computer|simple:inst13|t~8                                                                      ; out              ;
+; |small_computer|simple:inst13|t~13                                                                           ; |small_computer|simple:inst13|t~13                                                                     ; out              ;
+; |small_computer|simple:inst13|t~14                                                                           ; |small_computer|simple:inst13|t~14                                                                     ; out              ;
+; |small_computer|simple:inst13|t~15                                                                           ; |small_computer|simple:inst13|t~15                                                                     ; out              ;
+; |small_computer|simple:inst13|t~16                                                                           ; |small_computer|simple:inst13|t~16                                                                     ; out0             ;
+; |small_computer|simple:inst13|t~17                                                                           ; |small_computer|simple:inst13|t~17                                                                     ; out0             ;
+; |small_computer|simple:inst13|t~18                                                                           ; |small_computer|simple:inst13|t~18                                                                     ; out0             ;
+; |small_computer|simple:inst13|t~19                                                                           ; |small_computer|simple:inst13|t~19                                                                     ; out0             ;
+; |small_computer|simple:inst13|t~20                                                                           ; |small_computer|simple:inst13|t~20                                                                     ; out0             ;
+; |small_computer|simple:inst13|t~21                                                                           ; |small_computer|simple:inst13|t~21                                                                     ; out0             ;
+; |small_computer|simple:inst13|t~22                                                                           ; |small_computer|simple:inst13|t~22                                                                     ; out0             ;
+; |small_computer|simple:inst13|t~23                                                                           ; |small_computer|simple:inst13|t~23                                                                     ; out0             ;
+; |small_computer|simple:inst13|t~24                                                                           ; |small_computer|simple:inst13|t~24                                                                     ; out              ;
+; |small_computer|simple:inst13|t~25                                                                           ; |small_computer|simple:inst13|t~25                                                                     ; out              ;
+; |small_computer|simple:inst13|t~26                                                                           ; |small_computer|simple:inst13|t~26                                                                     ; out              ;
+; |small_computer|simple:inst13|t~27                                                                           ; |small_computer|simple:inst13|t~27                                                                     ; out              ;
+; |small_computer|simple:inst13|t~28                                                                           ; |small_computer|simple:inst13|t~28                                                                     ; out              ;
+; |small_computer|simple:inst13|t~29                                                                           ; |small_computer|simple:inst13|t~29                                                                     ; out              ;
+; |small_computer|simple:inst13|t~30                                                                           ; |small_computer|simple:inst13|t~30                                                                     ; out              ;
+; |small_computer|simple:inst13|t~31                                                                           ; |small_computer|simple:inst13|t~31                                                                     ; out              ;
+; |small_computer|simple:inst13|t~32                                                                           ; |small_computer|simple:inst13|t~32                                                                     ; out              ;
+; |small_computer|simple:inst13|t~33                                                                           ; |small_computer|simple:inst13|t~33                                                                     ; out              ;
+; |small_computer|simple:inst13|t~34                                                                           ; |small_computer|simple:inst13|t~34                                                                     ; out              ;
+; |small_computer|simple:inst13|t~35                                                                           ; |small_computer|simple:inst13|t~35                                                                     ; out              ;
+; |small_computer|simple:inst13|t~36                                                                           ; |small_computer|simple:inst13|t~36                                                                     ; out              ;
+; |small_computer|simple:inst13|t~37                                                                           ; |small_computer|simple:inst13|t~37                                                                     ; out              ;
+; |small_computer|simple:inst13|t~38                                                                           ; |small_computer|simple:inst13|t~38                                                                     ; out              ;
+; |small_computer|simple:inst13|t~39                                                                           ; |small_computer|simple:inst13|t~39                                                                     ; out              ;
+; |small_computer|simple:inst13|cf~0                                                                           ; |small_computer|simple:inst13|cf~0                                                                     ; out              ;
+; |small_computer|simple:inst13|t~40                                                                           ; |small_computer|simple:inst13|t~40                                                                     ; out              ;
+; |small_computer|simple:inst13|t~41                                                                           ; |small_computer|simple:inst13|t~41                                                                     ; out              ;
+; |small_computer|simple:inst13|t~42                                                                           ; |small_computer|simple:inst13|t~42                                                                     ; out              ;
+; |small_computer|simple:inst13|t~43                                                                           ; |small_computer|simple:inst13|t~43                                                                     ; out              ;
+; |small_computer|simple:inst13|t~44                                                                           ; |small_computer|simple:inst13|t~44                                                                     ; out              ;
+; |small_computer|simple:inst13|t~45                                                                           ; |small_computer|simple:inst13|t~45                                                                     ; out              ;
+; |small_computer|simple:inst13|t~46                                                                           ; |small_computer|simple:inst13|t~46                                                                     ; out              ;
+; |small_computer|simple:inst13|t~47                                                                           ; |small_computer|simple:inst13|t~47                                                                     ; out              ;
+; |small_computer|simple:inst13|zf~0                                                                           ; |small_computer|simple:inst13|zf~0                                                                     ; out              ;
+; |small_computer|simple:inst13|cf~1                                                                           ; |small_computer|simple:inst13|cf~1                                                                     ; out              ;
+; |small_computer|simple:inst13|t~48                                                                           ; |small_computer|simple:inst13|t~48                                                                     ; out              ;
+; |small_computer|simple:inst13|t~49                                                                           ; |small_computer|simple:inst13|t~49                                                                     ; out              ;
+; |small_computer|simple:inst13|t~50                                                                           ; |small_computer|simple:inst13|t~50                                                                     ; out              ;
+; |small_computer|simple:inst13|t~51                                                                           ; |small_computer|simple:inst13|t~51                                                                     ; out              ;
+; |small_computer|simple:inst13|t~52                                                                           ; |small_computer|simple:inst13|t~52                                                                     ; out              ;
+; |small_computer|simple:inst13|t~53                                                                           ; |small_computer|simple:inst13|t~53                                                                     ; out              ;
+; |small_computer|simple:inst13|t~54                                                                           ; |small_computer|simple:inst13|t~54                                                                     ; out              ;
+; |small_computer|simple:inst13|t~55                                                                           ; |small_computer|simple:inst13|t~55                                                                     ; out              ;
+; |small_computer|simple:inst13|zf~1                                                                           ; |small_computer|simple:inst13|zf~1                                                                     ; out              ;
+; |small_computer|simple:inst13|cf~2                                                                           ; |small_computer|simple:inst13|cf~2                                                                     ; out              ;
+; |small_computer|simple:inst13|t~56                                                                           ; |small_computer|simple:inst13|t~56                                                                     ; out              ;
+; |small_computer|simple:inst13|t~57                                                                           ; |small_computer|simple:inst13|t~57                                                                     ; out              ;
+; |small_computer|simple:inst13|t~58                                                                           ; |small_computer|simple:inst13|t~58                                                                     ; out              ;
+; |small_computer|simple:inst13|t~59                                                                           ; |small_computer|simple:inst13|t~59                                                                     ; out              ;
+; |small_computer|simple:inst13|t~60                                                                           ; |small_computer|simple:inst13|t~60                                                                     ; out              ;
+; |small_computer|simple:inst13|t~61                                                                           ; |small_computer|simple:inst13|t~61                                                                     ; out              ;
+; |small_computer|simple:inst13|t~62                                                                           ; |small_computer|simple:inst13|t~62                                                                     ; out              ;
+; |small_computer|simple:inst13|t~63                                                                           ; |small_computer|simple:inst13|t~63                                                                     ; out              ;
+; |small_computer|simple:inst13|zf~2                                                                           ; |small_computer|simple:inst13|zf~2                                                                     ; out              ;
+; |small_computer|simple:inst13|t[7]                                                                           ; |small_computer|simple:inst13|t[7]                                                                     ; out              ;
+; |small_computer|simple:inst13|t[6]                                                                           ; |small_computer|simple:inst13|t[6]                                                                     ; out              ;
+; |small_computer|simple:inst13|t[5]                                                                           ; |small_computer|simple:inst13|t[5]                                                                     ; out              ;
+; |small_computer|simple:inst13|t[4]                                                                           ; |small_computer|simple:inst13|t[4]                                                                     ; out              ;
+; |small_computer|simple:inst13|t[3]                                                                           ; |small_computer|simple:inst13|t[3]                                                                     ; out              ;
+; |small_computer|simple:inst13|t[2]                                                                           ; |small_computer|simple:inst13|t[2]                                                                     ; out              ;
+; |small_computer|simple:inst13|t[1]                                                                           ; |small_computer|simple:inst13|t[1]                                                                     ; out              ;
+; |small_computer|simple:inst13|t[0]                                                                           ; |small_computer|simple:inst13|t[0]                                                                     ; out              ;
+; |small_computer|simple:inst13|cf                                                                             ; |small_computer|simple:inst13|cf                                                                       ; out              ;
+; |small_computer|simple:inst13|zf                                                                             ; |small_computer|simple:inst13|zf                                                                       ; out              ;
+; |small_computer|shift:inst4|w[0]~0                                                                           ; |small_computer|shift:inst4|w[0]~0                                                                     ; out              ;
+; |small_computer|shift:inst4|always0~0                                                                        ; |small_computer|shift:inst4|always0~0                                                                  ; out0             ;
+; |small_computer|shift:inst4|always0~1                                                                        ; |small_computer|shift:inst4|always0~1                                                                  ; out0             ;
+; |small_computer|shift:inst4|always0~2                                                                        ; |small_computer|shift:inst4|always0~2                                                                  ; out0             ;
+; |small_computer|shift:inst4|always0~3                                                                        ; |small_computer|shift:inst4|always0~3                                                                  ; out0             ;
+; |small_computer|shift:inst4|always0~4                                                                        ; |small_computer|shift:inst4|always0~4                                                                  ; out0             ;
+; |small_computer|shift:inst4|always0~5                                                                        ; |small_computer|shift:inst4|always0~5                                                                  ; out0             ;
+; |small_computer|shift:inst4|cf~0                                                                             ; |small_computer|shift:inst4|cf~0                                                                       ; out              ;
+; |small_computer|shift:inst4|w[7]~1                                                                           ; |small_computer|shift:inst4|w[7]~1                                                                     ; out              ;
+; |small_computer|shift:inst4|w[6]~2                                                                           ; |small_computer|shift:inst4|w[6]~2                                                                     ; out              ;
+; |small_computer|shift:inst4|w[5]~3                                                                           ; |small_computer|shift:inst4|w[5]~3                                                                     ; out              ;
+; |small_computer|shift:inst4|w[4]~4                                                                           ; |small_computer|shift:inst4|w[4]~4                                                                     ; out              ;
+; |small_computer|shift:inst4|w[3]~5                                                                           ; |small_computer|shift:inst4|w[3]~5                                                                     ; out              ;
+; |small_computer|shift:inst4|w[2]~6                                                                           ; |small_computer|shift:inst4|w[2]~6                                                                     ; out              ;
+; |small_computer|shift:inst4|w[1]~7                                                                           ; |small_computer|shift:inst4|w[1]~7                                                                     ; out              ;
+; |small_computer|shift:inst4|cf~1                                                                             ; |small_computer|shift:inst4|cf~1                                                                       ; out              ;
+; |small_computer|shift:inst4|w[7]~8                                                                           ; |small_computer|shift:inst4|w[7]~8                                                                     ; out0             ;
+; |small_computer|shift:inst4|w[7]~9                                                                           ; |small_computer|shift:inst4|w[7]~9                                                                     ; out              ;
+; |small_computer|shift:inst4|w[6]~10                                                                          ; |small_computer|shift:inst4|w[6]~10                                                                    ; out              ;
+; |small_computer|shift:inst4|w[5]~11                                                                          ; |small_computer|shift:inst4|w[5]~11                                                                    ; out              ;
+; |small_computer|shift:inst4|w[4]~12                                                                          ; |small_computer|shift:inst4|w[4]~12                                                                    ; out              ;
+; |small_computer|shift:inst4|w[3]~13                                                                          ; |small_computer|shift:inst4|w[3]~13                                                                    ; out              ;
+; |small_computer|shift:inst4|w[2]~14                                                                          ; |small_computer|shift:inst4|w[2]~14                                                                    ; out              ;
+; |small_computer|shift:inst4|w[1]~15                                                                          ; |small_computer|shift:inst4|w[1]~15                                                                    ; out              ;
+; |small_computer|shift:inst4|cf                                                                               ; |small_computer|shift:inst4|cf                                                                         ; out              ;
+; |small_computer|shift:inst4|w[0]~16                                                                          ; |small_computer|shift:inst4|w[0]~16                                                                    ; out              ;
+; |small_computer|shift:inst4|w[0]                                                                             ; |small_computer|shift:inst4|w[0]                                                                       ; out              ;
+; |small_computer|shift:inst4|w[1]                                                                             ; |small_computer|shift:inst4|w[1]                                                                       ; out              ;
+; |small_computer|shift:inst4|w[2]                                                                             ; |small_computer|shift:inst4|w[2]                                                                       ; out              ;
+; |small_computer|shift:inst4|w[3]                                                                             ; |small_computer|shift:inst4|w[3]                                                                       ; out              ;
+; |small_computer|shift:inst4|w[4]                                                                             ; |small_computer|shift:inst4|w[4]                                                                       ; out              ;
+; |small_computer|shift:inst4|w[5]                                                                             ; |small_computer|shift:inst4|w[5]                                                                       ; out              ;
+; |small_computer|shift:inst4|w[6]                                                                             ; |small_computer|shift:inst4|w[6]                                                                       ; out              ;
+; |small_computer|shift:inst4|w[7]~24                                                                          ; |small_computer|shift:inst4|w[7]~24                                                                    ; out0             ;
+; |small_computer|shift:inst4|w[7]                                                                             ; |small_computer|shift:inst4|w[7]                                                                       ; out              ;
+; |small_computer|ir:inst2|ir[0]                                                                               ; |small_computer|ir:inst2|ir[0]                                                                         ; regout           ;
+; |small_computer|ir:inst2|ir[1]                                                                               ; |small_computer|ir:inst2|ir[1]                                                                         ; regout           ;
+; |small_computer|ir:inst2|ir[2]                                                                               ; |small_computer|ir:inst2|ir[2]                                                                         ; regout           ;
+; |small_computer|ir:inst2|ir[3]                                                                               ; |small_computer|ir:inst2|ir[3]                                                                         ; regout           ;
+; |small_computer|ir:inst2|ir[4]                                                                               ; |small_computer|ir:inst2|ir[4]                                                                         ; regout           ;
+; |small_computer|ir:inst2|ir[5]                                                                               ; |small_computer|ir:inst2|ir[5]                                                                         ; regout           ;
+; |small_computer|ir:inst2|ir[6]                                                                               ; |small_computer|ir:inst2|ir[6]                                                                         ; regout           ;
+; |small_computer|ir:inst2|ir[7]                                                                               ; |small_computer|ir:inst2|ir[7]                                                                         ; regout           ;
+; |small_computer|decoder:inst17|mova~0                                                                        ; |small_computer|decoder:inst17|mova~0                                                                  ; out              ;
+; |small_computer|decoder:inst17|movc~0                                                                        ; |small_computer|decoder:inst17|movc~0                                                                  ; out              ;
+; |small_computer|decoder:inst17|rsl~0                                                                         ; |small_computer|decoder:inst17|rsl~0                                                                   ; out              ;
+; |small_computer|decoder:inst17|jc~0                                                                          ; |small_computer|decoder:inst17|jc~0                                                                    ; out              ;
+; |small_computer|decoder:inst17|jz~0                                                                          ; |small_computer|decoder:inst17|jz~0                                                                    ; out              ;
+; |small_computer|decoder:inst17|jc~1                                                                          ; |small_computer|decoder:inst17|jc~1                                                                    ; out              ;
+; |small_computer|decoder:inst17|out1~0                                                                        ; |small_computer|decoder:inst17|out1~0                                                                  ; out              ;
+; |small_computer|decoder:inst17|jmp~0                                                                         ; |small_computer|decoder:inst17|jmp~0                                                                   ; out              ;
+; |small_computer|decoder:inst17|jz~1                                                                          ; |small_computer|decoder:inst17|jz~1                                                                    ; out              ;
+; |small_computer|decoder:inst17|jc~2                                                                          ; |small_computer|decoder:inst17|jc~2                                                                    ; out              ;
+; |small_computer|decoder:inst17|in1~0                                                                         ; |small_computer|decoder:inst17|in1~0                                                                   ; out              ;
+; |small_computer|decoder:inst17|out1~1                                                                        ; |small_computer|decoder:inst17|out1~1                                                                  ; out              ;
+; |small_computer|decoder:inst17|rsr~0                                                                         ; |small_computer|decoder:inst17|rsr~0                                                                   ; out              ;
+; |small_computer|decoder:inst17|rsl~1                                                                         ; |small_computer|decoder:inst17|rsl~1                                                                   ; out              ;
+; |small_computer|decoder:inst17|jmp~1                                                                         ; |small_computer|decoder:inst17|jmp~1                                                                   ; out              ;
+; |small_computer|decoder:inst17|jz~2                                                                          ; |small_computer|decoder:inst17|jz~2                                                                    ; out              ;
+; |small_computer|decoder:inst17|jc~3                                                                          ; |small_computer|decoder:inst17|jc~3                                                                    ; out              ;
+; |small_computer|decoder:inst17|in1~1                                                                         ; |small_computer|decoder:inst17|in1~1                                                                   ; out              ;
+; |small_computer|decoder:inst17|out1~2                                                                        ; |small_computer|decoder:inst17|out1~2                                                                  ; out              ;
+; |small_computer|decoder:inst17|rsr~1                                                                         ; |small_computer|decoder:inst17|rsr~1                                                                   ; out              ;
+; |small_computer|decoder:inst17|rsl~2                                                                         ; |small_computer|decoder:inst17|rsl~2                                                                   ; out              ;
+; |small_computer|decoder:inst17|jmp~2                                                                         ; |small_computer|decoder:inst17|jmp~2                                                                   ; out              ;
+; |small_computer|decoder:inst17|jz~3                                                                          ; |small_computer|decoder:inst17|jz~3                                                                    ; out              ;
+; |small_computer|decoder:inst17|jc~4                                                                          ; |small_computer|decoder:inst17|jc~4                                                                    ; out              ;
+; |small_computer|decoder:inst17|in1~2                                                                         ; |small_computer|decoder:inst17|in1~2                                                                   ; out              ;
+; |small_computer|decoder:inst17|out1~3                                                                        ; |small_computer|decoder:inst17|out1~3                                                                  ; out              ;
+; |small_computer|decoder:inst17|not1~0                                                                        ; |small_computer|decoder:inst17|not1~0                                                                  ; out              ;
+; |small_computer|decoder:inst17|rsr~2                                                                         ; |small_computer|decoder:inst17|rsr~2                                                                   ; out              ;
+; |small_computer|decoder:inst17|rsl~3                                                                         ; |small_computer|decoder:inst17|rsl~3                                                                   ; out              ;
+; |small_computer|decoder:inst17|jmp~3                                                                         ; |small_computer|decoder:inst17|jmp~3                                                                   ; out              ;
+; |small_computer|decoder:inst17|jz~4                                                                          ; |small_computer|decoder:inst17|jz~4                                                                    ; out              ;
+; |small_computer|decoder:inst17|jc~5                                                                          ; |small_computer|decoder:inst17|jc~5                                                                    ; out              ;
+; |small_computer|decoder:inst17|in1~3                                                                         ; |small_computer|decoder:inst17|in1~3                                                                   ; out              ;
+; |small_computer|decoder:inst17|out1~4                                                                        ; |small_computer|decoder:inst17|out1~4                                                                  ; out              ;
+; |small_computer|decoder:inst17|and1~0                                                                        ; |small_computer|decoder:inst17|and1~0                                                                  ; out              ;
+; |small_computer|decoder:inst17|not1~1                                                                        ; |small_computer|decoder:inst17|not1~1                                                                  ; out              ;
+; |small_computer|decoder:inst17|rsr~3                                                                         ; |small_computer|decoder:inst17|rsr~3                                                                   ; out              ;
+; |small_computer|decoder:inst17|rsl~4                                                                         ; |small_computer|decoder:inst17|rsl~4                                                                   ; out              ;
+; |small_computer|decoder:inst17|jmp~4                                                                         ; |small_computer|decoder:inst17|jmp~4                                                                   ; out              ;
+; |small_computer|decoder:inst17|jz~5                                                                          ; |small_computer|decoder:inst17|jz~5                                                                    ; out              ;
+; |small_computer|decoder:inst17|jc~6                                                                          ; |small_computer|decoder:inst17|jc~6                                                                    ; out              ;
+; |small_computer|decoder:inst17|in1~4                                                                         ; |small_computer|decoder:inst17|in1~4                                                                   ; out              ;
+; |small_computer|decoder:inst17|out1~5                                                                        ; |small_computer|decoder:inst17|out1~5                                                                  ; out              ;
+; |small_computer|decoder:inst17|sub~0                                                                         ; |small_computer|decoder:inst17|sub~0                                                                   ; out              ;
+; |small_computer|decoder:inst17|and1~1                                                                        ; |small_computer|decoder:inst17|and1~1                                                                  ; out              ;
+; |small_computer|decoder:inst17|not1~2                                                                        ; |small_computer|decoder:inst17|not1~2                                                                  ; out              ;
+; |small_computer|decoder:inst17|rsr~4                                                                         ; |small_computer|decoder:inst17|rsr~4                                                                   ; out              ;
+; |small_computer|decoder:inst17|rsl~5                                                                         ; |small_computer|decoder:inst17|rsl~5                                                                   ; out              ;
+; |small_computer|decoder:inst17|jmp~5                                                                         ; |small_computer|decoder:inst17|jmp~5                                                                   ; out              ;
+; |small_computer|decoder:inst17|jz~6                                                                          ; |small_computer|decoder:inst17|jz~6                                                                    ; out              ;
+; |small_computer|decoder:inst17|jc~7                                                                          ; |small_computer|decoder:inst17|jc~7                                                                    ; out              ;
+; |small_computer|decoder:inst17|in1~5                                                                         ; |small_computer|decoder:inst17|in1~5                                                                   ; out              ;
+; |small_computer|decoder:inst17|out1~6                                                                        ; |small_computer|decoder:inst17|out1~6                                                                  ; out              ;
+; |small_computer|decoder:inst17|mova~1                                                                        ; |small_computer|decoder:inst17|mova~1                                                                  ; out              ;
+; |small_computer|decoder:inst17|movb~0                                                                        ; |small_computer|decoder:inst17|movb~0                                                                  ; out              ;
+; |small_computer|decoder:inst17|movc~1                                                                        ; |small_computer|decoder:inst17|movc~1                                                                  ; out              ;
+; |small_computer|decoder:inst17|add~0                                                                         ; |small_computer|decoder:inst17|add~0                                                                   ; out              ;
+; |small_computer|decoder:inst17|sub~1                                                                         ; |small_computer|decoder:inst17|sub~1                                                                   ; out              ;
+; |small_computer|decoder:inst17|and1~2                                                                        ; |small_computer|decoder:inst17|and1~2                                                                  ; out              ;
+; |small_computer|decoder:inst17|not1~3                                                                        ; |small_computer|decoder:inst17|not1~3                                                                  ; out              ;
+; |small_computer|decoder:inst17|rsr~5                                                                         ; |small_computer|decoder:inst17|rsr~5                                                                   ; out              ;
+; |small_computer|decoder:inst17|rsl~6                                                                         ; |small_computer|decoder:inst17|rsl~6                                                                   ; out              ;
+; |small_computer|decoder:inst17|jmp~6                                                                         ; |small_computer|decoder:inst17|jmp~6                                                                   ; out              ;
+; |small_computer|decoder:inst17|jz~7                                                                          ; |small_computer|decoder:inst17|jz~7                                                                    ; out              ;
+; |small_computer|decoder:inst17|jc~8                                                                          ; |small_computer|decoder:inst17|jc~8                                                                    ; out              ;
+; |small_computer|decoder:inst17|in1~6                                                                         ; |small_computer|decoder:inst17|in1~6                                                                   ; out              ;
+; |small_computer|decoder:inst17|out1~7                                                                        ; |small_computer|decoder:inst17|out1~7                                                                  ; out              ;
+; |small_computer|decoder:inst17|mova                                                                          ; |small_computer|decoder:inst17|mova                                                                    ; out              ;
+; |small_computer|decoder:inst17|movb                                                                          ; |small_computer|decoder:inst17|movb                                                                    ; out              ;
+; |small_computer|decoder:inst17|movc                                                                          ; |small_computer|decoder:inst17|movc                                                                    ; out              ;
+; |small_computer|decoder:inst17|add                                                                           ; |small_computer|decoder:inst17|add                                                                     ; out              ;
+; |small_computer|decoder:inst17|sub                                                                           ; |small_computer|decoder:inst17|sub                                                                     ; out              ;
+; |small_computer|decoder:inst17|and1                                                                          ; |small_computer|decoder:inst17|and1                                                                    ; out              ;
+; |small_computer|decoder:inst17|not1                                                                          ; |small_computer|decoder:inst17|not1                                                                    ; out              ;
+; |small_computer|decoder:inst17|rsr                                                                           ; |small_computer|decoder:inst17|rsr                                                                     ; out              ;
+; |small_computer|decoder:inst17|rsl                                                                           ; |small_computer|decoder:inst17|rsl                                                                     ; out              ;
+; |small_computer|decoder:inst17|jmp                                                                           ; |small_computer|decoder:inst17|jmp                                                                     ; out              ;
+; |small_computer|decoder:inst17|jz                                                                            ; |small_computer|decoder:inst17|jz                                                                      ; out              ;
+; |small_computer|decoder:inst17|jc                                                                            ; |small_computer|decoder:inst17|jc                                                                      ; out              ;
+; |small_computer|decoder:inst17|in1                                                                           ; |small_computer|decoder:inst17|in1                                                                     ; out              ;
+; |small_computer|decoder:inst17|out1                                                                          ; |small_computer|decoder:inst17|out1                                                                    ; out              ;
+; |small_computer|con_signal:inst16|pc_ld~0                                                                    ; |small_computer|con_signal:inst16|pc_ld~0                                                              ; out0             ;
+; |small_computer|con_signal:inst16|pc_ld~1                                                                    ; |small_computer|con_signal:inst16|pc_ld~1                                                              ; out0             ;
+; |small_computer|con_signal:inst16|pc_ld~2                                                                    ; |small_computer|con_signal:inst16|pc_ld~2                                                              ; out0             ;
+; |small_computer|con_signal:inst16|pc_ld                                                                      ; |small_computer|con_signal:inst16|pc_ld                                                                ; out0             ;
+; |small_computer|con_signal:inst16|pc_inc~1                                                                   ; |small_computer|con_signal:inst16|pc_inc~1                                                             ; out0             ;
+; |small_computer|con_signal:inst16|pc_inc                                                                     ; |small_computer|con_signal:inst16|pc_inc                                                               ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~0                                                                   ; |small_computer|con_signal:inst16|reg_we~0                                                             ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~1                                                                   ; |small_computer|con_signal:inst16|reg_we~1                                                             ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~2                                                                   ; |small_computer|con_signal:inst16|reg_we~2                                                             ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~3                                                                   ; |small_computer|con_signal:inst16|reg_we~3                                                             ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~4                                                                   ; |small_computer|con_signal:inst16|reg_we~4                                                             ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~5                                                                   ; |small_computer|con_signal:inst16|reg_we~5                                                             ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~6                                                                   ; |small_computer|con_signal:inst16|reg_we~6                                                             ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~7                                                                   ; |small_computer|con_signal:inst16|reg_we~7                                                             ; out0             ;
+; |small_computer|con_signal:inst16|reg_we~8                                                                   ; |small_computer|con_signal:inst16|reg_we~8                                                             ; out0             ;
+; |small_computer|con_signal:inst16|ram_dl~0                                                                   ; |small_computer|con_signal:inst16|ram_dl~0                                                             ; out0             ;
+; |small_computer|con_signal:inst16|ram_dl~1                                                                   ; |small_computer|con_signal:inst16|ram_dl~1                                                             ; out0             ;
+; |small_computer|con_signal:inst16|ram_dl~2                                                                   ; |small_computer|con_signal:inst16|ram_dl~2                                                             ; out0             ;
+; |small_computer|con_signal:inst16|ram_dl                                                                     ; |small_computer|con_signal:inst16|ram_dl                                                               ; out0             ;
+; |small_computer|con_signal:inst16|alu_m~0                                                                    ; |small_computer|con_signal:inst16|alu_m~0                                                              ; out0             ;
+; |small_computer|con_signal:inst16|alu_m~1                                                                    ; |small_computer|con_signal:inst16|alu_m~1                                                              ; out0             ;
+; |small_computer|con_signal:inst16|alu_m                                                                      ; |small_computer|con_signal:inst16|alu_m                                                                ; out0             ;
+; |small_computer|con_signal:inst16|shi_fbus~0                                                                 ; |small_computer|con_signal:inst16|shi_fbus~0                                                           ; out0             ;
+; |small_computer|con_signal:inst16|shi_fbus~1                                                                 ; |small_computer|con_signal:inst16|shi_fbus~1                                                           ; out0             ;
+; |small_computer|con_signal:inst16|shi_fbus~2                                                                 ; |small_computer|con_signal:inst16|shi_fbus~2                                                           ; out0             ;
+; |small_computer|con_signal:inst16|shi_fbus~3                                                                 ; |small_computer|con_signal:inst16|shi_fbus~3                                                           ; out0             ;
+; |small_computer|con_signal:inst16|shi_fbus~4                                                                 ; |small_computer|con_signal:inst16|shi_fbus~4                                                           ; out0             ;
+; |small_computer|con_signal:inst16|shi_fbus                                                                   ; |small_computer|con_signal:inst16|shi_fbus                                                             ; out0             ;
+; |small_computer|con_signal:inst16|zf_en                                                                      ; |small_computer|con_signal:inst16|zf_en                                                                ; out0             ;
+; |small_computer|con_signal:inst16|cf_en~1                                                                    ; |small_computer|con_signal:inst16|cf_en~1                                                              ; out0             ;
+; |small_computer|con_signal:inst16|cf_en                                                                      ; |small_computer|con_signal:inst16|cf_en                                                                ; out0             ;
+; |small_computer|con_signal:inst16|madd[0]                                                                    ; |small_computer|con_signal:inst16|madd[0]                                                              ; out0             ;
+; |small_computer|con_signal:inst16|always0~1                                                                  ; |small_computer|con_signal:inst16|always0~1                                                            ; out0             ;
+; |small_computer|con_signal:inst16|madd[1]                                                                    ; |small_computer|con_signal:inst16|madd[1]                                                              ; out              ;
+; |small_computer|sm:inst21|sm                                                                                 ; |small_computer|sm:inst21|sm                                                                           ; regout           ;
+; |small_computer|pc:inst1|Add0~0                                                                              ; |small_computer|pc:inst1|Add0~0                                                                        ; out0             ;
+; |small_computer|pc:inst1|Add0~1                                                                              ; |small_computer|pc:inst1|Add0~1                                                                        ; out0             ;
+; |small_computer|pc:inst1|Add0~2                                                                              ; |small_computer|pc:inst1|Add0~2                                                                        ; out0             ;
+; |small_computer|pc:inst1|Add0~3                                                                              ; |small_computer|pc:inst1|Add0~3                                                                        ; out0             ;
+; |small_computer|pc:inst1|Add0~4                                                                              ; |small_computer|pc:inst1|Add0~4                                                                        ; out0             ;
+; |small_computer|pc:inst1|Add0~6                                                                              ; |small_computer|pc:inst1|Add0~6                                                                        ; out0             ;
+; |small_computer|simple:inst13|Add0~0                                                                         ; |small_computer|simple:inst13|Add0~0                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~1                                                                         ; |small_computer|simple:inst13|Add0~1                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~2                                                                         ; |small_computer|simple:inst13|Add0~2                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~3                                                                         ; |small_computer|simple:inst13|Add0~3                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~4                                                                         ; |small_computer|simple:inst13|Add0~4                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~5                                                                         ; |small_computer|simple:inst13|Add0~5                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~6                                                                         ; |small_computer|simple:inst13|Add0~6                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~7                                                                         ; |small_computer|simple:inst13|Add0~7                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~8                                                                         ; |small_computer|simple:inst13|Add0~8                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~9                                                                         ; |small_computer|simple:inst13|Add0~9                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add0~10                                                                        ; |small_computer|simple:inst13|Add0~10                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~11                                                                        ; |small_computer|simple:inst13|Add0~11                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~12                                                                        ; |small_computer|simple:inst13|Add0~12                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~13                                                                        ; |small_computer|simple:inst13|Add0~13                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~14                                                                        ; |small_computer|simple:inst13|Add0~14                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~15                                                                        ; |small_computer|simple:inst13|Add0~15                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~16                                                                        ; |small_computer|simple:inst13|Add0~16                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~17                                                                        ; |small_computer|simple:inst13|Add0~17                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~18                                                                        ; |small_computer|simple:inst13|Add0~18                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~19                                                                        ; |small_computer|simple:inst13|Add0~19                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~20                                                                        ; |small_computer|simple:inst13|Add0~20                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~21                                                                        ; |small_computer|simple:inst13|Add0~21                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~22                                                                        ; |small_computer|simple:inst13|Add0~22                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~23                                                                        ; |small_computer|simple:inst13|Add0~23                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~24                                                                        ; |small_computer|simple:inst13|Add0~24                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~25                                                                        ; |small_computer|simple:inst13|Add0~25                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~26                                                                        ; |small_computer|simple:inst13|Add0~26                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~27                                                                        ; |small_computer|simple:inst13|Add0~27                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~28                                                                        ; |small_computer|simple:inst13|Add0~28                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~29                                                                        ; |small_computer|simple:inst13|Add0~29                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~30                                                                        ; |small_computer|simple:inst13|Add0~30                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~31                                                                        ; |small_computer|simple:inst13|Add0~31                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~32                                                                        ; |small_computer|simple:inst13|Add0~32                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~33                                                                        ; |small_computer|simple:inst13|Add0~33                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~34                                                                        ; |small_computer|simple:inst13|Add0~34                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~35                                                                        ; |small_computer|simple:inst13|Add0~35                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add0~36                                                                        ; |small_computer|simple:inst13|Add0~36                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~0                                                                         ; |small_computer|simple:inst13|Add1~0                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~1                                                                         ; |small_computer|simple:inst13|Add1~1                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~2                                                                         ; |small_computer|simple:inst13|Add1~2                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~3                                                                         ; |small_computer|simple:inst13|Add1~3                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~4                                                                         ; |small_computer|simple:inst13|Add1~4                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~5                                                                         ; |small_computer|simple:inst13|Add1~5                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~6                                                                         ; |small_computer|simple:inst13|Add1~6                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~7                                                                         ; |small_computer|simple:inst13|Add1~7                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~8                                                                         ; |small_computer|simple:inst13|Add1~8                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~9                                                                         ; |small_computer|simple:inst13|Add1~9                                                                   ; out0             ;
+; |small_computer|simple:inst13|Add1~10                                                                        ; |small_computer|simple:inst13|Add1~10                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~11                                                                        ; |small_computer|simple:inst13|Add1~11                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~12                                                                        ; |small_computer|simple:inst13|Add1~12                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~13                                                                        ; |small_computer|simple:inst13|Add1~13                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~14                                                                        ; |small_computer|simple:inst13|Add1~14                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~15                                                                        ; |small_computer|simple:inst13|Add1~15                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~16                                                                        ; |small_computer|simple:inst13|Add1~16                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~17                                                                        ; |small_computer|simple:inst13|Add1~17                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~18                                                                        ; |small_computer|simple:inst13|Add1~18                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~19                                                                        ; |small_computer|simple:inst13|Add1~19                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~20                                                                        ; |small_computer|simple:inst13|Add1~20                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~21                                                                        ; |small_computer|simple:inst13|Add1~21                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~22                                                                        ; |small_computer|simple:inst13|Add1~22                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~23                                                                        ; |small_computer|simple:inst13|Add1~23                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~24                                                                        ; |small_computer|simple:inst13|Add1~24                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~25                                                                        ; |small_computer|simple:inst13|Add1~25                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~26                                                                        ; |small_computer|simple:inst13|Add1~26                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~27                                                                        ; |small_computer|simple:inst13|Add1~27                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~28                                                                        ; |small_computer|simple:inst13|Add1~28                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~29                                                                        ; |small_computer|simple:inst13|Add1~29                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~30                                                                        ; |small_computer|simple:inst13|Add1~30                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~31                                                                        ; |small_computer|simple:inst13|Add1~31                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~32                                                                        ; |small_computer|simple:inst13|Add1~32                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~33                                                                        ; |small_computer|simple:inst13|Add1~33                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~34                                                                        ; |small_computer|simple:inst13|Add1~34                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~35                                                                        ; |small_computer|simple:inst13|Add1~35                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~36                                                                        ; |small_computer|simple:inst13|Add1~36                                                                  ; out0             ;
+; |small_computer|simple:inst13|Add1~37                                                                        ; |small_computer|simple:inst13|Add1~37                                                                  ; out0             ;
+; |small_computer|mux3_1:inst3|Equal0~0                                                                        ; |small_computer|mux3_1:inst3|Equal0~0                                                                  ; out0             ;
+; |small_computer|mux3_1:inst3|Equal1~0                                                                        ; |small_computer|mux3_1:inst3|Equal1~0                                                                  ; out0             ;
+; |small_computer|mux3_1:inst3|Equal2~0                                                                        ; |small_computer|mux3_1:inst3|Equal2~0                                                                  ; out0             ;
+; |small_computer|reg_group:inst14|Equal0~0                                                                    ; |small_computer|reg_group:inst14|Equal0~0                                                              ; out0             ;
+; |small_computer|reg_group:inst14|Equal1~0                                                                    ; |small_computer|reg_group:inst14|Equal1~0                                                              ; out0             ;
+; |small_computer|reg_group:inst14|Equal2~0                                                                    ; |small_computer|reg_group:inst14|Equal2~0                                                              ; out0             ;
+; |small_computer|reg_group:inst14|Equal3~0                                                                    ; |small_computer|reg_group:inst14|Equal3~0                                                              ; out0             ;
+; |small_computer|simple:inst13|Equal0~0                                                                       ; |small_computer|simple:inst13|Equal0~0                                                                 ; out0             ;
+; |small_computer|simple:inst13|Equal1~0                                                                       ; |small_computer|simple:inst13|Equal1~0                                                                 ; out0             ;
+; |small_computer|simple:inst13|Equal2~0                                                                       ; |small_computer|simple:inst13|Equal2~0                                                                 ; out0             ;
+; |small_computer|simple:inst13|Equal3~0                                                                       ; |small_computer|simple:inst13|Equal3~0                                                                 ; out0             ;
+; |small_computer|simple:inst13|Equal4~0                                                                       ; |small_computer|simple:inst13|Equal4~0                                                                 ; out0             ;
+; |small_computer|simple:inst13|Equal5~0                                                                       ; |small_computer|simple:inst13|Equal5~0                                                                 ; out0             ;
+; |small_computer|simple:inst13|Equal6~0                                                                       ; |small_computer|simple:inst13|Equal6~0                                                                 ; out0             ;
+; |small_computer|simple:inst13|Equal7~0                                                                       ; |small_computer|simple:inst13|Equal7~0                                                                 ; out0             ;
+; |small_computer|simple:inst13|Equal8~0                                                                       ; |small_computer|simple:inst13|Equal8~0                                                                 ; out0             ;
+; |small_computer|decoder:inst17|Equal0~0                                                                      ; |small_computer|decoder:inst17|Equal0~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal1~0                                                                      ; |small_computer|decoder:inst17|Equal1~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal2~0                                                                      ; |small_computer|decoder:inst17|Equal2~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal3~0                                                                      ; |small_computer|decoder:inst17|Equal3~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal4~0                                                                      ; |small_computer|decoder:inst17|Equal4~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal5~0                                                                      ; |small_computer|decoder:inst17|Equal5~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal6~0                                                                      ; |small_computer|decoder:inst17|Equal6~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal7~0                                                                      ; |small_computer|decoder:inst17|Equal7~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal8~0                                                                      ; |small_computer|decoder:inst17|Equal8~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal9~0                                                                      ; |small_computer|decoder:inst17|Equal9~0                                                                ; out0             ;
+; |small_computer|decoder:inst17|Equal10~0                                                                     ; |small_computer|decoder:inst17|Equal10~0                                                               ; out0             ;
+; |small_computer|decoder:inst17|Equal11~0                                                                     ; |small_computer|decoder:inst17|Equal11~0                                                               ; out0             ;
+; |small_computer|decoder:inst17|Equal12~0                                                                     ; |small_computer|decoder:inst17|Equal12~0                                                               ; out0             ;
+; |small_computer|decoder:inst17|Equal13~0                                                                     ; |small_computer|decoder:inst17|Equal13~0                                                               ; out0             ;
+; |small_computer|decoder:inst17|Equal14~0                                                                     ; |small_computer|decoder:inst17|Equal14~0                                                               ; out0             ;
++--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                   ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |small_computer|inst23[6]                  ; |small_computer|inst23[6]                  ; out              ;
+; |small_computer|inst23[5]                  ; |small_computer|inst23[5]                  ; out              ;
+; |small_computer|inst23[4]                  ; |small_computer|inst23[4]                  ; out              ;
+; |small_computer|inst23[3]                  ; |small_computer|inst23[3]                  ; out              ;
+; |small_computer|inst23[2]                  ; |small_computer|inst23[2]                  ; out              ;
+; |small_computer|in[7]                      ; |small_computer|in[7]                      ; out              ;
+; |small_computer|in[6]                      ; |small_computer|in[6]                      ; out              ;
+; |small_computer|in[5]                      ; |small_computer|in[5]                      ; out              ;
+; |small_computer|in[4]                      ; |small_computer|in[4]                      ; out              ;
+; |small_computer|in[3]                      ; |small_computer|in[3]                      ; out              ;
+; |small_computer|in[2]                      ; |small_computer|in[2]                      ; out              ;
+; |small_computer|in[1]                      ; |small_computer|in[1]                      ; out              ;
+; |small_computer|in[0]                      ; |small_computer|in[0]                      ; out              ;
+; |small_computer|address[7]                 ; |small_computer|address[7]                 ; pin_out          ;
+; |small_computer|address[6]                 ; |small_computer|address[6]                 ; pin_out          ;
+; |small_computer|address[5]                 ; |small_computer|address[5]                 ; pin_out          ;
+; |small_computer|out[4]                     ; |small_computer|out[4]                     ; pin_out          ;
+; |small_computer|inst22[4]                  ; |small_computer|inst22[4]                  ; out              ;
+; |small_computer|pc:inst1|add~0             ; |small_computer|pc:inst1|add~0             ; out              ;
+; |small_computer|pc:inst1|add~8             ; |small_computer|pc:inst1|add~8             ; out              ;
+; |small_computer|pc:inst1|add[5]            ; |small_computer|pc:inst1|add[5]            ; regout           ;
+; |small_computer|pc:inst1|add[6]            ; |small_computer|pc:inst1|add[6]            ; regout           ;
+; |small_computer|pc:inst1|add[7]            ; |small_computer|pc:inst1|add[7]            ; regout           ;
+; |small_computer|mux3_1:inst3|y~1           ; |small_computer|mux3_1:inst3|y~1           ; out              ;
+; |small_computer|mux3_1:inst3|y~6           ; |small_computer|mux3_1:inst3|y~6           ; out              ;
+; |small_computer|mux3_1:inst3|y~7           ; |small_computer|mux3_1:inst3|y~7           ; out              ;
+; |small_computer|mux3_1:inst3|y~9           ; |small_computer|mux3_1:inst3|y~9           ; out              ;
+; |small_computer|mux3_1:inst3|y~10          ; |small_computer|mux3_1:inst3|y~10          ; out              ;
+; |small_computer|mux3_1:inst3|y~11          ; |small_computer|mux3_1:inst3|y~11          ; out              ;
+; |small_computer|mux3_1:inst3|y~12          ; |small_computer|mux3_1:inst3|y~12          ; out              ;
+; |small_computer|mux3_1:inst3|y~13          ; |small_computer|mux3_1:inst3|y~13          ; out              ;
+; |small_computer|mux3_1:inst3|y[6]          ; |small_computer|mux3_1:inst3|y[6]          ; out              ;
+; |small_computer|mux3_1:inst3|y[5]          ; |small_computer|mux3_1:inst3|y[5]          ; out              ;
+; |small_computer|reg_group:inst14|r3[0]     ; |small_computer|reg_group:inst14|r3[0]     ; regout           ;
+; |small_computer|reg_group:inst14|s~1       ; |small_computer|reg_group:inst14|s~1       ; out              ;
+; |small_computer|reg_group:inst14|s~2       ; |small_computer|reg_group:inst14|s~2       ; out              ;
+; |small_computer|reg_group:inst14|s~3       ; |small_computer|reg_group:inst14|s~3       ; out              ;
+; |small_computer|reg_group:inst14|s~4       ; |small_computer|reg_group:inst14|s~4       ; out              ;
+; |small_computer|reg_group:inst14|d~1       ; |small_computer|reg_group:inst14|d~1       ; out              ;
+; |small_computer|reg_group:inst14|r2~3      ; |small_computer|reg_group:inst14|r2~3      ; out              ;
+; |small_computer|reg_group:inst14|r2~4      ; |small_computer|reg_group:inst14|r2~4      ; out              ;
+; |small_computer|reg_group:inst14|r2~11     ; |small_computer|reg_group:inst14|r2~11     ; out              ;
+; |small_computer|reg_group:inst14|r2~12     ; |small_computer|reg_group:inst14|r2~12     ; out              ;
+; |small_computer|reg_group:inst14|r3~8      ; |small_computer|reg_group:inst14|r3~8      ; out              ;
+; |small_computer|reg_group:inst14|r3~11     ; |small_computer|reg_group:inst14|r3~11     ; out              ;
+; |small_computer|reg_group:inst14|r3[1]     ; |small_computer|reg_group:inst14|r3[1]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[2]     ; |small_computer|reg_group:inst14|r3[2]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[3]     ; |small_computer|reg_group:inst14|r3[3]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[4]     ; |small_computer|reg_group:inst14|r3[4]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[5]     ; |small_computer|reg_group:inst14|r3[5]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[6]     ; |small_computer|reg_group:inst14|r3[6]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[7]     ; |small_computer|reg_group:inst14|r3[7]     ; regout           ;
+; |small_computer|reg_group:inst14|r2[3]     ; |small_computer|reg_group:inst14|r2[3]     ; regout           ;
+; |small_computer|reg_group:inst14|r2[4]     ; |small_computer|reg_group:inst14|r2[4]     ; regout           ;
+; |small_computer|reg_group:inst14|r2[5]     ; |small_computer|reg_group:inst14|r2[5]     ; regout           ;
+; |small_computer|reg_group:inst14|r2[6]     ; |small_computer|reg_group:inst14|r2[6]     ; regout           ;
+; |small_computer|simple:inst13|t~1          ; |small_computer|simple:inst13|t~1          ; out              ;
+; |small_computer|simple:inst13|t~2          ; |small_computer|simple:inst13|t~2          ; out              ;
+; |small_computer|simple:inst13|t~3          ; |small_computer|simple:inst13|t~3          ; out              ;
+; |small_computer|simple:inst13|t~4          ; |small_computer|simple:inst13|t~4          ; out              ;
+; |small_computer|simple:inst13|t~9          ; |small_computer|simple:inst13|t~9          ; out              ;
+; |small_computer|simple:inst13|t~10         ; |small_computer|simple:inst13|t~10         ; out              ;
+; |small_computer|simple:inst13|t~11         ; |small_computer|simple:inst13|t~11         ; out              ;
+; |small_computer|simple:inst13|t~12         ; |small_computer|simple:inst13|t~12         ; out              ;
+; |small_computer|con_signal:inst16|pc_inc~0 ; |small_computer|con_signal:inst16|pc_inc~0 ; out0             ;
+; |small_computer|con_signal:inst16|pc_inc~2 ; |small_computer|con_signal:inst16|pc_inc~2 ; out0             ;
+; |small_computer|pc:inst1|Add0~9            ; |small_computer|pc:inst1|Add0~9            ; out0             ;
+; |small_computer|pc:inst1|Add0~10           ; |small_computer|pc:inst1|Add0~10           ; out0             ;
+; |small_computer|pc:inst1|Add0~11           ; |small_computer|pc:inst1|Add0~11           ; out0             ;
+; |small_computer|pc:inst1|Add0~12           ; |small_computer|pc:inst1|Add0~12           ; out0             ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                   ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |small_computer|inst23[7]                  ; |small_computer|inst23[7]                  ; out              ;
+; |small_computer|inst23[1]                  ; |small_computer|inst23[1]                  ; out              ;
+; |small_computer|inst23[0]                  ; |small_computer|inst23[0]                  ; out              ;
+; |small_computer|in[7]                      ; |small_computer|in[7]                      ; out              ;
+; |small_computer|in[6]                      ; |small_computer|in[6]                      ; out              ;
+; |small_computer|in[5]                      ; |small_computer|in[5]                      ; out              ;
+; |small_computer|in[4]                      ; |small_computer|in[4]                      ; out              ;
+; |small_computer|in[3]                      ; |small_computer|in[3]                      ; out              ;
+; |small_computer|in[2]                      ; |small_computer|in[2]                      ; out              ;
+; |small_computer|in[1]                      ; |small_computer|in[1]                      ; out              ;
+; |small_computer|in[0]                      ; |small_computer|in[0]                      ; out              ;
+; |small_computer|address[7]                 ; |small_computer|address[7]                 ; pin_out          ;
+; |small_computer|address[6]                 ; |small_computer|address[6]                 ; pin_out          ;
+; |small_computer|address[5]                 ; |small_computer|address[5]                 ; pin_out          ;
+; |small_computer|address[4]                 ; |small_computer|address[4]                 ; pin_out          ;
+; |small_computer|psw:inst19|c               ; |small_computer|psw:inst19|c               ; regout           ;
+; |small_computer|pc:inst1|add~0             ; |small_computer|pc:inst1|add~0             ; out              ;
+; |small_computer|pc:inst1|add~8             ; |small_computer|pc:inst1|add~8             ; out              ;
+; |small_computer|pc:inst1|add[4]            ; |small_computer|pc:inst1|add[4]            ; regout           ;
+; |small_computer|pc:inst1|add[5]            ; |small_computer|pc:inst1|add[5]            ; regout           ;
+; |small_computer|pc:inst1|add[6]            ; |small_computer|pc:inst1|add[6]            ; regout           ;
+; |small_computer|pc:inst1|add[7]            ; |small_computer|pc:inst1|add[7]            ; regout           ;
+; |small_computer|mux3_1:inst3|y~1           ; |small_computer|mux3_1:inst3|y~1           ; out              ;
+; |small_computer|mux3_1:inst3|y~6           ; |small_computer|mux3_1:inst3|y~6           ; out              ;
+; |small_computer|mux3_1:inst3|y~7           ; |small_computer|mux3_1:inst3|y~7           ; out              ;
+; |small_computer|mux3_1:inst3|y~9           ; |small_computer|mux3_1:inst3|y~9           ; out              ;
+; |small_computer|mux3_1:inst3|y~10          ; |small_computer|mux3_1:inst3|y~10          ; out              ;
+; |small_computer|mux3_1:inst3|y~11          ; |small_computer|mux3_1:inst3|y~11          ; out              ;
+; |small_computer|mux3_1:inst3|y~12          ; |small_computer|mux3_1:inst3|y~12          ; out              ;
+; |small_computer|mux3_1:inst3|y~13          ; |small_computer|mux3_1:inst3|y~13          ; out              ;
+; |small_computer|mux3_1:inst3|y[6]          ; |small_computer|mux3_1:inst3|y[6]          ; out              ;
+; |small_computer|mux3_1:inst3|y[5]          ; |small_computer|mux3_1:inst3|y[5]          ; out              ;
+; |small_computer|mux3_1:inst3|y[4]          ; |small_computer|mux3_1:inst3|y[4]          ; out              ;
+; |small_computer|reg_group:inst14|r3[0]     ; |small_computer|reg_group:inst14|r3[0]     ; regout           ;
+; |small_computer|reg_group:inst14|s~1       ; |small_computer|reg_group:inst14|s~1       ; out              ;
+; |small_computer|reg_group:inst14|s~2       ; |small_computer|reg_group:inst14|s~2       ; out              ;
+; |small_computer|reg_group:inst14|s~3       ; |small_computer|reg_group:inst14|s~3       ; out              ;
+; |small_computer|reg_group:inst14|s~4       ; |small_computer|reg_group:inst14|s~4       ; out              ;
+; |small_computer|reg_group:inst14|d~1       ; |small_computer|reg_group:inst14|d~1       ; out              ;
+; |small_computer|reg_group:inst14|r2~7      ; |small_computer|reg_group:inst14|r2~7      ; out              ;
+; |small_computer|reg_group:inst14|r2~15     ; |small_computer|reg_group:inst14|r2~15     ; out              ;
+; |small_computer|reg_group:inst14|r3~8      ; |small_computer|reg_group:inst14|r3~8      ; out              ;
+; |small_computer|reg_group:inst14|r3~11     ; |small_computer|reg_group:inst14|r3~11     ; out              ;
+; |small_computer|reg_group:inst14|r3[1]     ; |small_computer|reg_group:inst14|r3[1]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[2]     ; |small_computer|reg_group:inst14|r3[2]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[3]     ; |small_computer|reg_group:inst14|r3[3]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[4]     ; |small_computer|reg_group:inst14|r3[4]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[5]     ; |small_computer|reg_group:inst14|r3[5]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[6]     ; |small_computer|reg_group:inst14|r3[6]     ; regout           ;
+; |small_computer|reg_group:inst14|r3[7]     ; |small_computer|reg_group:inst14|r3[7]     ; regout           ;
+; |small_computer|reg_group:inst14|r2[0]     ; |small_computer|reg_group:inst14|r2[0]     ; regout           ;
+; |small_computer|reg_group:inst14|r2[1]     ; |small_computer|reg_group:inst14|r2[1]     ; regout           ;
+; |small_computer|reg_group:inst14|r2[6]     ; |small_computer|reg_group:inst14|r2[6]     ; regout           ;
+; |small_computer|simple:inst13|t~1          ; |small_computer|simple:inst13|t~1          ; out              ;
+; |small_computer|simple:inst13|t~2          ; |small_computer|simple:inst13|t~2          ; out              ;
+; |small_computer|simple:inst13|t~3          ; |small_computer|simple:inst13|t~3          ; out              ;
+; |small_computer|simple:inst13|t~4          ; |small_computer|simple:inst13|t~4          ; out              ;
+; |small_computer|simple:inst13|t~9          ; |small_computer|simple:inst13|t~9          ; out              ;
+; |small_computer|simple:inst13|t~10         ; |small_computer|simple:inst13|t~10         ; out              ;
+; |small_computer|simple:inst13|t~11         ; |small_computer|simple:inst13|t~11         ; out              ;
+; |small_computer|simple:inst13|t~12         ; |small_computer|simple:inst13|t~12         ; out              ;
+; |small_computer|decoder:inst17|halt~0      ; |small_computer|decoder:inst17|halt~0      ; out              ;
+; |small_computer|decoder:inst17|halt~1      ; |small_computer|decoder:inst17|halt~1      ; out              ;
+; |small_computer|decoder:inst17|halt~2      ; |small_computer|decoder:inst17|halt~2      ; out              ;
+; |small_computer|decoder:inst17|halt~3      ; |small_computer|decoder:inst17|halt~3      ; out              ;
+; |small_computer|decoder:inst17|halt~4      ; |small_computer|decoder:inst17|halt~4      ; out              ;
+; |small_computer|decoder:inst17|halt~5      ; |small_computer|decoder:inst17|halt~5      ; out              ;
+; |small_computer|decoder:inst17|halt~6      ; |small_computer|decoder:inst17|halt~6      ; out              ;
+; |small_computer|decoder:inst17|halt~7      ; |small_computer|decoder:inst17|halt~7      ; out              ;
+; |small_computer|decoder:inst17|halt~8      ; |small_computer|decoder:inst17|halt~8      ; out              ;
+; |small_computer|decoder:inst17|halt~9      ; |small_computer|decoder:inst17|halt~9      ; out              ;
+; |small_computer|decoder:inst17|halt        ; |small_computer|decoder:inst17|halt        ; out              ;
+; |small_computer|con_signal:inst16|pc_inc~0 ; |small_computer|con_signal:inst16|pc_inc~0 ; out0             ;
+; |small_computer|con_signal:inst16|pc_inc~2 ; |small_computer|con_signal:inst16|pc_inc~2 ; out0             ;
+; |small_computer|pc:inst1|Add0~5            ; |small_computer|pc:inst1|Add0~5            ; out0             ;
+; |small_computer|pc:inst1|Add0~7            ; |small_computer|pc:inst1|Add0~7            ; out0             ;
+; |small_computer|pc:inst1|Add0~8            ; |small_computer|pc:inst1|Add0~8            ; out0             ;
+; |small_computer|pc:inst1|Add0~9            ; |small_computer|pc:inst1|Add0~9            ; out0             ;
+; |small_computer|pc:inst1|Add0~10           ; |small_computer|pc:inst1|Add0~10           ; out0             ;
+; |small_computer|pc:inst1|Add0~11           ; |small_computer|pc:inst1|Add0~11           ; out0             ;
+; |small_computer|pc:inst1|Add0~12           ; |small_computer|pc:inst1|Add0~12           ; out0             ;
+; |small_computer|decoder:inst17|Equal15~0   ; |small_computer|decoder:inst17|Equal15~0   ; out0             ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Feb 24 21:48:31 2023
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off small_computer -c small_computer
+Info: Using vector source file "E:/电子电路/实验/模型机/模型机工程+202107030125+姚丁钰/my_small_computer/small_computer.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of small_computer.vwf called small_computer.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      83.92 %
+Info: Number of transitions in simulation is 5044
+Info: Vector file small_computer.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 178 megabytes
+    Info: Processing ended: Fri Feb 24 21:48:31 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
