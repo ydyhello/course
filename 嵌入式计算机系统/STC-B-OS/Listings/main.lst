@@ -1,0 +1,498 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              10/31/2023 17:08:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\main.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listings\ma
+                    -in.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "global.h"
+   2          #include "stack.h"
+   3          #include "xstack.h"
+   4          #include "scheduler.h"
+   5          #include "bit_ops.h"
+   6          #include "timer0_isr.h"
+   7          #include "syscall.h"
+   8          #include "semaphore.h"
+   9          #include "events.h"
+  10          #include "seg_led.h"
+  11          #include "button.h"
+  12          #include "usbcom.h"
+  13          #include "rs485.h"
+  14          #include "random.h"
+  15          
+  16          #define TIMESLICE_MS  1
+  17          #define T12RL   (65536 - MAIN_Fosc*TIMESLICE_MS/12/1000) 
+  18          
+  19          //game_pro
+  20          XDATA u8 playerid=0;
+  21          
+  22          XDATA u8 player1_num1=0;
+  23          XDATA u8 player1_num2=0;
+  24          XDATA u8 player2_num1=0;
+  25          XDATA u8 player2_num2=0;
+  26          
+  27          XDATA u8 pos1=1;
+  28          XDATA u8 pos2=1;
+  29          
+  30          XDATA u8 num1=0;
+  31          XDATA u8 num2=0;
+  32          
+  33          XDATA u8 flag1=0;//开关
+  34          XDATA u8 flag2=0;
+  35          
+  36          XDATA u8 count=0;
+  37          
+  38          XDATA u8 Case;
+  39          
+  40          
+  41          void testproc(u16 param) large reentrant
+  42          {
+  43   1        while(1)
+  44   1        {
+  45   2          if((timer0_cnt>>5) & BIT(param))
+  46   2          {
+  47   3            SETBIT(led_display_content, param);
+  48   3          }
+  49   2          else
+  50   2          {
+  51   3            CLEARBIT(led_display_content, param);
+  52   3          }
+  53   2        }
+  54   1      }
+C51 COMPILER V9.60.7.0   MAIN                                                              10/31/2023 17:08:22 PAGE 2   
+
+  55          
+  56          void testproc2(u16 param) large reentrant
+  57          {
+  58   1        while(1)
+  59   1        {
+  60   2          proc_sleep(param);
+  61   2          led_display_content = ~led_display_content;
+  62   2        }
+  63   1      }
+  64          
+  65          void testproc3(u16 param) large reentrant
+  66          {
+  67   1        while(1)
+  68   1        {
+  69   2          proc_sleep(param);
+  70   2          led_display_content ^= 0x0f;
+  71   2        }
+  72   1      }
+  73          
+  74          void testproc4() large reentrant
+  75          {
+  76   1        while(1)
+  77   1        {
+  78   2          proc_sleep(500);
+  79   2          sem_post(0);
+  80   2          led_display_content |= 0x80;
+  81   2          sem_wait(0);
+  82   2          led_display_content &= ~0x80;
+  83   2        }
+  84   1      }
+  85          
+  86          void testproc5() large reentrant
+  87          {
+  88   1        sem_init(0,0);
+  89   1        while(1)
+  90   1        {
+  91   2          sem_wait(0);
+  92   2          led_display_content |= 0x40;
+  93   2          proc_sleep(500);
+  94   2          sem_post(0);
+  95   2          led_display_content &= ~0x40;
+  96   2        }
+  97   1      }
+  98          
+  99          void testproc6(u16 param) large reentrant
+ 100          {
+ 101   1        while(1)
+ 102   1        {
+ 103   2          proc_wait_evts(EVT_BTN1_DN);//k1按下
+ 104   2          seg_set_str("HELLO   ");
+ 105   2          usbcom_write("hello \0",0);
+ 106   2          proc_wait_evts(EVT_NAV_R);//导航右
+ 107   2          seg_set_str("WORLD   ");
+ 108   2          usbcom_write("world\r\n\0",0);
+ 109   2          proc_wait_evts(EVT_UART1_RECV);//usb串口接收
+ 110   2          seg_set_str(usbcom_buf);
+ 111   2        }
+ 112   1      }
+*** WARNING C280 IN LINE 99 OF src\main.c: 'param': unreferenced local variable
+ 113          
+ 114          void testproc7(u16 param) large reentrant
+ 115          {
+C51 COMPILER V9.60.7.0   MAIN                                                              10/31/2023 17:08:22 PAGE 3   
+
+ 116   1        while(1)
+ 117   1        {
+ 118   2          proc_wait_evts(EVT_UART2_RECV | EVT_BTN1_DN);//RS485 串口接收|K1按下
+ 119   2          if(MY_EVENTS & EVT_BTN1_DN)
+ 120   2          {
+ 121   3            *((u32 *)rs485_buf) = rand32();
+ 122   3            rs485_write(rs485_buf, 4);
+ 123   3            seg_set_number(*((u32 *)rs485_buf));
+ 124   3          }
+ 125   2          else
+ 126   2          {
+ 127   3            seg_set_number(*((u32 *)rs485_buf));
+ 128   3          }
+ 129   2        }
+ 130   1      }
+*** WARNING C280 IN LINE 114 OF src\main.c: 'param': unreferenced local variable
+ 131          void testRR0(u16 param)
+ 132          {
+ 133   1        while(1){
+ 134   2          seg_set_number(00000000);
+ 135   2        }
+ 136   1      }
+*** WARNING C280 IN LINE 131 OF src\main.c: 'param': unreferenced local variable
+ 137          void testRR1(u16 param)
+ 138          {
+ 139   1        while(1){
+ 140   2          seg_set_number(11111111);
+ 141   2        }
+ 142   1      }
+*** WARNING C280 IN LINE 137 OF src\main.c: 'param': unreferenced local variable
+ 143          void testRR2(u16 param)
+ 144          {
+ 145   1        while(1){
+ 146   2          seg_set_number(22222222);
+ 147   2        }
+ 148   1      }
+*** WARNING C280 IN LINE 143 OF src\main.c: 'param': unreferenced local variable
+ 149          
+ 150          void game_start()
+ 151          {
+ 152   1        while(1){
+ 153   2      
+ 154   2          proc_wait_evts(EVT_BTN3_DN | EVT_UART2_RECV);
+ 155   2          if(MY_EVENTS & EVT_BTN3_DN)
+ 156   2          {
+ 157   3            led_display_content=0xff;
+ 158   3          }
+ 159   2          proc_wait_evts(EVT_BTN1_DN | EVT_BTN2_DN | EVT_UART2_RECV);
+ 160   2          if(MY_EVENTS & EVT_BTN1_DN)
+ 161   2          {
+ 162   3            playerid=1;//发送方
+ 163   3            led_display_content=0;
+ 164   3          }
+ 165   2          if(MY_EVENTS & EVT_BTN2_DN)
+ 166   2          {
+ 167   3            playerid=2;//接收方
+ 168   3            led_display_content=0;
+ 169   3          }
+ 170   2        }
+ 171   1      
+ 172   1      }
+ 173          void game_pro()
+C51 COMPILER V9.60.7.0   MAIN                                                              10/31/2023 17:08:22 PAGE 4   
+
+ 174          {
+ 175   1        while(1){
+ 176   2          
+ 177   2          proc_wait_evts(
+ 182   2            EVT_NAV_U | EVT_NAV_D |
+ 182   2            EVT_NAV_L | EVT_NAV_R |
+ 182   2            EVT_NAV_PUSH| EVT_BTN3_DN |
+ 182   2            EVT_BTN2_DN | EVT_USER1
+ 182   2          );
+ 183   2          if(MY_EVENTS & EVT_NAV_L){
+ 184   3            if(playerid==1 && flag1==0) pos1=2;
+ 185   3            if(playerid==2 && flag2==0) pos2=2;
+ 186   3          }
+ 187   2          if(MY_EVENTS & EVT_NAV_R){
+ 188   3            if(playerid==1 && flag1==0) pos1=1;
+ 189   3            if(playerid==2 && flag2==0) pos2=1;
+ 190   3          }
+ 191   2      
+ 192   2          //发送方
+ 193   2          if(playerid==1 && flag1==0){
+ 194   3            if(pos1==1){
+ 195   4              if(MY_EVENTS & EVT_NAV_U){
+ 196   5                if(player1_num1==9){
+ 197   6                  player1_num1=0;
+ 198   6                }else{
+ 199   6                  player1_num1++;
+ 200   6                }
+ 201   5              }
+ 202   4              if(MY_EVENTS & EVT_NAV_D){
+ 203   5                if(player1_num1==0){
+ 204   6                  player1_num1=9;
+ 205   6                }else{
+ 206   6                  player1_num1--;
+ 207   6                }
+ 208   5              }
+ 209   4            }
+ 210   3            if(pos1==2){
+ 211   4              if(MY_EVENTS & EVT_NAV_U){
+ 212   5                if(player1_num2==9){
+ 213   6                  player1_num2=0;
+ 214   6                }else{
+ 215   6                  player1_num2++;
+ 216   6                }
+ 217   5              }
+ 218   4              if(MY_EVENTS & EVT_NAV_D){
+ 219   5                if(player1_num2==0){
+ 220   6                  player1_num2=9;
+ 221   6                }else{
+ 222   6                  player1_num2--;
+ 223   6                }
+ 224   5              }
+ 225   4              
+ 226   4            }
+ 227   3          }
+ 228   2          
+ 229   2          //接收方
+ 230   2          if(playerid==2 && flag2==0){
+ 231   3            if(pos2==1){
+ 232   4              if(MY_EVENTS & EVT_NAV_U){
+ 233   5                if(player2_num1==9){
+ 234   6                  player2_num1=0;
+ 235   6                }else{
+C51 COMPILER V9.60.7.0   MAIN                                                              10/31/2023 17:08:22 PAGE 5   
+
+ 236   6                  player2_num1++;
+ 237   6                }
+ 238   5              }
+ 239   4              if(MY_EVENTS & EVT_NAV_D){
+ 240   5                if(player2_num1==0){
+ 241   6                  player2_num1=9;
+ 242   6                }else{
+ 243   6                  player2_num1--;
+ 244   6                }
+ 245   5              }
+ 246   4            }
+ 247   3            if(pos2==2){
+ 248   4              if(MY_EVENTS & EVT_NAV_U){
+ 249   5                if(player2_num2==9){
+ 250   6                  player2_num2=0;
+ 251   6                }else{
+ 252   6                  player2_num2++;
+ 253   6                }
+ 254   5              }
+ 255   4              if(MY_EVENTS & EVT_NAV_D){
+ 256   5                if(player2_num2==0){
+ 257   6                  player2_num2=9;
+ 258   6                }else{
+ 259   6                  player2_num2--;
+ 260   6                }
+ 261   5              }
+ 262   4              
+ 263   4            }
+ 264   3          }
+ 265   2          //确定被猜的数字
+ 266   2          if(MY_EVENTS & EVT_NAV_PUSH){
+ 267   3            if(playerid==2){
+ 268   4              num2=player2_num2*10+player2_num1;
+ 269   4              flag2=1;
+ 270   4              rs485_buf[0] = num2;
+ 271   4              rs485_write(rs485_buf, 1);
+ 272   4      
+ 273   4            }
+ 274   3            if(playerid==1){
+ 275   4              num1=player1_num2*10+player1_num1;
+ 276   4              
+ 277   4              if(flag1==0) count++;
+ 278   4              //flag1=1;
+ 279   4              led_display_content=count;
+ 280   4              if(rs485_buf[0]==num1){
+ 281   5                //led_display_content=rs485_buf[0];
+ 282   5                flag1=1;
+ 283   5              }
+ 284   4              if(rs485_buf[0]<num1)
+ 285   4                Case=1;
+ 286   4              if(rs485_buf[0]>num1)
+ 287   4                Case=2;
+ 288   4              
+ 289   4              
+ 290   4            }
+ 291   3          }
+ 292   2        }
+ 293   1      }
+ 294          void game_ui()
+ 295          {
+ 296   1        while(1){
+ 297   2          
+C51 COMPILER V9.60.7.0   MAIN                                                              10/31/2023 17:08:22 PAGE 6   
+
+ 298   2          if(playerid==1 && (rs485_buf[0]!=num1 || (rs485_buf[0]==0 && num1==0))){
+ 299   3            //led_display_content=count;
+ 300   3            seg_display_content[0]=seg_decoder['n'];
+ 301   3            seg_display_content[1]=seg_decoder['o'];
+ 302   3            seg_display_content[2]=seg_decoder[1];
+ 303   3            
+ 304   3            seg_display_content[3]=seg_decoder[' '];
+ 305   3            //seg_display_content[4]=seg_decoder[' '];
+ 306   3            seg_display_content[5]=seg_decoder[' '];
+ 307   3            if(Case==1)
+ 308   3              seg_display_content[4]=seg_decoder['u'];
+ 309   3            if(Case==2)
+ 310   3              seg_display_content[4]=seg_decoder['N'];
+ 311   3      
+ 312   3            if(pos1==1){
+ 313   4              seg_display_content[6]=seg_decoder[player1_num2];
+ 314   4              seg_display_content[7]=seg_decoder[player1_num1]|0x80;
+ 315   4            }
+ 316   3            if(pos1==2){
+ 317   4              seg_display_content[6]=seg_decoder[player1_num2]|0x80;
+ 318   4              seg_display_content[7]=seg_decoder[player1_num1];
+ 319   4            }
+ 320   3          }
+ 321   2          if(playerid==2){
+ 322   3            seg_display_content[0]=seg_decoder['n'];
+ 323   3            seg_display_content[1]=seg_decoder['o'];
+ 324   3            seg_display_content[2]=seg_decoder[2];
+ 325   3            
+ 326   3            seg_display_content[3]=seg_decoder[' '];
+ 327   3            seg_display_content[4]=seg_decoder[' '];
+ 328   3            seg_display_content[5]=seg_decoder[' '];
+ 329   3      
+ 330   3            if(pos2==1){
+ 331   4              seg_display_content[6]=seg_decoder[player2_num2];
+ 332   4              seg_display_content[7]=seg_decoder[player2_num1]|0x80;
+ 333   4            }
+ 334   3            if(pos2==2){
+ 335   4              seg_display_content[6]=seg_decoder[player2_num2]|0x80;
+ 336   4              seg_display_content[7]=seg_decoder[player2_num1];
+ 337   4            }
+ 338   3      
+ 339   3          }
+ 340   2          if(playerid==1 && rs485_buf[0]==num1 && rs485_buf[0]!=0 && num1!=0){
+ 341   3            seg_display_content[0]=seg_decoder['G'];
+ 342   3            seg_display_content[1]=seg_decoder['U'];
+ 343   3            seg_display_content[2]=seg_decoder['E'];
+ 344   3            seg_display_content[3]=seg_decoder['S'];
+ 345   3            seg_display_content[4]=seg_decoder['S'];
+ 346   3            seg_display_content[5]=seg_decoder[' '];
+ 347   3            if(count<10){
+ 348   4              seg_display_content[6]=seg_decoder[' '];
+ 349   4              seg_display_content[7]=seg_decoder[count];
+ 350   4            }else{
+ 351   4              seg_display_content[6]=seg_decoder[count/10];
+ 352   4              seg_display_content[7]=seg_decoder[count%10];
+ 353   4            }
+ 354   3          }
+ 355   2      
+ 356   2      
+ 357   2        }
+ 358   1      }
+ 359          
+C51 COMPILER V9.60.7.0   MAIN                                                              10/31/2023 17:08:22 PAGE 7   
+
+ 360          main()
+ 361          {
+ 362   1        //initialize kernel stack and xstack pointer
+ 363   1        SP = kernel_stack;
+ 364   1        setxbp(kernel_xstack + KERNEL_XSTACKSIZE);
+*** WARNING C214 IN LINE 364 OF src\main.c: 'Argument': conversion: pointer to non-pointer
+ 365   1        
+ 366   1        //set process stacks and swap stacks owner
+ 367   1        process_stack[0][PROCESS_STACKSIZE-1] = 0;
+ 368   1        process_stack[1][PROCESS_STACKSIZE-1] = 1;
+ 369   1        process_stack[2][PROCESS_STACKSIZE-1] = 2;
+ 370   1        process_stack[3][PROCESS_STACKSIZE-1] = 3;
+ 371   1        process_stack[4][PROCESS_STACKSIZE-1] = 4;
+ 372   1        process_stack_swap[0][PROCESS_STACKSIZE-1] = 5;
+ 373   1        process_stack_swap[1][PROCESS_STACKSIZE-1] = 6;
+ 374   1        process_stack_swap[2][PROCESS_STACKSIZE-1] = 7;
+ 375   1        
+ 376   1        //initialize LED pins
+ 377   1        P0M1 &= 0x00;
+ 378   1        P0M0 |= 0xff;
+ 379   1        P2M1 &= 0xf0;
+ 380   1        P2M0 |= 0x0f;
+ 381   1        //select LED, set all off
+ 382   1        P23 = 1;
+ 383   1        P0 = 0;
+ 384   1      
+ 385   1        //initialize buttons
+ 386   1        buttons_init();
+ 387   1        
+ 388   1        //initialize serial ports
+ 389   1        usbcom_init(115200);
+ 390   1        rs485_init(115200);
+ 391   1          
+ 392   1        //start process
+ 393   1        //优先级
+ 394   1        
+ 395   1        start_process((u16)testRR0,0,0,2);
+ 396   1        start_process((u16)testRR1,1,0,1);
+ 397   1        start_process((u16)testRR2,2,0,3);
+ 398   1        
+ 399   1        //RR
+ 400   1        /*
+ 401   1        start_process((u16)testRR0,0,0);
+ 402   1        start_process((u16)testRR1,1,0);
+ 403   1        start_process((u16)testRR2,2,0);
+ 404   1        */
+ 405   1        
+ 406   1        //猜数
+ 407   1        /*
+ 408   1        seg_set_str("GUESS PL");
+ 409   1        start_process((u16)game_start,0,0,1);
+ 410   1        start_process((u16)game_ui,1,0,2);
+ 411   1        start_process((u16)game_pro,2,0,3);
+ 412   1        */
+ 413   1        
+ 414   1        
+ 415   1        
+ 416   1        
+ 417   1      
+ 418   1            
+ 419   1          
+ 420   1        //initialize PCA2 interrupt (as syscall interrupt)
+C51 COMPILER V9.60.7.0   MAIN                                                              10/31/2023 17:08:22 PAGE 8   
+
+ 421   1        //clear CCF2
+ 422   1        CCON &= ~0x04;
+ 423   1        //disable PCA2 module and set ECCF2
+ 424   1        CCAPM2 = 1;
+ 425   1        //low priority interrupt
+ 426   1        PPCA = 0;
+ 427   1        
+ 428   1        //start main timer
+ 429   1        TR0 = 0;                            //stop timer
+ 430   1        TMOD &= 0xF0;                       //timer mode, 16b autoreload
+ 431   1        AUXR &= 0x7F;                       //12T mode
+ 432   1        TL0 = T12RL & 0xff;             //set reload value
+ 433   1        TH0 = (T12RL & 0xff00) >> 8;
+ 434   1        ET0 = EA = 1;                       //set interrupt enable
+ 435   1        PT0 = 0;                            //set priority to low
+ 436   1        TR0 = 1;                            //start timer
+ 437   1        
+ 438   1        //spin
+ 439   1        while(1);
+ 440   1      }
+*** WARNING C294 IN LINE 54 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 54 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 63 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 63 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 72 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 72 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 112 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 112 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 130 OF src\main.c: unreachable code
+*** WARNING C294 IN LINE 130 OF src\main.c: unreachable code
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   2753    ----
+   CONSTANT SIZE    =     35    ----
+   XDATA SIZE       =     19    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  16 WARNING(S),  0 ERROR(S)

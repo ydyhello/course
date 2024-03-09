@@ -1,0 +1,243 @@
+C51 COMPILER V9.60.7.0   SCHEDULER                                                         10/31/2023 17:08:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SCHEDULER
+OBJECT MODULE PLACED IN .\Objects\scheduler.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\scheduler.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listin
+                    -gs\scheduler.lst) TABS(2) OBJECT(.\Objects\scheduler.obj)
+
+line level    source
+
+   1          #include "scheduler.h"
+   2          
+   3          XDATA u8 process_context[8][18];
+   4          XDATA u8 current_process = 8;
+   5          DATA u8 flag_nosched = 0;
+   6          XDATA u8 process_slot = 0;
+   7          XDATA u8 remaining_timeslices = DEFAULT_TIMESLICES;
+   8          XDATA u8 proc_time_share[8];
+   9          
+  10          XDATA u8 proc_priority[8];
+  11          //This determines the number of timeslices assigned when each process is scheduled
+  12          //proc_time_share[0] in filled upon initialization. other elements will be filled when
+  13          //corresponding process gets started
+  14          
+  15          //Only processes with 0 sleep countdown can be scheduled
+  16          XDATA u16 proc_sleep_countdown[8] ={0, 0, 0, 0, 0, 0, 0, 0};
+  17          
+  18          #define PRIORITY_INDEX 18
+  19          /*
+  20          void start_process(u16 entry, u16 pid, u32 param)
+  21          {
+  22            //XBPH,L
+  23            process_context[pid][13] = (((u16)process_xstack[pid] + PROCESS_XSTACKSIZE)&0xff00)>>8;
+  24            process_context[pid][14] = ((u16)process_xstack[pid] + PROCESS_XSTACKSIZE)&0x00ff;
+  25          
+  26            //PCH, PCL
+  27            process_context[pid][15] = (entry&0xff00) >> 8; 
+  28            process_context[pid][16] = (entry&0x00ff);
+  29          
+  30            
+  31            //SP
+  32            if(get_stack_index(pid)!=-1)
+  33              process_context[pid][17] = process_stack[get_stack_index(pid)]; //stack present in memory, use absolute 
+             -address
+  34            else
+  35              process_context[pid][17] = 0; //stack in stackswap space, use address relative to stack start
+  36            
+  37            //R4-R7 (param)
+  38            process_context[pid][9] = (param & 0xff000000) >> 24;
+  39            process_context[pid][10] = (param & 0x00ff0000) >> 16;
+  40            process_context[pid][11] = (param & 0x0000ff00) >> 8;
+  41            process_context[pid][12] = (param & 0x000000ff);
+  42          
+  43            proc_time_share[pid] = DEFAULT_TIMESLICES;
+  44            process_slot |= BIT(pid);
+  45          }
+  46          
+  47          
+  48          u8 select_process()
+  49          {
+  50              XDATA u8 tmp_process;
+  51              
+  52              //current_process can be 8 (kernel startup) or 9 (idle spin)
+  53              //so we have to set current_process to 0 in that situation.
+C51 COMPILER V9.60.7.0   SCHEDULER                                                         10/31/2023 17:08:22 PAGE 2   
+
+  54              if(current_process >= 8) current_process = 0;
+  55              tmp_process = current_process;
+  56              
+  57          
+  58              //sequentially check other processes
+  59              while((tmp_process = NEXT(tmp_process)) != current_process)
+  60                  if(process_ready(tmp_process))
+  61                    goto SCHEDULER_END;
+  62          
+  63              //if no other process can run, check if current process can run again
+  64              if (process_ready(current_process))
+  65              {
+  66              tmp_process = current_process;
+  67              goto SCHEDULER_END;
+  68            }
+  69              
+  70            //Can't find a process to run, reuturn 9(invalid)
+  71            //ISR should recognize this and put system to spin until next interrupt
+  72            tmp_process = 9;
+  73            
+  74            SCHEDULER_END:;
+  75            return tmp_process;
+  76          }
+  77          */
+  78          
+  79          void start_process(u16 entry, u16 pid, u32 param, u8 priority)
+  80          {
+  81   1        //XBPH,L
+  82   1        process_context[pid][13] = (((u16)process_xstack[pid] + PROCESS_XSTACKSIZE)&0xff00)>>8;
+  83   1        process_context[pid][14] = ((u16)process_xstack[pid] + PROCESS_XSTACKSIZE)&0x00ff;
+  84   1      
+  85   1        //PCH, PCL
+  86   1        process_context[pid][15] = (entry&0xff00) >> 8; 
+  87   1        process_context[pid][16] = (entry&0x00ff);
+  88   1      
+  89   1        
+  90   1        //SP
+  91   1        if(get_stack_index(pid)!=-1)
+  92   1          process_context[pid][17] = process_stack[get_stack_index(pid)]; //stack present in memory, use absolute 
+             -address
+  93   1        else
+  94   1          process_context[pid][17] = 0; //stack in stackswap space, use address relative to stack start
+  95   1        
+  96   1        //R4-R7 (param)
+  97   1        process_context[pid][9] = (param & 0xff000000) >> 24;
+  98   1        process_context[pid][10] = (param & 0x00ff0000) >> 16;
+  99   1        process_context[pid][11] = (param & 0x0000ff00) >> 8;
+ 100   1        process_context[pid][12] = (param & 0x000000ff);
+ 101   1      
+ 102   1        proc_time_share[pid] = DEFAULT_TIMESLICES;
+ 103   1        proc_priority[pid] = priority;
+ 104   1        process_slot |= BIT(pid);
+ 105   1      } 
+ 106          
+ 107          
+ 108          u8 select_process()
+ 109          {
+ 110   1          XDATA u8 tmp_process;
+ 111   1          XDATA u8 fin_process;
+ 112   1          XDATA u8 max_priority = 9;
+ 113   1          XDATA u8 flag=0;
+ 114   1          //current_process can be 8 (kernel startup) or 9 (idle spin)
+C51 COMPILER V9.60.7.0   SCHEDULER                                                         10/31/2023 17:08:22 PAGE 3   
+
+ 115   1          //so we have to set current_process to 0 in that situation.
+ 116   1          if(current_process >= 8) current_process = 0;
+ 117   1          fin_process = current_process;
+ 118   1      
+ 119   1      
+ 120   1        
+ 121   1          while((tmp_process = NEXT(tmp_process)) != current_process)
+ 122   1          {
+ 123   2              if(process_ready(tmp_process))
+ 124   2                if(proc_priority[tmp_process]<max_priority)//检查优先级
+ 125   2                {
+ 126   3                    max_priority = proc_priority[tmp_process];
+ 127   3                    fin_process = tmp_process;
+ 128   3                    flag=1;
+ 129   3                }
+ 130   2                  
+ 131   2          }
+ 132   1          if(flag==1)
+ 133   1            goto SCHEDULER_END;
+ 134   1          //if no other process can run, check if current process can run again
+ 135   1          if (process_ready(current_process))
+ 136   1          {
+ 137   2            fin_process = current_process;
+ 138   2            goto SCHEDULER_END;
+ 139   2          }
+ 140   1          
+ 141   1        //Can't find a process to run, reuturn 9(invalid)
+ 142   1        //ISR should recognize this and put system to spin until next interrupt
+ 143   1        fin_process = 9;
+ 144   1        
+ 145   1        SCHEDULER_END:;
+ 146   1        return fin_process;
+ 147   1      }
+ 148          
+ 149          u8 process_ready(u8 pid)
+ 150          {
+ 151   1          //Check process exists
+ 152   1          if(!PROC_EXISTS(pid))
+ 153   1              return 0;
+ 154   1      
+ 155   1          //Check process is not waiting for semaphore
+ 156   1          if(proc_waiting_sem & BIT(pid))
+ 157   1              return 0;
+ 158   1      
+ 159   1          //Check process is not sleeping or waitiong for events
+ 160   1          if(proc_waiting_evt & BIT(pid))
+ 161   1              return 0;
+ 162   1       
+ 163   1          return 1;
+ 164   1      }
+ 165          
+ 166          //ONLY CALL THIS FUNCTION ATOMICALLY IN ISR!!!
+ 167          void reschedule()
+ 168          {
+ 169   1        //kernel or spin context doesn't need to be saved
+ 170   1        if(current_process < 8) 
+ 171   1          save_current_context();
+ 172   1        
+ 173   1        //select a process to run
+ 174   1        current_process = select_process();
+ 175   1        if(current_process == 9) goto IDLE_SPIN;
+ 176   1        
+C51 COMPILER V9.60.7.0   SCHEDULER                                                         10/31/2023 17:08:22 PAGE 4   
+
+ 177   1        //allocate timeslices and load context
+ 178   1        remaining_timeslices = proc_time_share[current_process];
+ 179   1        if(get_stack_index(current_process) == -1)
+ 180   1          stackswap(get_stackswap_index(current_process));
+ 181   1          //do stack swap.
+ 182   1        load_current_context();
+ 183   1        return;
+ 184   1        
+ 185   1        IDLE_SPIN:;
+ 186   1        //load address of spin() into interrupt context.
+ 187   1        //allocate 1 timeslice to it.
+ 188   1        interrupt_context[15] = HIGH16((u16)spin);
+ 189   1        interrupt_context[16] = LOW16((u16)spin);
+ 190   1        remaining_timeslices = 1;
+ 191   1        return;
+ 192   1      }
+ 193          
+ 194          void decrement_sleep_counters()
+ 195          {
+ 196   1          COUNTDOWN(proc_sleep_countdown[0], interrupt_counter);
+ 197   1          COUNTDOWN(proc_sleep_countdown[1], interrupt_counter);
+ 198   1          COUNTDOWN(proc_sleep_countdown[2], interrupt_counter);
+ 199   1          COUNTDOWN(proc_sleep_countdown[3], interrupt_counter);
+ 200   1          COUNTDOWN(proc_sleep_countdown[4], interrupt_counter);
+ 201   1          COUNTDOWN(proc_sleep_countdown[5], interrupt_counter);
+ 202   1          COUNTDOWN(proc_sleep_countdown[6], interrupt_counter);
+ 203   1          COUNTDOWN(proc_sleep_countdown[7], interrupt_counter);
+ 204   1      }
+ 205          
+ 206          
+ 207          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1410    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =    193    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

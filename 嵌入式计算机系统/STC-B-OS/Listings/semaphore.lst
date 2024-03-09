@@ -1,0 +1,105 @@
+C51 COMPILER V9.60.7.0   SEMAPHORE                                                         10/31/2023 17:08:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SEMAPHORE
+OBJECT MODULE PLACED IN .\Objects\semaphore.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\semaphore.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listin
+                    -gs\semaphore.lst) TABS(2) OBJECT(.\Objects\semaphore.obj)
+
+line level    source
+
+   1          #include "semaphore.h"
+   2          
+   3          XDATA char semaphores[MAX_SEMAPHORES];
+   4          XDATA u8 proc_sem_wait_flag[MAX_SEMAPHORES];
+   5          XDATA u8 sem_wake_round[MAX_SEMAPHORES];
+   6          XDATA u8 proc_waiting_sem = 0;
+   7          
+   8          XDATA char semaphore_lock[MAX_SEMAPHORES] = {0}; // 初始化为0表示锁是未锁定状态
+   9          
+  10          void __sem_init(u8 sem_id, char val)
+  11          {
+  12   1          proc_sem_wait_flag[sem_id] = 0;
+  13   1          sem_wake_round[sem_id] = 1;
+  14   1          semaphores[sem_id] = val;
+  15   1      }
+  16          
+  17          void __sem_post(u8 sem_id)
+  18          {
+  19   1          XDATA u8 select_wake;
+  20   1      
+  21   1          // 获取锁
+  22   1          while (semaphore_lock[sem_id] != 0) {
+  23   2              // 等待锁释放
+  24   2          }
+  25   1          semaphore_lock[sem_id] = 1; // 锁住
+  26   1      
+  27   1          // No process is waiting, only increment semaphore
+  28   1          if (!proc_sem_wait_flag[sem_id]) {
+  29   2              semaphores[sem_id]++;
+  30   2              semaphore_lock[sem_id] = 0; // 释放锁
+  31   2              return;
+  32   2          }
+  33   1      
+  34   1          // Find the first process waiting on the semaphore
+  35   1          select_wake = RSL(sem_wake_round[sem_id]);
+  36   1          while ((select_wake & proc_sem_wait_flag[sem_id]) == 0)
+  37   1              select_wake = RSL(select_wake);
+  38   1      
+  39   1          // Remove the waiting flag of the process
+  40   1          proc_sem_wait_flag[sem_id] &= ~select_wake;
+  41   1          proc_waiting_sem &= ~select_wake;
+  42   1      
+  43   1          // Record the last woken process
+  44   1          sem_wake_round[sem_id] = select_wake;
+  45   1      
+  46   1          // 释放锁
+  47   1          semaphore_lock[sem_id] = 0;
+  48   1      }
+  49          
+  50          u8 __sem_wait(u8 sem_id)
+  51          {
+  52   1          // 获取锁
+  53   1          while (semaphore_lock[sem_id] != 0) {
+  54   2              // 等待锁释放
+C51 COMPILER V9.60.7.0   SEMAPHORE                                                         10/31/2023 17:08:22 PAGE 2   
+
+  55   2          }
+  56   1          semaphore_lock[sem_id] = 1; // 锁住
+  57   1      
+  58   1          // Semaphore is currently idle, decrement value and return.
+  59   1          if (semaphores[sem_id]) {
+  60   2              semaphores[sem_id]--;
+  61   2              semaphore_lock[sem_id] = 0; // 释放锁
+  62   2              return 1;
+  63   2          }
+  64   1      
+  65   1          // Set the current process as waiting on the semaphore, yield
+  66   1          // (and the process won't be selected by the scheduler
+  67   1          // until the wait flag is cleared by some sem_post)
+  68   1          proc_sem_wait_flag[sem_id] |= BIT(current_process);
+  69   1          proc_waiting_sem |= BIT(current_process);
+  70   1      
+  71   1          // 释放锁
+  72   1          semaphore_lock[sem_id] = 0;
+  73   1      
+  74   1          return 0; // Returning 0 means a reschedule should be done.
+  75   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    543    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     38    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

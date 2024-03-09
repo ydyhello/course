@@ -1,0 +1,117 @@
+C51 COMPILER V9.60.7.0   EVENTS                                                            10/31/2023 17:08:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE EVENTS
+OBJECT MODULE PLACED IN .\Objects\events.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\events.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listings\
+                    -events.lst) TABS(2) OBJECT(.\Objects\events.obj)
+
+line level    source
+
+   1          #include "events.h"
+   2          
+   3          XDATA u32 curr_events = 0;
+   4          XDATA u8 proc_waiting_evt = 0;
+   5          XDATA u32 proc_listening_list[8] = {0,0,0,0,0,0,0,0};
+   6          /*
+   7              Example: process P waiting on event EVT_XXX and EVT_YYY
+   8              proc_waiting_evt.bit[P] = 1;
+   9              proc_listening_list[P] = EVT_XXX | EVT_YYY;
+  10          */
+  11          
+  12          void dispatch_events(u8 pid)
+  13          {
+  14   1          if(proc_waiting_evt & BIT(pid))
+  15   1          {
+  16   2              if(proc_listening_list[pid] & curr_events)
+  17   2              {
+  18   3                  /*
+  19   3                  process can read this to know which of 
+  20   3                  the listened events is actually occured.
+  21   3                  */
+  22   3                  proc_listening_list[pid] = curr_events; 
+  23   3                  CLEARBIT(proc_waiting_evt, pid);
+  24   3              }
+  25   2              else if((proc_listening_list[pid] & EVT_TIMER) && (proc_sleep_countdown[pid]==0))
+  26   2              {
+  27   3                  proc_listening_list[pid] = EVT_TIMER; 
+  28   3                  CLEARBIT(proc_waiting_evt, pid);
+  29   3              }
+  30   2          }
+  31   1      }
+  32          
+  33          void collect_btnevts()
+  34          {
+  35   1          update_button_state();
+  36   1      
+  37   1          if(btnstate_posedge & BTNSTATE_B1) curr_events |= EVT_BTN1_DN;
+  38   1          if(btnstate_posedge & BTNSTATE_B2) curr_events |= EVT_BTN2_DN;
+  39   1          if(btnstate_posedge & BTNSTATE_B3) curr_events |= EVT_BTN3_DN;
+  40   1          if(btnstate_posedge & BTNSTATE_UP)      curr_events |= EVT_NAV_U;
+  41   1          if(btnstate_posedge & BTNSTATE_DOWN)    curr_events |= EVT_NAV_D;
+  42   1          if(btnstate_posedge & BTNSTATE_LEFT)    curr_events |= EVT_NAV_L;
+  43   1          if(btnstate_posedge & BTNSTATE_RIGHT)   curr_events |= EVT_NAV_R;
+  44   1          if(btnstate_posedge & BTNSTATE_PUSH)    curr_events |= EVT_NAV_PUSH;
+  45   1          
+  46   1          if(btnstate_negedge & BTNSTATE_B1) curr_events |= EVT_BTN1_UP;
+  47   1          if(btnstate_negedge & BTNSTATE_B2) curr_events |= EVT_BTN2_UP;
+  48   1          if(btnstate_negedge & BTNSTATE_B3) curr_events |= EVT_NAV_BTN3_RESET;
+  49   1          if(btnstate_negedge & BTNSTATE_UP)      curr_events |= EVT_NAV_BTN3_RESET;
+  50   1          if(btnstate_negedge & BTNSTATE_DOWN)    curr_events |= EVT_NAV_BTN3_RESET;
+  51   1          if(btnstate_negedge & BTNSTATE_LEFT)    curr_events |= EVT_NAV_BTN3_RESET;
+  52   1          if(btnstate_negedge & BTNSTATE_RIGHT)   curr_events |= EVT_NAV_BTN3_RESET;
+  53   1          if(btnstate_negedge & BTNSTATE_PUSH)    curr_events |= EVT_NAV_BTN3_RESET;
+  54   1      }
+C51 COMPILER V9.60.7.0   EVENTS                                                            10/31/2023 17:08:22 PAGE 2   
+
+  55          
+  56          
+  57          void collect_uartevts() //VOID
+  58          {
+  59   1        if(rs485_evtstate)
+  60   1        {
+  61   2            rs485_evtstate = 0;
+  62   2            curr_events |= EVT_UART2_RECV;
+  63   2        }
+  64   1        if(usbcom_evtstate)
+  65   1        {
+  66   2          usbcom_evtstate = 0;
+  67   2          curr_events |= EVT_UART1_RECV;
+  68   2        }
+  69   1      }
+  70          
+  71          
+  72          void process_events() //VOID
+  73          {
+  74   1          curr_events = 0;
+  75   1          
+  76   1          collect_btnevts();
+  77   1          collect_uartevts();
+  78   1      
+  79   1          dispatch_events(0);
+  80   1          dispatch_events(1);
+  81   1          dispatch_events(2);
+  82   1          dispatch_events(3);
+  83   1          dispatch_events(4);
+  84   1          dispatch_events(5);
+  85   1          dispatch_events(6);
+  86   1          dispatch_events(7);
+  87   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    960    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     38    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

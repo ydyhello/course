@@ -1,0 +1,81 @@
+C51 COMPILER V9.60.7.0   TIMER0_ISR_C                                                      10/31/2023 17:08:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TIMER0_ISR_C
+OBJECT MODULE PLACED IN .\Objects\timer0_isr_c.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\timer0_isr_c.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Lis
+                    -tings\timer0_isr_c.lst) TABS(2) OBJECT(.\Objects\timer0_isr_c.obj)
+
+line level    source
+
+   1          #include "timer0_isr.h"
+   2          
+   3          DATA u32 timer0_cnt = 0;
+   4          DATA u8 interrupt_counter = 0;
+   5          DATA u8 interrupt_context[18];
+   6          
+   7          
+   8          void save_current_context()
+   9          {
+  10   1        XDATA u8 i;
+  11   1        for(i=0;i<18;i++)
+  12   1          process_context[current_process][i] = interrupt_context[i];
+  13   1      }
+  14          
+  15          void load_current_context()
+  16          {
+  17   1        XDATA u8 i;
+  18   1        for(i=0;i<18;i++)
+  19   1          interrupt_context[i] = process_context[current_process][i];
+  20   1      }
+  21          
+  22          void timer0_isr_c()
+  23          { 
+  24   1        //increment system time, and update all counters
+  25   1        timer0_cnt += interrupt_counter;
+  26   1        COUNTDOWN(remaining_timeslices, interrupt_counter); 
+  27   1        decrement_sleep_counters();
+  28   1        interrupt_counter = 0;
+  29   1        
+  30   1        //Update display
+  31   1        seg_led_scan_next();
+  32   1        
+  33   1        //Process events
+  34   1        process_events();
+  35   1      
+  36   1        /*
+  37   1        Timer0 and Syscall interrupt at the same CPU cycle.
+  38   1        If a task switch is done, current_process is modified,
+  39   1        syscall won't be able to determine the correct process 
+  40   1        calling it.
+  41   1        */
+  42   1        if (CCON&4)
+  43   1          goto SKIPSCHED;
+  44   1        if(remaining_timeslices > 0)
+  45   1          goto SKIPSCHED;
+  46   1          
+  47   1        reschedule();
+  48   1      
+  49   1        SKIPSCHED: 
+  50   1          return;
+  51   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+C51 COMPILER V9.60.7.0   TIMER0_ISR_C                                                      10/31/2023 17:08:22 PAGE 2   
+
+   CODE SIZE        =    205    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      2    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     23    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

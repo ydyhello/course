@@ -1,0 +1,1 @@
+"src\events.c" LARGE OMF2 OPTIMIZE (0,SPEED) BROWSE DEBUG PRINT(.\Listings\events.lst) TABS (2) OBJECT(.\Objects\events.obj)

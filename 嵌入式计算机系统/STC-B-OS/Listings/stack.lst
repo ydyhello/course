@@ -1,0 +1,137 @@
+C51 COMPILER V9.60.7.0   STACK                                                             10/31/2023 17:08:21 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE STACK
+OBJECT MODULE PLACED IN .\Objects\stack.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\stack.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listings\s
+                    -tack.lst) TABS(2) OBJECT(.\Objects\stack.obj)
+
+line level    source
+
+   1          #include "stack.h"
+   2          
+   3          IDATA u8 kernel_stack[KERNEL_STACKSIZE];
+   4          IDATA u8 process_stack[5][PROCESS_STACKSIZE];
+   5          XDATA u8 process_stack_swap[3][PROCESS_STACKSIZE];
+   6          
+   7          /*
+   8              OS allows 8 processes maximum, but there are only
+   9              5 process stacks allowed in memory due to size 
+  10              limitations.
+  11              
+  12              the process stacks can be swapped out to xdata 
+  13              swap area if there are more than 5 processes at
+  14              the same time.
+  15          */
+  16          
+  17          char get_stack_index(u8 pid)
+  18          {
+  19   1        XDATA u8 i;
+  20   1        for(i=0;i<5;i++)
+  21   1          if(process_stack[i][PROCESS_STACKSIZE-1] == pid)
+  22   1            return i;
+  23   1        
+  24   1        return -1;
+  25   1      }
+  26          
+  27          char get_stackswap_index(u8 pid)
+  28          {
+  29   1        XDATA u8 i;
+  30   1        for(i=0;i<3;i++)
+  31   1          if(process_stack_swap[i][PROCESS_STACKSIZE-1] == pid)
+  32   1            return i;
+  33   1        
+  34   1        return -1;
+  35   1      }
+  36          
+  37          
+  38          extern XDATA u8 process_context[8][18];
+  39          extern XDATA u8 process_slot;
+  40          /*
+  41          void stackswap(u8 swap_index)
+  42          {
+  43            XDATA u8 i, temp, physical_index;
+  44            
+  45            //first try to find a stack slot that's not being used
+  46            physical_index = 0xff;
+  47            for(i=0;i<5;i++)
+  48            {
+  49              if(process_slot & BIT(process_stack[i][PROCESS_STACKSIZE-1]) == 0)
+  50              {
+  51                physical_index = i;
+  52                break;
+  53              }
+  54            }
+C51 COMPILER V9.60.7.0   STACK                                                             10/31/2023 17:08:21 PAGE 2   
+
+  55            
+  56            //if there's no free stack slot, select random victim
+  57            physical_index = rand32()%5;
+  58            
+  59            for(i=0; i<PROCESS_STACKSIZE; i++)
+  60            {
+  61              temp = process_stack[physical_index][i];
+  62              process_stack[physical_index][i] = process_stack_swap[swap_index][i];
+  63              process_stack_swap[swap_index][i] = temp;
+  64            }
+  65            
+  66            //convert context SP of process whose stack is being swapped out to a relative address
+  67            process_context[process_stack_swap[swap_index][PROCESS_STACKSIZE-1]][17] -= (u8)process_stack[physical_in
+             -dex];
+  68            
+  69            //convert context SP of process whose stack is being swapped in to an absolute address
+  70            process_context[process_stack[physical_index][PROCESS_STACKSIZE-1]][17] += (u8)process_stack[physical_in
+             -dex];
+  71          }
+  72          */
+  73          void stackswap(u8 swap_index)
+  74          {
+  75   1          XDATA u8 i, temp, least_recently_used;
+  76   1      
+  77   1          // Find the least recently used stack slot
+  78   1          least_recently_used = 0; // 跟踪最近最少使用的栈槽位的索引
+  79   1      
+  80   1        //从索引1开始，查找最近最少使用的栈槽位。这是通过比较栈槽位的最后一个元素，即进程ID，来实现的。最小的进程
+             -ID表示最近最少使用的栈。
+  81   1          for (i = 1; i < 5; i++) {
+  82   2              if (process_stack[i][PROCESS_STACKSIZE-1] < process_stack[least_recently_used][PROCESS_STACKSIZE-1
+             -]) {
+  83   3                  least_recently_used = i;
+  84   3              }
+  85   2          }
+  86   1      
+  87   1          for (i = 0; i < PROCESS_STACKSIZE; i++) {
+  88   2              temp = process_stack[least_recently_used][i];
+  89   2              process_stack[least_recently_used][i] = process_stack_swap[swap_index][i];
+  90   2              process_stack_swap[swap_index][i] = temp;
+  91   2          }
+  92   1      
+  93   1          // Convert context SP of process whose stack is being swapped out to a relative address
+  94   1          process_context[process_stack_swap[swap_index][PROCESS_STACKSIZE-1]][17] -= (u8)process_stack[least_re
+             -cently_used];
+  95   1      
+  96   1          // Convert context SP of process whose stack is being swapped in to an absolute address
+  97   1          process_context[process_stack[least_recently_used][PROCESS_STACKSIZE-1]][17] += (u8)process_stack[leas
+             -t_recently_used];
+  98   1      }
+  99          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    424    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     71    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =    120    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.7.0   STACK                                                             10/31/2023 17:08:21 PAGE 3   
+
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

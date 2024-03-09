@@ -1,0 +1,123 @@
+C51 COMPILER V9.60.7.0   SYSCALL_C                                                         10/31/2023 17:08:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SYSCALL_C
+OBJECT MODULE PLACED IN .\Objects\syscall_c.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\syscall_c.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listin
+                    -gs\syscall_c.lst) TABS(2) OBJECT(.\Objects\syscall_c.obj)
+
+line level    source
+
+   1          #include "syscall.h"
+   2          
+   3          void syscall_c()
+   4          {
+   5   1        XDATA u8 syscall_id;
+   6   1        XDATA u16 syscall_data, syscall_data2;
+   7   1        
+   8   1        syscall_id = interrupt_context[12]; //R7 of the process invoking syscall
+   9   1        //payload1: MSB in R4, LSB in R5
+  10   1        syscall_data = interrupt_context[10] + (interrupt_context[9] << 8);
+  11   1        //payload2: MSB in R2, LSB in R3
+  12   1        syscall_data2 = interrupt_context[8] + (interrupt_context[7] << 8);
+  13   1        
+  14   1        //syscall 1: process yield it's remaining timeslices
+  15   1        if (syscall_id == 1)//让出时间片
+  16   1        {
+  17   2          SYSCALL_YIELD:;
+  18   2          reschedule();
+  19   2          return;
+  20   2        }
+  21   1        
+  22   1        //syscall 2: process sleep, payload1 = time
+  23   1        else if (syscall_id == 2)//进程休眠
+  24   1        {
+  25   2          SETBIT(proc_waiting_evt, current_process);
+  26   2          proc_listening_list[current_process] = EVT_TIMER;
+  27   2          proc_sleep_countdown[current_process] = syscall_data;
+  28   2          goto SYSCALL_YIELD;
+  29   2        } 
+  30   1      
+  31   1        //syscall 3: process wait on event, payload1 = events
+  32   1        else if (syscall_id == 3)//等待事件
+  33   1        {
+  34   2          SETBIT(proc_waiting_evt, current_process);
+  35   2          proc_listening_list[current_process] = syscall_data;
+  36   2          proc_sleep_countdown[current_process] = syscall_data2;
+  37   2          goto SYSCALL_YIELD;
+  38   2        }
+  39   1      
+  40   1        //syscall 0: process exit
+  41   1        else if(syscall_id == 0)//退出进程
+  42   1        {
+  43   2          CLEARBIT(process_slot, current_process);
+  44   2          return;
+  45   2        }
+  46   1      
+  47   1        //syscall 4: semaphore init
+  48   1        else if (syscall_id == 4)//初始化信号量
+  49   1        {
+  50   2          __sem_init(syscall_data, syscall_data2);
+  51   2          return;
+  52   2        }
+  53   1        
+  54   1        //syscall 5: semaphore post
+C51 COMPILER V9.60.7.0   SYSCALL_C                                                         10/31/2023 17:08:22 PAGE 2   
+
+  55   1        else if (syscall_id == 5)//发布信号量
+  56   1        {
+  57   2          __sem_post(syscall_data);
+  58   2          return;
+  59   2        }
+  60   1        
+  61   1        //syscall 6: semaphore wait
+  62   1        else if (syscall_id == 6)//等待信号量
+  63   1        {
+  64   2          if(__sem_wait(syscall_data))
+  65   2            return;
+  66   2          else
+  67   2            goto SYSCALL_YIELD;
+  68   2        }
+  69   1        
+  70   1        //syscall 7: deliver event
+  71   1        else if (syscall_id == 7)//用于传递事件
+  72   1        {
+  73   2          if((proc_waiting_evt & BIT(syscall_data)) && 
+  74   2              proc_listening_list[syscall_data] & syscall_data2)
+  75   2          {
+  76   3            proc_listening_list[syscall_data] = curr_events; 
+  77   3            CLEARBIT(proc_waiting_evt, syscall_data);
+  78   3          }
+  79   2        }
+  80   1      }
+  81          
+  82          void pca_isr_c()
+  83          {
+  84   1        //CCF2 -> syscall
+  85   1        if(CCON & 4)
+  86   1        {
+  87   2          CCON &= ~4;
+  88   2          syscall_c();
+  89   2        }
+  90   1        else
+  91   1        {
+  92   2        }
+  93   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    575    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      5    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

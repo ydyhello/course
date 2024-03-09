@@ -1,0 +1,174 @@
+C51 COMPILER V9.60.7.0   DS1302                                                            10/31/2023 17:08:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE DS1302
+OBJECT MODULE PLACED IN .\Objects\ds1302.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\ds1302.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listings\
+                    -ds1302.lst) TABS(2) OBJECT(.\Objects\ds1302.obj)
+
+line level    source
+
+   1          #include "ds1302.h"
+   2          #include "seg_led.h"
+   3          
+   4          void ds1302_writebyte(u8 addr, u8 write)
+   5          {
+   6   1          ds1302_dout();
+   7   1      
+   8   1          DS1302_RST = 1; //Initiate communication
+   9   1      
+  10   1          DS1302_IO = 0;  //WRITE
+  11   1          ds1302_clockpulse();
+  12   1      
+  13   1          //address
+  14   1          {
+  15   2              DS1302_IO = GETBIT(addr,0);
+  16   2              ds1302_clockpulse();
+  17   2      
+  18   2              DS1302_IO = GETBIT(addr,1);
+  19   2              ds1302_clockpulse();
+  20   2      
+  21   2              DS1302_IO = GETBIT(addr,2);
+  22   2              ds1302_clockpulse();
+  23   2      
+  24   2              DS1302_IO = GETBIT(addr,3);
+  25   2              ds1302_clockpulse();
+  26   2      
+  27   2              DS1302_IO = GETBIT(addr,4);
+  28   2              ds1302_clockpulse();
+  29   2      
+  30   2              DS1302_IO = GETBIT(addr,5); // 0-> Time, 1-> RAM
+  31   2              ds1302_clockpulse();
+  32   2          }
+  33   1      
+  34   1          DS1302_IO = 1;
+  35   1          ds1302_clockpulse();
+  36   1      
+  37   1          
+  38   1          //data
+  39   1          {
+  40   2              DS1302_IO = GETBIT(write,0);
+  41   2              ds1302_clockpulse();
+  42   2      
+  43   2              DS1302_IO = GETBIT(write,1);
+  44   2              ds1302_clockpulse();
+  45   2      
+  46   2              DS1302_IO = GETBIT(write,2);
+  47   2              ds1302_clockpulse();
+  48   2      
+  49   2              DS1302_IO = GETBIT(write,3);
+  50   2              ds1302_clockpulse();
+  51   2      
+  52   2              DS1302_IO = GETBIT(write,4);
+  53   2              ds1302_clockpulse();
+  54   2      
+C51 COMPILER V9.60.7.0   DS1302                                                            10/31/2023 17:08:22 PAGE 2   
+
+  55   2              DS1302_IO = GETBIT(write,5);
+  56   2              ds1302_clockpulse();
+  57   2      
+  58   2              DS1302_IO = GETBIT(write,6);
+  59   2              ds1302_clockpulse();
+  60   2      
+  61   2              DS1302_IO = GETBIT(write,7);
+  62   2              ds1302_clockpulse();
+  63   2          }
+  64   1      
+  65   1      
+  66   1          //reset pins
+  67   1          DS1302_SCLK = 0;
+  68   1          DS1302_IO = 0;
+  69   1          DS1302_RST = 0;
+  70   1      }
+  71          
+  72          
+  73          u8 ds1302_readbyte(u8 addr) 
+  74          {
+  75   1          XDATA u8 read = 0;
+  76   1          
+  77   1          ds1302_dout();
+  78   1      
+  79   1          DS1302_RST = 1; //Initiate communication
+  80   1      
+  81   1          DS1302_IO = 1;  //READ
+  82   1          ds1302_clockpulse();
+  83   1      
+  84   1          //address
+  85   1          {
+  86   2              DS1302_IO = GETBIT(addr,0);
+  87   2              ds1302_clockpulse();
+  88   2      
+  89   2              DS1302_IO = GETBIT(addr,1);
+  90   2              ds1302_clockpulse();
+  91   2      
+  92   2              DS1302_IO = GETBIT(addr,2);
+  93   2              ds1302_clockpulse();
+  94   2      
+  95   2              DS1302_IO = GETBIT(addr,3);
+  96   2              ds1302_clockpulse();
+  97   2      
+  98   2              DS1302_IO = GETBIT(addr,4);
+  99   2              ds1302_clockpulse();
+ 100   2      
+ 101   2              DS1302_IO = GETBIT(addr,5); // 0-> Time, 1-> RAM
+ 102   2              ds1302_clockpulse();
+ 103   2          }
+ 104   1      
+ 105   1          DS1302_IO = 1;
+ 106   1          ds1302_clockpulse();
+ 107   1      
+ 108   1          ds1302_din();
+ 109   1          //data
+ 110   1          {
+ 111   2              WRITEBIT(read, 0, DS1302_IO);
+ 112   2              ds1302_clockpulse();
+ 113   2      
+ 114   2              WRITEBIT(read, 1, DS1302_IO);
+ 115   2              ds1302_clockpulse();
+ 116   2      
+C51 COMPILER V9.60.7.0   DS1302                                                            10/31/2023 17:08:22 PAGE 3   
+
+ 117   2              WRITEBIT(read, 2, DS1302_IO);
+ 118   2              ds1302_clockpulse();
+ 119   2      
+ 120   2              WRITEBIT(read, 3, DS1302_IO);
+ 121   2              ds1302_clockpulse();
+ 122   2      
+ 123   2              WRITEBIT(read, 4, DS1302_IO);
+ 124   2              ds1302_clockpulse();
+ 125   2      
+ 126   2              WRITEBIT(read, 5, DS1302_IO);
+ 127   2              ds1302_clockpulse();
+ 128   2      
+ 129   2              WRITEBIT(read, 6, DS1302_IO);
+ 130   2              ds1302_clockpulse();
+ 131   2      
+ 132   2              WRITEBIT(read, 7, DS1302_IO);
+ 133   2              ds1302_clockpulse();
+ 134   2          }
+ 135   1      
+ 136   1          //reset pins
+ 137   1          DS1302_RST = 0;
+ 138   1          DS1302_SCLK = 0;
+ 139   1          DS1302_IO = 0;
+ 140   1          
+ 141   1          return read;
+ 142   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    645    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      4    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

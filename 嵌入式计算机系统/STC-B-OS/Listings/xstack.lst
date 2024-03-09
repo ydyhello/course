@@ -1,0 +1,32 @@
+C51 COMPILER V9.60.7.0   XSTACK                                                            10/25/2023 19:58:24 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE XSTACK
+OBJECT MODULE PLACED IN .\Objects\xstack.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\xstack.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listings\
+                    -xstack.lst) TABS(2) OBJECT(.\Objects\xstack.obj)
+
+line level    source
+
+   1          #include "xstack.h"
+   2          
+   3          XDATA u8 kernel_xstack[KERNEL_XSTACKSIZE];
+   4          XDATA u8 process_xstack[8][PROCESS_XSTACKSIZE];
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =    544    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

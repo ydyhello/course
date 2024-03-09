@@ -1,0 +1,50 @@
+C51 COMPILER V9.60.7.0   RANDOM                                                            10/31/2023 17:08:22 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE RANDOM
+OBJECT MODULE PLACED IN .\Objects\random.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE src\random.c LARGE OMF2 OPTIMIZE(0,SPEED) BROWSE DEBUG PRINT(.\Listings\
+                    -random.lst) TABS(2) OBJECT(.\Objects\random.obj)
+
+line level    source
+
+   1          #include "random.h"
+   2          
+   3          XDATA u32 __rndseed = 0xf2e0062c;
+   4          
+   5          u32 rand32() large reentrant
+   6          {
+   7   1          //LCG: (aX+c)%m
+   8   1          __rndseed = ((__rndseed * 1103515245) + 12345) & 0x7fffffff;
+   9   1          return __rndseed;
+  10   1      }
+  11          
+  12          
+  13          void srand()
+  14          {
+  15   1        XDATA u8 tmp;
+  16   1        tmp = ds1302_readbyte(DS1302_SEC);
+  17   1        __rndseed = tmp;
+  18   1        tmp = ds1302_readbyte(DS1302_MIN);
+  19   1        __rndseed += tmp;
+  20   1        tmp = ds1302_readbyte(DS1302_HR);
+  21   1        __rndseed += tmp;
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    194    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      5    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

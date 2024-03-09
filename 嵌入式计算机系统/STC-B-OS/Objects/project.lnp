@@ -1,0 +1,23 @@
+".\Objects\stack.obj",
+".\Objects\xstack.obj",
+".\Objects\xbp_helper.obj",
+".\Objects\random.obj",
+".\Objects\spin.obj",
+".\Objects\adsensor.obj",
+".\Objects\button.obj",
+".\Objects\ds1302.obj",
+".\Objects\rs485.obj",
+".\Objects\usbcom.obj",
+".\Objects\seg_led.obj",
+".\Objects\semaphore.obj",
+".\Objects\events.obj",
+".\Objects\scheduler.obj",
+".\Objects\timer0_isr_c.obj",
+".\Objects\timer0_isr.obj",
+".\Objects\syscall_c.obj",
+".\Objects\syscall.obj",
+".\Objects\main.obj",
+".\Objects\STARTUP.obj" 
+TO ".\Objects\project" 
+
+PRINT(".\Listings\project.map")

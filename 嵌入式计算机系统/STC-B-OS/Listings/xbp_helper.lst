@@ -1,0 +1,684 @@
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     1
+
+
+MACRO ASSEMBLER AX51 V3.15.3.0
+OBJECT MODULE PLACED IN .\Objects\xbp_helper.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\AX51.EXE src\xbp_helper.a51 SET(LARGE) DEBUG PRINT(.\Listings\xbp_helper.lst) O
+                      BJECT(.\Objects\xbp_helper.obj) EP
+
+LOC    OBJ             LINE     SOURCE
+
+                          1     ;#include "stc15fxxxx.inc"
+                    +1    2     
+                    +1    3     
+                    +1    4     
+  0080              +1    5     sfr P0   = 0x80;
+  0081              +1    6     sfr SP   = 0x81;
+  0082              +1    7     sfr DPL  = 0x82;
+  0083              +1    8     sfr DPH  = 0x83;
+  0084              +1    9     sfr     S4CON = 0x84;
+  0085              +1   10     sfr     S4BUF = 0x85;
+  0087              +1   11     sfr PCON = 0x87;
+                    +1   12     
+  0088              +1   13     sfr TCON = 0x88;
+  0089              +1   14     sfr TMOD = 0x89;
+  008A              +1   15     sfr TL0  = 0x8A;
+  008B              +1   16     sfr TL1  = 0x8B;
+  008C              +1   17     sfr TH0  = 0x8C;
+  008D              +1   18     sfr TH1  = 0x8D;
+  008E              +1   19     sfr     AUXR = 0x8E;
+  008F              +1   20     sfr WAKE_CLKO = 0x8F;
+  008F              +1   21     sfr INT_CLKO = 0x8F;
+  008F              +1   22     sfr     AUXR2    = 0x8F;
+                    +1   23     
+  008A              +1   24     sfr RL_TL0  = 0x8A;
+  008B              +1   25     sfr RL_TL1  = 0x8B;
+  008C              +1   26     sfr RL_TH0  = 0x8C;
+  008D              +1   27     sfr RL_TH1  = 0x8D;
+                    +1   28     
+                    +1   29     
+  0090              +1   30     sfr P1   = 0x90;
+  0091              +1   31     sfr P1M1 = 0x91;        //P1M1.n,P1M0.n         =00--->Standard,        01--->push-pull 
+                                       实际上1T的都一样
+  0092              +1   32     sfr P1M0 = 0x92;        //                                      =10--->pure input,      
+                               11--->open drain
+  0093              +1   33     sfr P0M1 = 0x93;        //P0M1.n,P0M0.n         =00--->Standard,        01--->push-pull
+  0094              +1   34     sfr P0M0 = 0x94;        //                                      =10--->pure input,      
+                               11--->open drain
+  0095              +1   35     sfr P2M1 = 0x95;        //P2M1.n,P2M0.n         =00--->Standard,        01--->push-pull
+  0096              +1   36     sfr P2M0 = 0x96;        //                                      =10--->pure input,      
+                               11--->open drain
+  0097              +1   37     sfr CLK_DIV = 0x97;
+  0097              +1   38     sfr PCON2   = 0x97;
+                    +1   39     
+  0098              +1   40     sfr SCON  = 0x98;
+  0099              +1   41     sfr SBUF  = 0x99;
+  009A              +1   42     sfr S2CON = 0x9A;       //
+  009B              +1   43     sfr S2BUF = 0x9B;       //
+  009D              +1   44     sfr P1ASF = 0x9D;       //只写，模拟输入(AD或LVD)选择
+                    +1   45     
+  00A0              +1   46     sfr P2    = 0xA0;
+  00A1              +1   47     sfr BUS_SPEED = 0xA1;
+  00A2              +1   48     sfr AUXR1 = 0xA2;
+  00A2              +1   49     sfr P_SW1 = 0xA2;
+                    +1   50     
+  00A8              +1   51     sfr IE    = 0xA8;
+  00A9              +1   52     sfr SADDR = 0xA9;
+  00AA              +1   53     sfr WKTCL = 0xAA;       //唤醒定时器低字节
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     2
+
+  00AB              +1   54     sfr WKTCH = 0xAB;       //唤醒定时器高字节
+  00AC              +1   55     sfr     S3CON = 0xAC;
+  00AD              +1   56     sfr S3BUF = 0xAD;
+  00AF              +1   57     sfr IE2   = 0xAF;       //STC12C5A60S2系列
+                    +1   58     
+  00B0              +1   59     sfr P3    = 0xB0;
+  00B1              +1   60     sfr P3M1  = 0xB1;       //P3M1.n,P3M0.n         =00--->Standard,        01--->push-pull
+  00B2              +1   61     sfr P3M0  = 0xB2;       //                                      =10--->pure input,      
+                               11--->open drain
+  00B3              +1   62     sfr P4M1  = 0xB3;       //P4M1.n,P4M0.n         =00--->Standard,        01--->push-pull
+  00B4              +1   63     sfr P4M0  = 0xB4;       //                                      =10--->pure input,      
+                               11--->open drain
+  00B5              +1   64     sfr IP2   = 0xB5;       //STC12C5A60S2系列
+  00B6              +1   65     sfr IPH2  = 0xB6;       //STC12C5A60S2系列
+  00B7              +1   66     sfr IPH   = 0xB7;
+                    +1   67     
+  00B8              +1   68     sfr IP        = 0xB8;
+  00B9              +1   69     sfr SADEN     = 0xB9;
+  00BA              +1   70     sfr     P_SW2     = 0xBA;
+  00BC              +1   71     sfr ADC_CONTR = 0xBC;   //带AD系列
+  00BD              +1   72     sfr ADC_RES   = 0xBD;   //带AD系列
+  00BE              +1   73     sfr ADC_RESL  = 0xBE;   //带AD系列
+                    +1   74     
+  00C0              +1   75     sfr P4        = 0xC0;
+  00C1              +1   76     sfr WDT_CONTR = 0xC1;
+  00C2              +1   77     sfr IAP_DATA  = 0xC2;
+  00C3              +1   78     sfr IAP_ADDRH = 0xC3;
+  00C4              +1   79     sfr IAP_ADDRL = 0xC4;
+  00C5              +1   80     sfr IAP_CMD   = 0xC5;
+  00C6              +1   81     sfr IAP_TRIG  = 0xC6;
+  00C7              +1   82     sfr IAP_CONTR = 0xC7;
+                    +1   83     
+  00C2              +1   84     sfr ISP_DATA  = 0xC2;
+  00C3              +1   85     sfr ISP_ADDRH = 0xC3;
+  00C4              +1   86     sfr ISP_ADDRL = 0xC4;
+  00C5              +1   87     sfr ISP_CMD   = 0xC5;
+  00C6              +1   88     sfr ISP_TRIG  = 0xC6;
+  00C7              +1   89     sfr ISP_CONTR = 0xC7;
+                    +1   90     
+  00C8              +1   91     sfr P5     = 0xC8;      //
+  00C9              +1   92     sfr P5M1   = 0xC9;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
+  00CA              +1   93     sfr P5M0   = 0xCA;      //                                      =10--->pure input,      
+                               11--->open drain
+  00CB              +1   94     sfr P6M1   = 0xCB;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
+  00CC              +1   95     sfr P6M0   = 0xCC;      //                                      =10--->pure input,      
+                               11--->open drain
+  00CD              +1   96     sfr SPSTAT = 0xCD;      //
+  00CE              +1   97     sfr SPCTL  = 0xCE;      //
+  00CF              +1   98     sfr SPDAT  = 0xCF;      //
+                    +1   99     
+  00D0              +1  100     sfr PSW  = 0xD0;
+  00D1              +1  101     sfr     T4T3M = 0xD1;
+  00D2              +1  102     sfr     T4H  = 0xD2;
+  00D3              +1  103     sfr     T4L  = 0xD3;
+  00D4              +1  104     sfr     T3H  = 0xD4;
+  00D5              +1  105     sfr     T3L  = 0xD5;
+  00D6              +1  106     sfr     T2H  = 0xD6;
+  00D7              +1  107     sfr     T2L  = 0xD7;
+                    +1  108     
+  00D2              +1  109     sfr     TH4  = 0xD2;
+  00D3              +1  110     sfr     TL4  = 0xD3;
+  00D4              +1  111     sfr     TH3  = 0xD4;
+  00D5              +1  112     sfr     TL3  = 0xD5;
+  00D6              +1  113     sfr     TH2  = 0xD6;
+  00D7              +1  114     sfr     TL2  = 0xD7;
+                    +1  115     
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     3
+
+  00D2              +1  116     sfr     RL_T4H  = 0xD2;
+  00D3              +1  117     sfr     RL_T4L  = 0xD3;
+  00D4              +1  118     sfr     RL_T3H  = 0xD4;
+  00D5              +1  119     sfr     RL_T3L  = 0xD5;
+  00D6              +1  120     sfr     RL_T2H  = 0xD6;
+  00D7              +1  121     sfr     RL_T2L  = 0xD7;
+                    +1  122     
+  00D8              +1  123     sfr CCON = 0xD8;        //
+  00D9              +1  124     sfr CMOD = 0xD9;        //
+  00DA              +1  125     sfr CCAPM0 = 0xDA;      //PCA模块0的工作模式寄存器。
+  00DB              +1  126     sfr CCAPM1 = 0xDB;      //PCA模块1的工作模式寄存器。
+  00DC              +1  127     sfr CCAPM2 = 0xDC;      //PCA模块2的工作模式寄存器。
+                    +1  128     
+  00E0              +1  129     sfr ACC    = 0xE0;
+  00E1              +1  130     sfr     P7M1   = 0xE1;
+  00E2              +1  131     sfr     P7M0   = 0xE2;
+                    +1  132     
+  00E8              +1  133     sfr     P6     = 0xE8;
+  00E9              +1  134     sfr CL     = 0xE9;      //
+  00EA              +1  135     sfr CCAP0L = 0xEA;      //PCA模块0的捕捉/比较寄存器低8位。
+  00EB              +1  136     sfr CCAP1L = 0xEB;      //PCA模块1的捕捉/比较寄存器低8位。
+  00EC              +1  137     sfr CCAP2L = 0xEC;      //PCA模块2的捕捉/比较寄存器低8位。
+                    +1  138     
+  00F0              +1  139     sfr B      = 0xF0;
+  00F2              +1  140     sfr PCA_PWM0 = 0xF2;    //PCA模块0 PWM寄存器。
+  00F3              +1  141     sfr PCA_PWM1 = 0xF3;    //PCA模块1 PWM寄存器。
+  00F4              +1  142     sfr PCA_PWM2 = 0xF4;    //PCA模块2 PWM寄存器。
+                    +1  143     
+  00F8              +1  144     sfr     P7     = 0xF8;
+  00F9              +1  145     sfr CH     = 0xF9;
+  00FA              +1  146     sfr CCAP0H = 0xFA;              //PCA模块0的捕捉/比较寄存器高8位。
+  00FB              +1  147     sfr CCAP1H = 0xFB;              //PCA模块1的捕捉/比较寄存器高8位。
+  00FC              +1  148     sfr CCAP2H = 0xFC;              //PCA模块2的捕捉/比较寄存器高8位。
+                    +1  149     
+00D0.7              +1  150     sbit CY   = PSW^7;
+00D0.6              +1  151     sbit AC   = PSW^6;
+00D0.5              +1  152     sbit F0   = PSW^5;
+00D0.4              +1  153     sbit RS1  = PSW^4;
+00D0.3              +1  154     sbit RS0  = PSW^3;
+00D0.2              +1  155     sbit OV   = PSW^2;
+00D0.1              +1  156     sbit F1   = PSW^1;
+00D0.0              +1  157     sbit P    = PSW^0;
+                    +1  158     
+0088.7              +1  159     sbit TF1  = TCON^7;     //定时器1溢出中断标志位
+0088.6              +1  160     sbit TR1  = TCON^6;     //定时器1运行控制位
+0088.5              +1  161     sbit TF0  = TCON^5;     //定时器0溢出中断标志位
+0088.4              +1  162     sbit TR0  = TCON^4;     //定时器0运行控制位
+0088.3              +1  163     sbit IE1  = TCON^3;     //外中断1标志位
+0088.2              +1  164     sbit IT1  = TCON^2;     //外中断1信号方式控制位，1：下降沿中断，0：�
+                               �升下降均中断。
+0088.1              +1  165     sbit IE0  = TCON^1;     //外中断0标志位
+0088.0              +1  166     sbit IT0  = TCON^0;     //外中断0信号方式控制位，1：下降沿中断，0：�
+                               �升下降均中断。
+                    +1  167     
+                    +1  168     
+0080.0              +1  169     sbit  P00 = P0^0;
+0080.1              +1  170     sbit  P01 = P0^1;
+0080.2              +1  171     sbit  P02 = P0^2;
+0080.3              +1  172     sbit  P03 = P0^3;
+0080.4              +1  173     sbit  P04 = P0^4;
+0080.5              +1  174     sbit  P05 = P0^5;
+0080.6              +1  175     sbit  P06 = P0^6;
+0080.7              +1  176     sbit  P07 = P0^7;
+                    +1  177     
+                    +1  178     
+0090.0              +1  179     sbit  P10 = P1^0;
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     4
+
+0090.1              +1  180     sbit  P11 = P1^1;
+0090.2              +1  181     sbit  P12 = P1^2;
+0090.3              +1  182     sbit  P13 = P1^3;
+0090.4              +1  183     sbit  P14 = P1^4;
+0090.5              +1  184     sbit  P15 = P1^5;
+0090.6              +1  185     sbit  P16 = P1^6;
+0090.7              +1  186     sbit  P17 = P1^7;
+                    +1  187     
+0090.0              +1  188     sbit  RXD2      = P1^0;
+0090.1              +1  189     sbit  TXD2      = P1^1;
+0090.0              +1  190     sbit  CCP1      = P1^0;
+0090.1              +1  191     sbit  CCP0      = P1^1;
+0090.2              +1  192     sbit  SPI_SS    = P1^2;
+0090.3              +1  193     sbit  SPI_MOSI  = P1^3;
+0090.4              +1  194     sbit  SPI_MISO  = P1^4;
+0090.5              +1  195     sbit  SPI_SCLK  = P1^5;
+                    +1  196     
+00A0.4              +1  197     sbit  SPI_SS_2    = P2^4;
+00A0.3              +1  198     sbit  SPI_MOSI_2  = P2^3;
+00A0.2              +1  199     sbit  SPI_MISO_2  = P2^2;
+00A0.1              +1  200     sbit  SPI_SCLK_2  = P2^1;
+                    +1  201     
+00C8.4              +1  202     sbit  SPI_SS_3    = P5^4;
+00C0.0              +1  203     sbit  SPI_MOSI_3  = P4^0;
+00C0.1              +1  204     sbit  SPI_MISO_3  = P4^1;
+00C0.3              +1  205     sbit  SPI_SCLK_3  = P4^3;
+                    +1  206     
+00A0.0              +1  207     sbit  P20 = P2^0;
+00A0.1              +1  208     sbit  P21 = P2^1;
+00A0.2              +1  209     sbit  P22 = P2^2;
+00A0.3              +1  210     sbit  P23 = P2^3;
+00A0.4              +1  211     sbit  P24 = P2^4;
+00A0.5              +1  212     sbit  P25 = P2^5;
+00A0.6              +1  213     sbit  P26 = P2^6;
+00A0.7              +1  214     sbit  P27 = P2^7;
+                    +1  215     
+00B0.0              +1  216     sbit  P30 = P3^0;
+00B0.1              +1  217     sbit  P31 = P3^1;
+00B0.2              +1  218     sbit  P32 = P3^2;
+00B0.3              +1  219     sbit  P33 = P3^3;
+00B0.4              +1  220     sbit  P34 = P3^4;
+00B0.5              +1  221     sbit  P35 = P3^5;
+00B0.6              +1  222     sbit  P36 = P3^6;
+00B0.7              +1  223     sbit  P37 = P3^7;
+                    +1  224     
+00B0.0              +1  225     sbit RXD  = P3^0;
+00B0.1              +1  226     sbit TXD  = P3^1;
+00B0.2              +1  227     sbit INT0 = P3^2;
+00B0.3              +1  228     sbit INT1 = P3^3;
+00B0.4              +1  229     sbit T0   = P3^4;
+00B0.5              +1  230     sbit T1   = P3^5;
+00B0.6              +1  231     sbit WR   = P3^6;
+00B0.7              +1  232     sbit RD   = P3^7;
+00B0.7              +1  233     sbit CCP2  = P3^7;
+                    +1  234     
+00B0.5              +1  235     sbit CLKOUT0   = P3^5;
+00B0.4              +1  236     sbit CLKOUT1   = P3^4;
+                    +1  237     
+                    +1  238     
+00C0.0              +1  239     sbit  P40 = P4^0;
+00C0.1              +1  240     sbit  P41 = P4^1;
+00C0.2              +1  241     sbit  P42 = P4^2;
+00C0.3              +1  242     sbit  P43 = P4^3;
+00C0.4              +1  243     sbit  P44 = P4^4;
+00C0.5              +1  244     sbit  P45 = P4^5;
+00C0.6              +1  245     sbit  P46 = P4^6;
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     5
+
+00C0.7              +1  246     sbit  P47 = P4^7;
+                    +1  247     
+                    +1  248     
+00C8.0              +1  249     sbit  P50 = P5^0;
+00C8.1              +1  250     sbit  P51 = P5^1;
+00C8.2              +1  251     sbit  P52 = P5^2;
+00C8.3              +1  252     sbit  P53 = P5^3;
+00C8.4              +1  253     sbit  P54 = P5^4;
+00C8.5              +1  254     sbit  P55 = P5^5;
+00C8.6              +1  255     sbit  P56 = P5^6;
+00C8.7              +1  256     sbit  P57 = P5^7;
+                    +1  257     
+                    +1  258     
+0098.7              +1  259     sbit SM0  = SCON^7;     //SM0/FE                SM0 SM1 = 00 ~ 11: 方式0~3
+0098.6              +1  260     sbit SM1  = SCON^6;     //
+0098.5              +1  261     sbit SM2  = SCON^5;     //多机通讯
+0098.4              +1  262     sbit REN  = SCON^4;     //接收允许
+0098.3              +1  263     sbit TB8  = SCON^3;     //发送数据第8位
+0098.2              +1  264     sbit RB8  = SCON^2;     //接收数据第8位
+0098.1              +1  265     sbit TI   = SCON^1;     //发送中断标志位
+0098.0              +1  266     sbit RI   = SCON^0;     //接收中断标志位
+                    +1  267     
+00A8.7              +1  268     sbit EA   = IE^7;       //中断允许总控制位
+00A8.6              +1  269     sbit ELVD = IE^6;       //低压监测中断允许位
+00A8.5              +1  270     sbit EADC = IE^5;       //ADC 中断 允许位
+00A8.4              +1  271     sbit ES   = IE^4;       //串行中断 允许控制位
+00A8.3              +1  272     sbit ET1  = IE^3;       //定时中断1允许控制位
+00A8.2              +1  273     sbit EX1  = IE^2;       //外部中断1允许控制位
+00A8.1              +1  274     sbit ET0  = IE^1;       //定时中断0允许控制位
+00A8.0              +1  275     sbit EX0  = IE^0;       //外部中断0允许控制位
+                    +1  276     
+                    +1  277     
+                    +1  278      
+                    +1  279     
+                    +1  280     
+                    +1  281     
+                    +1  282     
+                    +1  283     
+                    +1  284     
+                    +1  285     
+                    +1  286     
+                    +1  287     
+                    +1  288     
+                    +1  289     
+00E0.0              +1  290     sbit ACC0 = ACC^0;
+00E0.1              +1  291     sbit ACC1 = ACC^1;
+00E0.2              +1  292     sbit ACC2 = ACC^2;
+00E0.3              +1  293     sbit ACC3 = ACC^3;
+00E0.4              +1  294     sbit ACC4 = ACC^4;
+00E0.5              +1  295     sbit ACC5 = ACC^5;
+00E0.6              +1  296     sbit ACC6 = ACC^6;
+00E0.7              +1  297     sbit ACC7 = ACC^7;
+                    +1  298     
+00F0.0              +1  299     sbit B0 = B^0;
+00F0.1              +1  300     sbit B1 = B^1;
+00F0.2              +1  301     sbit B2 = B^2;
+00F0.3              +1  302     sbit B3 = B^3;
+00F0.4              +1  303     sbit B4 = B^4;
+00F0.5              +1  304     sbit B5 = B^5;
+00F0.6              +1  305     sbit B6 = B^6;
+00F0.7              +1  306     sbit B7 = B^7;
+                    +1  307     
+00B8.7              +1  308     sbit PPCA       = IP^7; //PCA 模块中断优先级
+00B8.6              +1  309     sbit PLVD       = IP^6; //低压监测中断优先级
+00B8.5              +1  310     sbit PADC       = IP^5; //ADC 中断优先级
+00B8.4              +1  311     sbit PS         = IP^4; //串行中断0优先级设定位
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     6
+
+00B8.3              +1  312     sbit PT1        = IP^3; //定时中断1优先级设定位
+00B8.2              +1  313     sbit PX1        = IP^2; //外部中断1优先级设定位
+00B8.1              +1  314     sbit PT0        = IP^1; //定时中断0优先级设定位
+00B8.0              +1  315     sbit PX0        = IP^0; //外部中断0优先级设定位
+                    +1  316     
+00D8.0              +1  317     sbit CCF0  = CCON^0;    //PCA 模块0中断标志，由硬件置位，必须由软件清
+                               0。
+00D8.1              +1  318     sbit CCF1  = CCON^1;    //PCA 模块1中断标志，由硬件置位，必须由软件清
+                               0。
+00D8.2              +1  319     sbit CCF2  = CCON^2;    //PCA 模块2中断标志，由硬件置位，必须由软件清
+                               0。
+00D8.6              +1  320     sbit CR    = CCON^6;    //1: 允许PCA计数器计数，必须由软件清0。
+00D8.7              +1  321     sbit CF    = CCON^7;    //PCA计数器溢出（CH，CL由FFFFH变为0000H）标志。PCA
+                               计数器溢出后由硬件置位，必须由软件清0�
+                    +1  322     
+                    +1  323     
+                        324     
+                        325     
+                        326     EXTERN DATA (?C_XBP)
+                        327     
+------                  328     SEG_XBPHELPER SEGMENT CODE
+------                  329     RSEG SEG_XBPHELPER
+                        330     
+                        331             PUBLIC _GETXBP, GETXBP
+000000                  332             _GETXBP:
+000000                  333             GETXBP:
+000000 10AF05           334                     JBC EA, GETXBP_SETEA
+000003 AE00       E     335                             MOV R6, ?C_XBP
+000005 AF00       E     336                             MOV R7, ?C_XBP + 1
+000007 22               337                             RET
+000008                  338                     GETXBP_SETEA:
+000008 AE00       E     339                             MOV R6, ?C_XBP
+00000A AF00       E     340                             MOV R7, ?C_XBP + 1
+00000C D2AF             341                             SETB    EA
+00000E 22               342                             RET
+                        343     
+                        344             PUBLIC _SETXBP, SETXBP
+00000F                  345             _SETXBP:
+00000F                  346             SETXBP:
+00000F 10AF05           347                     JBC EA, SETXBP_SETEA
+000012 8E00       E     348                             MOV ?C_XBP, R6
+000014 8F00       E     349                             MOV ?C_XBP + 1, R7
+000016 22               350                             RET
+000017                  351                     SETXBP_SETEA:
+000017 8E00       E     352                             MOV ?C_XBP, R6
+000019 8F00       E     353                             MOV ?C_XBP + 1, R7
+00001B D2AF             354                             SETB    EA
+00001D 22               355                             RET
+                        356     
+                        357     
+                        358     
+                        359     
+                        360     END
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     7
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E                        T Y P E  V A L U E     ATTRIBUTES
+
+?C_XBP. . . . . . . . . . . .  D  ADDR  -------       EXT
+_GETXBP . . . . . . . . . . .  C  ADDR  0000H     R   SEG=SEG_XBPHELPER
+_SETXBP . . . . . . . . . . .  C  ADDR  000FH     R   SEG=SEG_XBPHELPER
+AC. . . . . . . . . . . . . .  B  ADDR  00D0H.6   A   
+ACC . . . . . . . . . . . . .  D  ADDR  00E0H     A   
+ACC0. . . . . . . . . . . . .  B  ADDR  00E0H.0   A   
+ACC1. . . . . . . . . . . . .  B  ADDR  00E0H.1   A   
+ACC2. . . . . . . . . . . . .  B  ADDR  00E0H.2   A   
+ACC3. . . . . . . . . . . . .  B  ADDR  00E0H.3   A   
+ACC4. . . . . . . . . . . . .  B  ADDR  00E0H.4   A   
+ACC5. . . . . . . . . . . . .  B  ADDR  00E0H.5   A   
+ACC6. . . . . . . . . . . . .  B  ADDR  00E0H.6   A   
+ACC7. . . . . . . . . . . . .  B  ADDR  00E0H.7   A   
+ADC_CONTR . . . . . . . . . .  D  ADDR  00BCH     A   
+ADC_RES . . . . . . . . . . .  D  ADDR  00BDH     A   
+ADC_RESL. . . . . . . . . . .  D  ADDR  00BEH     A   
+AUXR. . . . . . . . . . . . .  D  ADDR  008EH     A   
+AUXR1 . . . . . . . . . . . .  D  ADDR  00A2H     A   
+AUXR2 . . . . . . . . . . . .  D  ADDR  008FH     A   
+B . . . . . . . . . . . . . .  D  ADDR  00F0H     A   
+B0. . . . . . . . . . . . . .  B  ADDR  00F0H.0   A   
+B1. . . . . . . . . . . . . .  B  ADDR  00F0H.1   A   
+B2. . . . . . . . . . . . . .  B  ADDR  00F0H.2   A   
+B3. . . . . . . . . . . . . .  B  ADDR  00F0H.3   A   
+B4. . . . . . . . . . . . . .  B  ADDR  00F0H.4   A   
+B5. . . . . . . . . . . . . .  B  ADDR  00F0H.5   A   
+B6. . . . . . . . . . . . . .  B  ADDR  00F0H.6   A   
+B7. . . . . . . . . . . . . .  B  ADDR  00F0H.7   A   
+BUS_SPEED . . . . . . . . . .  D  ADDR  00A1H     A   
+CCAP0H. . . . . . . . . . . .  D  ADDR  00FAH     A   
+CCAP0L. . . . . . . . . . . .  D  ADDR  00EAH     A   
+CCAP1H. . . . . . . . . . . .  D  ADDR  00FBH     A   
+CCAP1L. . . . . . . . . . . .  D  ADDR  00EBH     A   
+CCAP2H. . . . . . . . . . . .  D  ADDR  00FCH     A   
+CCAP2L. . . . . . . . . . . .  D  ADDR  00ECH     A   
+CCAPM0. . . . . . . . . . . .  D  ADDR  00DAH     A   
+CCAPM1. . . . . . . . . . . .  D  ADDR  00DBH     A   
+CCAPM2. . . . . . . . . . . .  D  ADDR  00DCH     A   
+CCF0. . . . . . . . . . . . .  B  ADDR  00D8H.0   A   
+CCF1. . . . . . . . . . . . .  B  ADDR  00D8H.1   A   
+CCF2. . . . . . . . . . . . .  B  ADDR  00D8H.2   A   
+CCON. . . . . . . . . . . . .  D  ADDR  00D8H     A   
+CCP0. . . . . . . . . . . . .  B  ADDR  0090H.1   A   
+CCP1. . . . . . . . . . . . .  B  ADDR  0090H.0   A   
+CCP2. . . . . . . . . . . . .  B  ADDR  00B0H.7   A   
+CF. . . . . . . . . . . . . .  B  ADDR  00D8H.7   A   
+CH. . . . . . . . . . . . . .  D  ADDR  00F9H     A   
+CL. . . . . . . . . . . . . .  D  ADDR  00E9H     A   
+CLK_DIV . . . . . . . . . . .  D  ADDR  0097H     A   
+CLKOUT0 . . . . . . . . . . .  B  ADDR  00B0H.5   A   
+CLKOUT1 . . . . . . . . . . .  B  ADDR  00B0H.4   A   
+CMOD. . . . . . . . . . . . .  D  ADDR  00D9H     A   
+CR. . . . . . . . . . . . . .  B  ADDR  00D8H.6   A   
+CY. . . . . . . . . . . . . .  B  ADDR  00D0H.7   A   
+DPH . . . . . . . . . . . . .  D  ADDR  0083H     A   
+DPL . . . . . . . . . . . . .  D  ADDR  0082H     A   
+EA. . . . . . . . . . . . . .  B  ADDR  00A8H.7   A   
+EADC. . . . . . . . . . . . .  B  ADDR  00A8H.5   A   
+ELVD. . . . . . . . . . . . .  B  ADDR  00A8H.6   A   
+ES. . . . . . . . . . . . . .  B  ADDR  00A8H.4   A   
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     8
+
+ET0 . . . . . . . . . . . . .  B  ADDR  00A8H.1   A   
+ET1 . . . . . . . . . . . . .  B  ADDR  00A8H.3   A   
+EX0 . . . . . . . . . . . . .  B  ADDR  00A8H.0   A   
+EX1 . . . . . . . . . . . . .  B  ADDR  00A8H.2   A   
+F0. . . . . . . . . . . . . .  B  ADDR  00D0H.5   A   
+F1. . . . . . . . . . . . . .  B  ADDR  00D0H.1   A   
+GETXBP. . . . . . . . . . . .  C  ADDR  0000H     R   SEG=SEG_XBPHELPER
+GETXBP_SETEA. . . . . . . . .  C  ADDR  0008H     R   SEG=SEG_XBPHELPER
+IAP_ADDRH . . . . . . . . . .  D  ADDR  00C3H     A   
+IAP_ADDRL . . . . . . . . . .  D  ADDR  00C4H     A   
+IAP_CMD . . . . . . . . . . .  D  ADDR  00C5H     A   
+IAP_CONTR . . . . . . . . . .  D  ADDR  00C7H     A   
+IAP_DATA. . . . . . . . . . .  D  ADDR  00C2H     A   
+IAP_TRIG. . . . . . . . . . .  D  ADDR  00C6H     A   
+IE. . . . . . . . . . . . . .  D  ADDR  00A8H     A   
+IE0 . . . . . . . . . . . . .  B  ADDR  0088H.1   A   
+IE1 . . . . . . . . . . . . .  B  ADDR  0088H.3   A   
+IE2 . . . . . . . . . . . . .  D  ADDR  00AFH     A   
+INT0. . . . . . . . . . . . .  B  ADDR  00B0H.2   A   
+INT1. . . . . . . . . . . . .  B  ADDR  00B0H.3   A   
+INT_CLKO. . . . . . . . . . .  D  ADDR  008FH     A   
+IP. . . . . . . . . . . . . .  D  ADDR  00B8H     A   
+IP2 . . . . . . . . . . . . .  D  ADDR  00B5H     A   
+IPH . . . . . . . . . . . . .  D  ADDR  00B7H     A   
+IPH2. . . . . . . . . . . . .  D  ADDR  00B6H     A   
+ISP_ADDRH . . . . . . . . . .  D  ADDR  00C3H     A   
+ISP_ADDRL . . . . . . . . . .  D  ADDR  00C4H     A   
+ISP_CMD . . . . . . . . . . .  D  ADDR  00C5H     A   
+ISP_CONTR . . . . . . . . . .  D  ADDR  00C7H     A   
+ISP_DATA. . . . . . . . . . .  D  ADDR  00C2H     A   
+ISP_TRIG. . . . . . . . . . .  D  ADDR  00C6H     A   
+IT0 . . . . . . . . . . . . .  B  ADDR  0088H.0   A   
+IT1 . . . . . . . . . . . . .  B  ADDR  0088H.2   A   
+OV. . . . . . . . . . . . . .  B  ADDR  00D0H.2   A   
+P . . . . . . . . . . . . . .  B  ADDR  00D0H.0   A   
+P0. . . . . . . . . . . . . .  D  ADDR  0080H     A   
+P00 . . . . . . . . . . . . .  B  ADDR  0080H.0   A   
+P01 . . . . . . . . . . . . .  B  ADDR  0080H.1   A   
+P02 . . . . . . . . . . . . .  B  ADDR  0080H.2   A   
+P03 . . . . . . . . . . . . .  B  ADDR  0080H.3   A   
+P04 . . . . . . . . . . . . .  B  ADDR  0080H.4   A   
+P05 . . . . . . . . . . . . .  B  ADDR  0080H.5   A   
+P06 . . . . . . . . . . . . .  B  ADDR  0080H.6   A   
+P07 . . . . . . . . . . . . .  B  ADDR  0080H.7   A   
+P0M0. . . . . . . . . . . . .  D  ADDR  0094H     A   
+P0M1. . . . . . . . . . . . .  D  ADDR  0093H     A   
+P1. . . . . . . . . . . . . .  D  ADDR  0090H     A   
+P10 . . . . . . . . . . . . .  B  ADDR  0090H.0   A   
+P11 . . . . . . . . . . . . .  B  ADDR  0090H.1   A   
+P12 . . . . . . . . . . . . .  B  ADDR  0090H.2   A   
+P13 . . . . . . . . . . . . .  B  ADDR  0090H.3   A   
+P14 . . . . . . . . . . . . .  B  ADDR  0090H.4   A   
+P15 . . . . . . . . . . . . .  B  ADDR  0090H.5   A   
+P16 . . . . . . . . . . . . .  B  ADDR  0090H.6   A   
+P17 . . . . . . . . . . . . .  B  ADDR  0090H.7   A   
+P1ASF . . . . . . . . . . . .  D  ADDR  009DH     A   
+P1M0. . . . . . . . . . . . .  D  ADDR  0092H     A   
+P1M1. . . . . . . . . . . . .  D  ADDR  0091H     A   
+P2. . . . . . . . . . . . . .  D  ADDR  00A0H     A   
+P20 . . . . . . . . . . . . .  B  ADDR  00A0H.0   A   
+P21 . . . . . . . . . . . . .  B  ADDR  00A0H.1   A   
+P22 . . . . . . . . . . . . .  B  ADDR  00A0H.2   A   
+P23 . . . . . . . . . . . . .  B  ADDR  00A0H.3   A   
+P24 . . . . . . . . . . . . .  B  ADDR  00A0H.4   A   
+P25 . . . . . . . . . . . . .  B  ADDR  00A0H.5   A   
+P26 . . . . . . . . . . . . .  B  ADDR  00A0H.6   A   
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE     9
+
+P27 . . . . . . . . . . . . .  B  ADDR  00A0H.7   A   
+P2M0. . . . . . . . . . . . .  D  ADDR  0096H     A   
+P2M1. . . . . . . . . . . . .  D  ADDR  0095H     A   
+P3. . . . . . . . . . . . . .  D  ADDR  00B0H     A   
+P30 . . . . . . . . . . . . .  B  ADDR  00B0H.0   A   
+P31 . . . . . . . . . . . . .  B  ADDR  00B0H.1   A   
+P32 . . . . . . . . . . . . .  B  ADDR  00B0H.2   A   
+P33 . . . . . . . . . . . . .  B  ADDR  00B0H.3   A   
+P34 . . . . . . . . . . . . .  B  ADDR  00B0H.4   A   
+P35 . . . . . . . . . . . . .  B  ADDR  00B0H.5   A   
+P36 . . . . . . . . . . . . .  B  ADDR  00B0H.6   A   
+P37 . . . . . . . . . . . . .  B  ADDR  00B0H.7   A   
+P3M0. . . . . . . . . . . . .  D  ADDR  00B2H     A   
+P3M1. . . . . . . . . . . . .  D  ADDR  00B1H     A   
+P4. . . . . . . . . . . . . .  D  ADDR  00C0H     A   
+P40 . . . . . . . . . . . . .  B  ADDR  00C0H.0   A   
+P41 . . . . . . . . . . . . .  B  ADDR  00C0H.1   A   
+P42 . . . . . . . . . . . . .  B  ADDR  00C0H.2   A   
+P43 . . . . . . . . . . . . .  B  ADDR  00C0H.3   A   
+P44 . . . . . . . . . . . . .  B  ADDR  00C0H.4   A   
+P45 . . . . . . . . . . . . .  B  ADDR  00C0H.5   A   
+P46 . . . . . . . . . . . . .  B  ADDR  00C0H.6   A   
+P47 . . . . . . . . . . . . .  B  ADDR  00C0H.7   A   
+P4M0. . . . . . . . . . . . .  D  ADDR  00B4H     A   
+P4M1. . . . . . . . . . . . .  D  ADDR  00B3H     A   
+P5. . . . . . . . . . . . . .  D  ADDR  00C8H     A   
+P50 . . . . . . . . . . . . .  B  ADDR  00C8H.0   A   
+P51 . . . . . . . . . . . . .  B  ADDR  00C8H.1   A   
+P52 . . . . . . . . . . . . .  B  ADDR  00C8H.2   A   
+P53 . . . . . . . . . . . . .  B  ADDR  00C8H.3   A   
+P54 . . . . . . . . . . . . .  B  ADDR  00C8H.4   A   
+P55 . . . . . . . . . . . . .  B  ADDR  00C8H.5   A   
+P56 . . . . . . . . . . . . .  B  ADDR  00C8H.6   A   
+P57 . . . . . . . . . . . . .  B  ADDR  00C8H.7   A   
+P5M0. . . . . . . . . . . . .  D  ADDR  00CAH     A   
+P5M1. . . . . . . . . . . . .  D  ADDR  00C9H     A   
+P6. . . . . . . . . . . . . .  D  ADDR  00E8H     A   
+P6M0. . . . . . . . . . . . .  D  ADDR  00CCH     A   
+P6M1. . . . . . . . . . . . .  D  ADDR  00CBH     A   
+P7. . . . . . . . . . . . . .  D  ADDR  00F8H     A   
+P7M0. . . . . . . . . . . . .  D  ADDR  00E2H     A   
+P7M1. . . . . . . . . . . . .  D  ADDR  00E1H     A   
+P_SW1 . . . . . . . . . . . .  D  ADDR  00A2H     A   
+P_SW2 . . . . . . . . . . . .  D  ADDR  00BAH     A   
+PADC. . . . . . . . . . . . .  B  ADDR  00B8H.5   A   
+PCA_PWM0. . . . . . . . . . .  D  ADDR  00F2H     A   
+PCA_PWM1. . . . . . . . . . .  D  ADDR  00F3H     A   
+PCA_PWM2. . . . . . . . . . .  D  ADDR  00F4H     A   
+PCON. . . . . . . . . . . . .  D  ADDR  0087H     A   
+PCON2 . . . . . . . . . . . .  D  ADDR  0097H     A   
+PLVD. . . . . . . . . . . . .  B  ADDR  00B8H.6   A   
+PPCA. . . . . . . . . . . . .  B  ADDR  00B8H.7   A   
+PS. . . . . . . . . . . . . .  B  ADDR  00B8H.4   A   
+PSW . . . . . . . . . . . . .  D  ADDR  00D0H     A   
+PT0 . . . . . . . . . . . . .  B  ADDR  00B8H.1   A   
+PT1 . . . . . . . . . . . . .  B  ADDR  00B8H.3   A   
+PX0 . . . . . . . . . . . . .  B  ADDR  00B8H.0   A   
+PX1 . . . . . . . . . . . . .  B  ADDR  00B8H.2   A   
+RB8 . . . . . . . . . . . . .  B  ADDR  0098H.2   A   
+RD. . . . . . . . . . . . . .  B  ADDR  00B0H.7   A   
+REN . . . . . . . . . . . . .  B  ADDR  0098H.4   A   
+RI. . . . . . . . . . . . . .  B  ADDR  0098H.0   A   
+RL_T2H. . . . . . . . . . . .  D  ADDR  00D6H     A   
+RL_T2L. . . . . . . . . . . .  D  ADDR  00D7H     A   
+RL_T3H. . . . . . . . . . . .  D  ADDR  00D4H     A   
+RL_T3L. . . . . . . . . . . .  D  ADDR  00D5H     A   
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE    10
+
+RL_T4H. . . . . . . . . . . .  D  ADDR  00D2H     A   
+RL_T4L. . . . . . . . . . . .  D  ADDR  00D3H     A   
+RL_TH0. . . . . . . . . . . .  D  ADDR  008CH     A   
+RL_TH1. . . . . . . . . . . .  D  ADDR  008DH     A   
+RL_TL0. . . . . . . . . . . .  D  ADDR  008AH     A   
+RL_TL1. . . . . . . . . . . .  D  ADDR  008BH     A   
+RS0 . . . . . . . . . . . . .  B  ADDR  00D0H.3   A   
+RS1 . . . . . . . . . . . . .  B  ADDR  00D0H.4   A   
+RXD . . . . . . . . . . . . .  B  ADDR  00B0H.0   A   
+RXD2. . . . . . . . . . . . .  B  ADDR  0090H.0   A   
+S2BUF . . . . . . . . . . . .  D  ADDR  009BH     A   
+S2CON . . . . . . . . . . . .  D  ADDR  009AH     A   
+S3BUF . . . . . . . . . . . .  D  ADDR  00ADH     A   
+S3CON . . . . . . . . . . . .  D  ADDR  00ACH     A   
+S4BUF . . . . . . . . . . . .  D  ADDR  0085H     A   
+S4CON . . . . . . . . . . . .  D  ADDR  0084H     A   
+SADDR . . . . . . . . . . . .  D  ADDR  00A9H     A   
+SADEN . . . . . . . . . . . .  D  ADDR  00B9H     A   
+SBUF. . . . . . . . . . . . .  D  ADDR  0099H     A   
+SCON. . . . . . . . . . . . .  D  ADDR  0098H     A   
+SEG_XBPHELPER . . . . . . . .  C  SEG   00001EH       REL=UNIT, ALN=BYTE
+SETXBP. . . . . . . . . . . .  C  ADDR  000FH     R   SEG=SEG_XBPHELPER
+SETXBP_SETEA. . . . . . . . .  C  ADDR  0017H     R   SEG=SEG_XBPHELPER
+SM0 . . . . . . . . . . . . .  B  ADDR  0098H.7   A   
+SM1 . . . . . . . . . . . . .  B  ADDR  0098H.6   A   
+SM2 . . . . . . . . . . . . .  B  ADDR  0098H.5   A   
+SP. . . . . . . . . . . . . .  D  ADDR  0081H     A   
+SPCTL . . . . . . . . . . . .  D  ADDR  00CEH     A   
+SPDAT . . . . . . . . . . . .  D  ADDR  00CFH     A   
+SPI_MISO. . . . . . . . . . .  B  ADDR  0090H.4   A   
+SPI_MISO_2. . . . . . . . . .  B  ADDR  00A0H.2   A   
+SPI_MISO_3. . . . . . . . . .  B  ADDR  00C0H.1   A   
+SPI_MOSI. . . . . . . . . . .  B  ADDR  0090H.3   A   
+SPI_MOSI_2. . . . . . . . . .  B  ADDR  00A0H.3   A   
+SPI_MOSI_3. . . . . . . . . .  B  ADDR  00C0H.0   A   
+SPI_SCLK. . . . . . . . . . .  B  ADDR  0090H.5   A   
+SPI_SCLK_2. . . . . . . . . .  B  ADDR  00A0H.1   A   
+SPI_SCLK_3. . . . . . . . . .  B  ADDR  00C0H.3   A   
+SPI_SS. . . . . . . . . . . .  B  ADDR  0090H.2   A   
+SPI_SS_2. . . . . . . . . . .  B  ADDR  00A0H.4   A   
+SPI_SS_3. . . . . . . . . . .  B  ADDR  00C8H.4   A   
+SPSTAT. . . . . . . . . . . .  D  ADDR  00CDH     A   
+T0. . . . . . . . . . . . . .  B  ADDR  00B0H.4   A   
+T1. . . . . . . . . . . . . .  B  ADDR  00B0H.5   A   
+T2H . . . . . . . . . . . . .  D  ADDR  00D6H     A   
+T2L . . . . . . . . . . . . .  D  ADDR  00D7H     A   
+T3H . . . . . . . . . . . . .  D  ADDR  00D4H     A   
+T3L . . . . . . . . . . . . .  D  ADDR  00D5H     A   
+T4H . . . . . . . . . . . . .  D  ADDR  00D2H     A   
+T4L . . . . . . . . . . . . .  D  ADDR  00D3H     A   
+T4T3M . . . . . . . . . . . .  D  ADDR  00D1H     A   
+TB8 . . . . . . . . . . . . .  B  ADDR  0098H.3   A   
+TCON. . . . . . . . . . . . .  D  ADDR  0088H     A   
+TF0 . . . . . . . . . . . . .  B  ADDR  0088H.5   A   
+TF1 . . . . . . . . . . . . .  B  ADDR  0088H.7   A   
+TH0 . . . . . . . . . . . . .  D  ADDR  008CH     A   
+TH1 . . . . . . . . . . . . .  D  ADDR  008DH     A   
+TH2 . . . . . . . . . . . . .  D  ADDR  00D6H     A   
+TH3 . . . . . . . . . . . . .  D  ADDR  00D4H     A   
+TH4 . . . . . . . . . . . . .  D  ADDR  00D2H     A   
+TI. . . . . . . . . . . . . .  B  ADDR  0098H.1   A   
+TL0 . . . . . . . . . . . . .  D  ADDR  008AH     A   
+TL1 . . . . . . . . . . . . .  D  ADDR  008BH     A   
+TL2 . . . . . . . . . . . . .  D  ADDR  00D7H     A   
+TL3 . . . . . . . . . . . . .  D  ADDR  00D5H     A   
+TL4 . . . . . . . . . . . . .  D  ADDR  00D3H     A   
+AX51 MACRO ASSEMBLER  XBP_HELPER                                                            10/25/23 19:58:24 PAGE    11
+
+TMOD. . . . . . . . . . . . .  D  ADDR  0089H     A   
+TR0 . . . . . . . . . . . . .  B  ADDR  0088H.4   A   
+TR1 . . . . . . . . . . . . .  B  ADDR  0088H.6   A   
+TXD . . . . . . . . . . . . .  B  ADDR  00B0H.1   A   
+TXD2. . . . . . . . . . . . .  B  ADDR  0090H.1   A   
+WAKE_CLKO . . . . . . . . . .  D  ADDR  008FH     A   
+WDT_CONTR . . . . . . . . . .  D  ADDR  00C1H     A   
+WKTCH . . . . . . . . . . . .  D  ADDR  00ABH     A   
+WKTCL . . . . . . . . . . . .  D  ADDR  00AAH     A   
+WR. . . . . . . . . . . . . .  B  ADDR  00B0H.6   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S).

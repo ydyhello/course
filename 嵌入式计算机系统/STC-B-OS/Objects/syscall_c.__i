@@ -1,0 +1,1 @@
+"src\syscall_c.c" LARGE OMF2 OPTIMIZE (0,SPEED) BROWSE DEBUG PRINT(.\Listings\syscall_c.lst) TABS (2) OBJECT(.\Objects\syscall_c.obj)

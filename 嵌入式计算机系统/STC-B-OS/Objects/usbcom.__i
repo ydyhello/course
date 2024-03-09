@@ -1,0 +1,1 @@
+"src\usbcom.c" LARGE OMF2 OPTIMIZE (0,SPEED) BROWSE DEBUG PRINT(.\Listings\usbcom.lst) TABS (2) OBJECT(.\Objects\usbcom.obj)

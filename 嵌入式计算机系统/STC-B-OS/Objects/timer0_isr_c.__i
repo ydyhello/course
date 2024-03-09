@@ -1,0 +1,1 @@
+"src\timer0_isr_c.c" LARGE OMF2 OPTIMIZE (0,SPEED) BROWSE DEBUG PRINT(.\Listings\timer0_isr_c.lst) TABS (2) OBJECT(.\Objects\timer0_isr_c.obj)
