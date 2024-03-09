@@ -1,0 +1,158 @@
+C51 COMPILER V9.51   MAIN                                                                  10/07/2023 22:38:31 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\output\main.obj
+COMPILER INVOKED BY: E:\工训\keil\C51\BIN\C51.EXE source\main.c BROWSE INCDIR(.\inc) DEBUG OBJECTEXTEND PRINT(.\list\mai
+                    -n.lst) TABS(2) OBJECT(.\output\main.obj)
+
+line level    source
+
+   1          #include "STC15F2K60S2.H"        //必须。
+   2          #include "sys.H"                 //必须。
+   3          #include "displayer.H" 
+   4          #include "adc.H"
+   5          #include "key.H"
+   6          #include "selfstepmotor.h"
+   7          #include "beep.h"
+   8          code char Spin_table[]={0xc,0x6,0x3,0x9};      //存储使电机旋转的编码，采用二相磁励方式
+   9          extern code char HighSpeed_Spin_table[]={0x8,0xc,0x4,0x6,0x2,0x3,0x1,0x9}; //复合磁励
+  10          code unsigned long SysClock=11059200; 
+  11          unsigned char a=0x10,b=0x01,c=0,hc=0,k=0x11; //分别控制三个电机的显示或者行动
+  12          code char decode_table[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x00,0x08,0x40,0x73, 0x37, 0xb
+             -f, 0x6d , 0x5e,
+  13                          /* 序号:   0   1    2    3    4     5    6    7   8    9   10    11   12   13    14     15    
+             -16    17 */
+  14                          /* 显示:   0   1    2    3    4     5    6    7   8    9  (无)   下-  中-  P    n     0.  
+             -  S     d */  
+  15                                   0x3f|0x80,0x06|0x80,0x5b|0x80,0x4f|0x80,0x66|0x80,0x6d|0x80,0x7d|0x80,0x07|0x80,0x
+             -7f|0x80,0x6f|0x80 };  
+  16                       /* 带小数点     0         1         2         3         4         5         6         7      
+             -   8         9        */
+  17          
+  18          void setspeed(){//实现按键控制,k1加速，k2刹车
+  19   1        char k = GetKeyAct(enumKey1),j = GetKeyAct(enumKey2);
+  20   1        if(k == enumKeyPress){
+  21   2          speedUp(Getnum());
+  22   2          Seg7Print(14,15,Getnum()+1,-1,16,13,17,Getspeed_level(Getnum()));
+  23   2        }
+  24   1        if(j == enumKeyPress) {
+  25   2          speedDown(Getnum());
+  26   2          Seg7Print(14,15,Getnum()+1,-1,16,13,17,Getspeed_level(Getnum()));
+  27   2        }
+  28   1      }
+  29          
+  30          void changenum(){//实现导航控制,上键下键切换控制目标,k3变向
+  31   1        char k = GetAdcNavAct(enumAdcNavKeyUp),j = GetAdcNavAct(enumAdcNavKeyDown),l=GetAdcNavAct(enumAdcNavKey3
+             -);
+  32   1        if(k == enumKeyPress){//向上切换
+  33   2          numUp();
+  34   2          Seg7Print(14,15,Getnum()+1,-1,16,13,17,Getspeed_level(Getnum()));
+  35   2        }
+  36   1        if(j == enumKeyPress){//向下切换
+  37   2          numDown();
+  38   2          Seg7Print(14,15,Getnum()+1,-1,16,13,17,Getspeed_level(Getnum()));
+  39   2        }
+  40   1        if(l == enumKeyPress) turn(Getnum());
+  41   1      }
+  42          
+  43          void num1mov()
+  44          { if(GetDirection(0)==0){
+  45   2              if(a==0x80) a=0x10;
+  46   2              else a<<=1;
+  47   2            }
+  48   1            else{
+C51 COMPILER V9.51   MAIN                                                                  10/07/2023 22:38:31 PAGE 2   
+
+  49   2              if(a==0x10) a=0x80;
+  50   2              else if(a==0x80) a=0x40;
+  51   2              else a>>=1;
+  52   2            }
+  53   1      }
+  54          
+  55          void num2mov()
+  56          {
+  57   1            if(GetDirection(1)==0){
+  58   2              if(b==0x08) b=0x01;
+  59   2              else b<<=1;
+  60   2            }
+  61   1            else{
+  62   2              if(b==0x01) b=0x08;
+  63   2                else b>>=1;
+  64   2            }
+  65   1      }
+  66          
+  67          void num3mov()
+  68          {
+  69   1          
+  70   1            SM_Ctrl(HighSpeed_Spin_table[hc]);
+  71   1            if(GetDirection(2)==0){
+  72   2              if(hc==7) hc=0;
+  73   2              else hc++;
+  74   2           }
+  75   1            else{
+  76   2              if(hc==0) hc=7;
+  77   2              else hc--;
+  78   2          }
+  79   1        
+  80   1      }
+  81          
+  82          int timex=0;
+  83          void speed_levelx()
+  84          { timex++;
+  85   1        k=a|b;
+  86   1        LedPrint(k);
+  87   1        if(timex%5==0)
+  88   1        {
+  89   2          if(Getspeed_level(0)==3) num1mov();
+  90   2          if(Getspeed_level(1)==3) num2mov();
+  91   2          if(Getspeed_level(2)==3) num3mov();
+  92   2        }
+  93   1        if(timex%100==0)
+  94   1        {
+  95   2          if(Getspeed_level(0)==2) num1mov();
+  96   2          if(Getspeed_level(1)==2) num2mov();
+  97   2          if(Getspeed_level(2)==2) num3mov();
+  98   2        }
+  99   1          if(timex%500==0)
+ 100   1        {
+ 101   2          if(Getspeed_level(0)==1) num1mov();
+ 102   2          if(Getspeed_level(1)==1) num2mov();
+ 103   2          if(Getspeed_level(2)==1) num3mov();
+ 104   2        }
+ 105   1      }
+ 106          
+ 107          
+ 108          void main() 
+ 109          { 
+ 110   1        KeyInit();
+C51 COMPILER V9.51   MAIN                                                                  10/07/2023 22:38:31 PAGE 3   
+
+ 111   1        AdcInit(ADCexpEXT);
+ 112   1        motorInit();
+ 113   1        BeepInit();
+ 114   1        DisplayerInit();
+ 115   1        LedPrint(a|b);
+ 116   1        Seg7Print(14,15,1,-1,16,13,17,0);
+ 117   1        SetEventCallBack(enumEventKey,setspeed);         //装载按键控制
+ 118   1        SetEventCallBack(enumEventNav,changenum);       //导航键控制
+ 119   1        SetEventCallBack(enumEventSys1mS,speed_levelx);      //使用回调函数控制挡位
+ 120   1        MySTC_Init();     
+ 121   1        while(1)              
+ 122   1          { MySTC_OS();    
+ 123   2          }              
+ 124   1      }                 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    618    ----
+   CONSTANT SIZE    =     44    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      7       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

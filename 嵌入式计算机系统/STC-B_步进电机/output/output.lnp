@@ -1,0 +1,6 @@
+".\output\main.obj",
+".\source\STCBSP_V3.6.LIB",
+".\output\SelfStepmotor.obj" 
+TO ".\output\output" 
+PRINT(".\list\output.m51") RAMSIZE(256) 
+XDATA( 0X0000-0X07FF )

@@ -1,0 +1,137 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\xxq\八位数码管+流水灯工程\八位数码管+流水灯_BSP版\STC_Demo.uvproj
+Project File Date:  06/30/2022
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C141: syntax error near '0x3f'
+source\main.c(14): error C141: syntax error near '{'
+source\main.c(15): error C141: syntax error near 'if'
+source\main.c(15): error C141: syntax error near '!=', expected ')'
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(15): error C247: non-address/-constant initializer
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(16): error C141: syntax error near 'else'
+source\main.c(16): error C279: 'a': multiple initialization
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(17): error C231: '_LedPrint': redefinition
+source\main.c(18): error C141: syntax error near '}'
+Target not created
+compiling main.c...
+source\main.c(10): error C141: syntax error near '0x3f'
+source\main.c(14): error C141: syntax error near '{'
+source\main.c(15): error C141: syntax error near 'if'
+source\main.c(15): error C141: syntax error near '!=', expected ')'
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(15): error C247: non-address/-constant initializer
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(16): error C141: syntax error near 'else'
+source\main.c(16): error C279: 'a': multiple initialization
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(17): error C231: '_LedPrint': redefinition
+source\main.c(18): error C141: syntax error near '}'
+source\main.c - 13 Error(s), 0 Warning(s).
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C141: syntax error near '0x3f'
+source\main.c(14): error C141: syntax error near '{'
+source\main.c(15): error C141: syntax error near 'if'
+source\main.c(15): error C141: syntax error near '!=', expected ')'
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(15): error C247: non-address/-constant initializer
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(16): error C141: syntax error near 'else'
+source\main.c(16): error C279: 'a': multiple initialization
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(17): error C231: '_LedPrint': redefinition
+source\main.c(18): error C141: syntax error near '}'
+Target not created
+compiling main.c...
+source\main.c(10): error C141: syntax error near '0x3f'
+source\main.c(14): error C141: syntax error near '{'
+source\main.c(15): error C141: syntax error near 'if'
+source\main.c(15): error C141: syntax error near '!=', expected ')'
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(15): error C247: non-address/-constant initializer
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(16): error C141: syntax error near 'else'
+source\main.c(16): error C279: 'a': multiple initialization
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(17): error C231: '_LedPrint': redefinition
+source\main.c(18): error C141: syntax error near '}'
+source\main.c - 13 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C141: syntax error near '0x3f'
+source\main.c(14): error C141: syntax error near '{'
+source\main.c(15): error C141: syntax error near 'if'
+source\main.c(15): error C141: syntax error near '!=', expected ')'
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(15): error C247: non-address/-constant initializer
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(16): error C141: syntax error near 'else'
+source\main.c(16): error C279: 'a': multiple initialization
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(17): error C231: '_LedPrint': redefinition
+source\main.c(18): error C141: syntax error near '}'
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C141: syntax error near '0x3f'
+source\main.c(14): error C141: syntax error near '{'
+source\main.c(15): error C141: syntax error near 'if'
+source\main.c(15): error C141: syntax error near '!=', expected ')'
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(15): error C247: non-address/-constant initializer
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(16): error C141: syntax error near 'else'
+source\main.c(16): error C279: 'a': multiple initialization
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(17): error C231: '_LedPrint': redefinition
+source\main.c(18): error C141: syntax error near '}'
+Target not created
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C141: syntax error near '0x3f'
+source\main.c(14): error C141: syntax error near '{'
+source\main.c(15): error C141: syntax error near 'if'
+source\main.c(15): error C141: syntax error near '!=', expected ')'
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(15): error C247: non-address/-constant initializer
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(16): error C141: syntax error near 'else'
+source\main.c(16): error C279: 'a': multiple initialization
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(17): error C231: '_LedPrint': redefinition
+source\main.c(18): error C141: syntax error near '}'
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C141: syntax error near '0x3f'
+source\main.c(14): error C141: syntax error near '{'
+source\main.c(15): error C141: syntax error near 'if'
+source\main.c(15): error C141: syntax error near '!=', expected ')'
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(15): error C247: non-address/-constant initializer
+source\main.c(15): error C231: 'a': redefinition
+source\main.c(16): error C141: syntax error near 'else'
+source\main.c(16): error C279: 'a': multiple initialization
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(16): error C231: 'a': redefinition
+source\main.c(17): error C231: '_LedPrint': redefinition
+source\main.c(18): error C141: syntax error near '}'
+Target not created

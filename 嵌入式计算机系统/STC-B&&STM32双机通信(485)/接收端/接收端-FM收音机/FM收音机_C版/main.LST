@@ -1,0 +1,172 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              12/12/2023 15:14:27 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\Keil_v5_2\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "KEY.H"
+   2          //#include "led.h"
+   3          #include "Delay.h"
+   4          #include "FM.h"
+   5          #include <STC15F2K60S2.H>
+   6          #include <intrins.h>    
+   7          #define uint  unsigned int
+   8          #define uchar unsigned char
+   9          #define ulong unsigned long
+  10          unsigned char Radio_Write_Data[8]={          
+  11            0xc0,0x11,          //02H:音频输出，静音禁用，12MHZ，启用状态
+  12            0x1a,0x50,          //03H:97500KHZ,频率使能87-108M(US/Europe)，步进100KHZ
+  13            0x40,0x02,        //04H:1-0为GPIO1(10为低，灯亮；11为高，灯灭)，...
+  14            0x88,0xa5 };      //a5中的5为初始音量
+  15          unsigned long frequency=0;
+  16          unsigned int chan=0;
+  17          unsigned char volume;
+  18          unsigned int moshi1=0 ;
+  19            
+  20            
+  21            #define cstUart2Ri  0x01                        //?????????
+  22          #define cstUart2Ti  0x02                        //?????????
+  23          
+  24          #define cstNoneParity           0           //???
+  25          #define PARITYBIT cstNoneParity         //?????
+  26            
+  27            #define cstFosc 11059200L               //?????? 
+  28          #define cstBaud2    9600                    //?????    
+  29          #define cstT2HL     (65536-(cstFosc/4/cstBaud2))    //???????
+  30          
+  31            sbit sbtKey1 = P3 ^ 2 ;                 //????
+  32          sbit sbtKey2 = P3 ^ 3 ;                 //????
+  33          sbit sbtKey3 = P1 ^ 7 ;                 //????
+  34          
+  35          sbit sbtSel0 = P2 ^ 0 ;
+  36          sbit sbtSel1 = P2 ^ 1 ;
+  37          sbit sbtSel2 = P2 ^ 2 ;
+  38          sbit sbtLedSel = P2 ^ 3 ;
+  39          
+  40          sbit sbtM485_TRN  = P3 ^ 7 ;   //??MAX485????,?1???,?0???
+  41          
+  42          bit btSendBusy ;                           
+  43          uchar ucGetDataTmp ;          //??????
+  44          uchar ucPutDataTmp ;          //??????
+  45          uchar arrSegSelect[] = {0x3f, 0x06, 0x5b, 0x4f, 0x66,
+  46                                  0x6d, 0x7d, 0x07, 0x7f, 0x6f,
+  47                                  0x77, 0x7c, 0x39, 0x5e, 0x79,
+  48                                  0x71, 0x40, 0x00
+  49                                 };   //??,??0-f
+  50          /*系统初始化函数
+  51          *初始化系统的A/D,IO口以及收音机芯片（RDA5807P）
+  52          */
+  53                                 void Uart2Init( void )
+  54          {
+  55   1          S2CON = 0x10 ;      //??????,?????2??
+C51 COMPILER V9.60.7.0   MAIN                                                              12/12/2023 15:14:27 PAGE 2   
+
+  56   1          T2L = cstT2HL ;             //????????
+  57   1          T2H = cstT2HL >> 8 ;
+  58   1          AUXR |= 0x14 ;      //T2?1T??,??????2
+  59   1      }
+  60          void Init()
+  61          { 
+  62   1        Init_KEY();   
+  63   1        Config_LED();
+  64   1          
+  65   1        /*FM硬件初始化*/
+  66   1         P4M0=0x00;
+  67   1         P4M1=0x00;
+  68   1        
+  69   1         P5M0=0xff;
+  70   1         P5M1=0x00;
+  71   1        
+  72   1         Init_Radio();
+  73   1        P2_3 = 0;
+  74   1      }
+  75          void Init_485()
+  76          {
+  77   1          P0M0 = 0xff ;       //P0???(????)
+  78   1          P0M1 = 0x00 ;
+  79   1          P2M0 = 0x0f ;       //P2.0梸P2.3???
+  80   1          P2M1 = 0x00 ;
+  81   1          P3M0 = 0x00 ;
+  82   1          P3M1 = 0x00 ;
+  83   1          P1M0 = 0x00 ;
+  84   1          P1M1 = 0x00 ;       //P1?P3????
+  85   1          //????0
+  86   1          IT0 = 1 ;           //???????(?0??????????????)
+  87   1          EX0 = 1 ;           //??????0
+  88   1          PX0 = 0 ;           //????:????
+  89   1          //485???  ?????
+  90   1          sbtM485_TRN = 0 ;       //???????
+  91   1          P_SW2 |= 0x01 ;     //????2????P4.6,P4.7
+  92   1          Uart2Init() ;
+  93   1          btSendBusy = 1 ;
+  94   1          IE2 |= 0x01 ;       //????2??
+  95   1          IP2 |= 0x01 ;       //???????:????
+  96   1          EA = 1 ;            //????
+  97   1          //?????
+  98   1          sbtLedSel = 0 ;     //???????
+  99   1          sbtSel0 = 1 ;
+ 100   1          sbtSel1 = 1 ;
+ 101   1          sbtSel2 = 1 ;           //??????????
+ 102   1          ucPutDataTmp = 0 ;
+ 103   1      }
+ 104          /*---------??2??????---------*/
+ 105          void Uart2_Process( void ) interrupt 8 using 1
+ 106          {
+ 107   1          if( S2CON & cstUart2Ri )
+ 108   1          {
+ 109   2              ucGetDataTmp = S2BUF ;
+ 110   2              ucPutDataTmp = ucGetDataTmp ;
+ 111   2              S2CON &= ~cstUart2Ri;   //????????0
+ 112   2          }
+ 113   1          if( S2CON & cstUart2Ti )
+ 114   1          {
+ 115   2              btSendBusy = 0 ;            //?????
+ 116   2              S2CON &= ~cstUart2Ti ;      //????????0
+ 117   2          }
+C51 COMPILER V9.60.7.0   MAIN                                                              12/12/2023 15:14:27 PAGE 3   
+
+ 118   1      }
+ 119          
+ 120          /*---------????0????---------*/
+ 121          void ExInt0_Process() interrupt 0
+ 122          {
+ 123   1          sbtM485_TRN = 1 ;
+ 124   1          S2BUF = ucPutDataTmp ;
+ 125   1          while( btSendBusy ) ;
+ 126   1          btSendBusy = 1 ;
+ 127   1          sbtM485_TRN = 0 ;
+ 128   1      }
+ 129          
+ 130          /*主函数
+ 131          *初始化系统，然后循环调用按键监听函数以及数码管显示函数
+ 132          */
+ 133          void main()
+ 134          {
+ 135   1        Init(); 
+ 136   1        Init_485();
+ 137   1        while(1)
+ 138   1        {
+ 139   2          ucPutDataTmp %= 16 ;
+ 140   2          if(ucPutDataTmp%16==1) moshi1=2;
+ 141   2          if(moshi1==2) Frequency_Display();
+ 142   2          if(ucPutDataTmp%16==2) Search_Keyscan();
+ 143   2          if(ucPutDataTmp%16==3) KeyScan(); 
+ 144   2        }
+ 145   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    189    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     37    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

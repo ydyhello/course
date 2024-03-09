@@ -1,0 +1,2678 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\xxq\·嵌入式\实验2\STC_Demo.uvproj
+Project File Date:  10/26/2022
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C209: '_turn': too few actual parameters
+source\main.c(19): warning C209: '_brake': too few actual parameters
+source\main.c(33): error C141: syntax error near ')'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C209: '_turn': too few actual parameters
+source\main.c(19): warning C209: '_brake': too few actual parameters
+source\main.c(33): error C141: syntax error near ')'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C209: '_turn': too few actual parameters
+source\main.c(19): warning C209: '_brake': too few actual parameters
+source\main.c(33): error C202: 'gear1': undefined identifier
+source\main.c(34): error C202: 'gear2': undefined identifier
+source\main.c(35): error C202: 'gear3': undefined identifier
+source\main.c(36): error C202: 'gear4': undefined identifier
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C209: '_turn': too few actual parameters
+source\main.c(19): warning C209: '_brake': too few actual parameters
+compiling SelfStepmotor.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  SYS_DISP
+    MODULE:  .\source\STCBSP_V3.6.LIB (DISPLAYER)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEG7PRINT?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LEDPRINT?DISPLAYER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _BRAKE
+    MODULE:  .\output\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _TURN
+    MODULE:  .\output\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _TURN
+    MODULE:  .\output\main.obj (MAIN)
+    ADDRESS: 15B2H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _BRAKE
+    MODULE:  .\output\main.obj (MAIN)
+    ADDRESS: 15BAH
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 11DFH
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 133BH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1351H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 128DH
+Program Size: data=50.0 xdata=174 code=3763
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C209: '_turn': too few actual parameters
+source\main.c(19): warning C209: '_brake': too few actual parameters
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(23): error C141: syntax error near 'int'
+source\SelfStepmotor.c(23): error C202: 'i': undefined identifier
+source\SelfStepmotor.c(24): error C202: 'i': undefined identifier
+source\SelfStepmotor.c(25): error C202: 'i': undefined identifier
+source\SelfStepmotor.c(26): error C202: 'i': undefined identifier
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C209: '_turn': too few actual parameters
+source\main.c(19): warning C209: '_brake': too few actual parameters
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(23): error C141: syntax error near 'char'
+source\SelfStepmotor.c(23): error C202: 'i': undefined identifier
+source\SelfStepmotor.c(24): error C202: 'i': undefined identifier
+source\SelfStepmotor.c(25): error C202: 'i': undefined identifier
+source\SelfStepmotor.c(26): error C202: 'i': undefined identifier
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C209: '_turn': too few actual parameters
+source\main.c(19): warning C209: '_brake': too few actual parameters
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEG7PRINT?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LEDPRINT?DISPLAYER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _BRAKE
+    MODULE:  .\output\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _TURN
+    MODULE:  .\output\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _TURN
+    MODULE:  .\output\main.obj (MAIN)
+    ADDRESS: 15C0H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _BRAKE
+    MODULE:  .\output\main.obj (MAIN)
+    ADDRESS: 15C8H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 11E5H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1341H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1357H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1293H
+Program Size: data=58.0 xdata=162 code=3790
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 21 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C206: 'turn': missing function-prototype
+source\main.c(19): warning C209: '_brake': too few actual parameters
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(36): error C141: syntax error near ')'
+source\SelfStepmotor.c(37): error C187: not an lvalue
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(36): error C202: 'gear': undefined identifier
+source\main.c(58): error C193: 'parameter': bad operand type
+source\main.c(59): error C193: 'parameter': bad operand type
+source\main.c(60): error C193: 'parameter': bad operand type
+source\main.c(61): error C193: 'parameter': bad operand type
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEG7PRINT?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LEDPRINT?DISPLAYER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 11E5H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1341H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1357H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1293H
+Program Size: data=58.0 xdata=162 code=3842
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 15 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(35): error C202: 'gear': undefined identifier
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(35): error C202: 'gear': undefined identifier
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(35): error C202: 'gear': undefined identifier
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(17): error C202: 'Current_ctrl': undefined identifier
+source\main.c(18): error C202: 'Current_ctrl': undefined identifier
+source\main.c(24): error C202: 'Current_ctrl': undefined identifier
+source\main.c(24): error C202: 'Current_ctrl': undefined identifier
+source\main.c(25): error C202: 'Current_ctrl': undefined identifier
+source\main.c(28): error C202: 'Current_ctrl': undefined identifier
+source\main.c(28): error C202: 'Current_ctrl': undefined identifier
+source\main.c(29): error C202: 'Current_ctrl': undefined identifier
+source\main.c(34): error C202: 'Current_ctrl': undefined identifier
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(17): error C202: 'Current_ctrl': undefined identifier
+source\main.c(18): error C202: 'Current_ctrl': undefined identifier
+source\main.c(32): error C202: 'Current_ctrl': undefined identifier
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(55): error C236: '_ctrlUp': different length of parameter lists
+source\SelfStepmotor.c(59): error C236: '_ctrlDown': different length of parameter lists
+source\SelfStepmotor.c(64): error C236: '_GetGtrl': different length of parameter lists
+Target not created
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(17): warning C209: '_GetGtrl': too few actual parameters
+source\main.c(18): warning C209: '_GetGtrl': too few actual parameters
+source\main.c(32): warning C209: '_GetGtrl': too few actual parameters
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(55): error C236: '_ctrlUp': different length of parameter lists
+source\SelfStepmotor.c(59): error C236: '_ctrlDown': different length of parameter lists
+source\SelfStepmotor.c(64): error C236: '_GetGtrl': different length of parameter lists
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(17): warning C209: '_GetGtrl': too few actual parameters
+source\main.c(18): warning C209: '_GetGtrl': too few actual parameters
+source\main.c(32): warning C209: '_GetGtrl': too few actual parameters
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(55): error C236: '_ctrlUp': different length of parameter lists
+source\SelfStepmotor.c(59): error C236: '_ctrlDown': different length of parameter lists
+source\SelfStepmotor.c(64): error C236: '_GetGtrl': different length of parameter lists
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(17): warning C209: '_GetGtrl': too few actual parameters
+source\main.c(18): warning C209: '_GetGtrl': too few actual parameters
+source\main.c(32): warning C209: '_GetGtrl': too few actual parameters
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(54): error C236: '_ctrlUp': different length of parameter lists
+source\SelfStepmotor.c(58): error C236: '_ctrlDown': different length of parameter lists
+source\SelfStepmotor.c(63): error C236: '_GetGtrl': different length of parameter lists
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(17): warning C209: '_GetGtrl': too few actual parameters
+source\main.c(18): warning C209: '_GetGtrl': too few actual parameters
+source\main.c(32): warning C209: '_GetGtrl': too few actual parameters
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(63): error C236: '_GetGtrl': different length of parameter lists
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRLUP?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRLDOWN?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEG7PRINT?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LEDPRINT?DISPLAYER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 11E2H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 133EH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1354H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1290H
+Program Size: data=58.0 xdata=162 code=3863
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 18 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEG7PRINT?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LEDPRINT?DISPLAYER
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 11E2H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 133EH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1354H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1290H
+Program Size: data=58.0 xdata=162 code=3879
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 16 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C281: illegal hex constant
+source\main.c(13): error C141: syntax error near '0x3f'
+source\main.c(16): error C141: syntax error near '{'
+source\main.c(18): error C141: syntax error near 'if'
+source\main.c(18): error C141: syntax error near '==', expected ')'
+source\main.c(18): error C129: missing ';' before ')'
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c(67): error C231: '_GetDirection': redefinition
+source\SelfStepmotor.c(69): error C231: '_GetDirection': redefinition
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C281: illegal hex constant
+source\main.c(13): error C141: syntax error near '0x3f'
+source\main.c(16): error C141: syntax error near '{'
+source\main.c(18): error C141: syntax error near 'if'
+source\main.c(18): error C141: syntax error near '==', expected ')'
+source\main.c(18): error C129: missing ';' before ')'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(10): error C281: illegal hex constant
+source\main.c(13): error C141: syntax error near '0x3f'
+source\main.c(16): error C141: syntax error near '{'
+source\main.c(18): error C141: syntax error near 'if'
+source\main.c(18): error C141: syntax error near '==', expected ')'
+source\main.c(18): error C129: missing ';' before ')'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(36): warning C206: 'Getdirection': missing function-prototype
+source\main.c(36): error C267: 'Getdirection': requires ANSI-style prototype
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(44): warning C206: 'GetCtrl': missing function-prototype
+source\main.c(48): error C141: syntax error near '}'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(33): warning C206: 'GetCtrl': missing function-prototype
+source\main.c(48): error C141: syntax error near '}'
+compiling SelfStepmotor.c...
+Target not created
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C206: 'GetGtrl': missing function-prototype
+source\main.c(48): error C141: syntax error near '}'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(18): warning C206: 'GetGtrl': missing function-prototype
+source\main.c(48): error C141: syntax error near '}'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(48): error C141: syntax error near '}'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 11EBH
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 13AEH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 13C4H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1300H
+Program Size: data=59.0 xdata=162 code=3993
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 13EDH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1403H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 133FH
+Program Size: data=59.0 xdata=162 code=4056
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1409H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 141FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135BH
+Program Size: data=59.0 xdata=162 code=4084
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1409H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 141FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135BH
+Program Size: data=59.0 xdata=162 code=4084
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c - 0 Error(s), 0 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1409H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 141FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135BH
+Program Size: data=59.0 xdata=162 code=4084
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  I
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  DIRECTION
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  GEAR
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  CURRENT_CTRL
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _GETDIRECTION
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  GETCTRL
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  CTRLDOWN
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  CTRLUP
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _TURN
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _GETGEAR
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _BRAKE
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _SPEEDUP
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MOTORINIT
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SPEEDUP?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_BRAKE?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GETGEAR?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRLUP?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRLDOWN?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETCTRL?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GETDIRECTION?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1294H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 140CH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1422H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135EH
+Program Size: data=67.0 xdata=162 code=4192
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1409H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 141FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135BH
+Program Size: data=59.0 xdata=162 code=4084
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1409H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 141FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135BH
+Program Size: data=59.0 xdata=162 code=4084
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1409H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 141FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135BH
+Program Size: data=59.0 xdata=162 code=4084
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1409H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 141FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135BH
+Program Size: data=59.0 xdata=162 code=4084
+creating hex file from ".\output\10"...
+".\output\10" - 0 Error(s), 14 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 1291H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1409H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 141FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 135BH
+Program Size: data=59.0 xdata=162 code=4084
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 135BH
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 14D3H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 14E9H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1425H
+Program Size: data=59.0 xdata=162 code=4285
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 13D4H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 14D8H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 14EEH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 142AH
+Program Size: data=59.0 xdata=162 code=4290
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 13D7H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 14DBH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 14F1H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 142DH
+Program Size: data=59.0 xdata=162 code=4293
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEP?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPSTATUS?BEEP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEYINIT?KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (BEEP)
+    ADDRESS: 13D7H
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 14DBH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 14F1H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 142DH
+Program Size: data=59.0 xdata=162 code=4293
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1463H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1479H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 13B5H
+Program Size: data=55.0 xdata=162 code=4089
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1463H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1479H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 13B5H
+Program Size: data=55.0 xdata=162 code=4089
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1460H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1476H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 13B2H
+Program Size: data=55.0 xdata=162 code=4086
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1460H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1476H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 13B2H
+Program Size: data=55.0 xdata=162 code=4086
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1375H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 138BH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 12C7H
+Program Size: data=55.0 xdata=162 code=3849
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1372H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1388H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 12C4H
+Program Size: data=55.0 xdata=162 code=3846
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c - 0 Error(s), 0 Warning(s).
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1372H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1388H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 12C4H
+Program Size: data=55.0 xdata=162 code=3846
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1372H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1388H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 12C4H
+Program Size: data=55.0 xdata=162 code=3846
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3850
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 9 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\output\SelfStepmotor.obj (SELFSTEPMOTOR)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?SELFSTEPMOTOR
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1372H
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 1388H
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  SYSCLOCK
+    MODULE:  .\source\STCBSP_V3.6.LIB (SYS)
+    ADDRESS: 12C4H
+Program Size: data=55.0 xdata=162 code=3854
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3850
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 9 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3850
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 9 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+*** Note: 'Create Batch File' is active - using 'Rebuild'.
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3850
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 9 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3850
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 9 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3850
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 9 Warning(s).
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c - 0 Error(s), 0 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3817
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3813
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 13 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3813
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3813
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c - 0 Error(s), 0 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3813
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3813
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3813
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3808
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR1?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=62.0 xdata=162 code=3813
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 14 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CTRL?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDISPLAYERAREA?DISPLAYER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETEVENTCALLBACK?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MOTORINIT?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GETGEAR?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GETDIRECTION?SELFSTEPMOTOR
+Program Size: data=61.0 xdata=162 code=3647
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 15 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(63): error C141: syntax error near '/'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(63): error C141: syntax error near '/'
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3856
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3856
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling SelfStepmotor.c...
+source\SelfStepmotor.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3859
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3856
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=55.0 xdata=162 code=3856
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(53): error C141: syntax error near 'unsigned'
+source\main.c(53): error C202: 'k': undefined identifier
+source\main.c(54): error C202: 'k': undefined identifier
+source\main.c(68): error C141: syntax error near 'unsigned'
+source\main.c(68): error C202: 'k': undefined identifier
+source\main.c(69): error C202: 'k': undefined identifier
+compiling SelfStepmotor.c...
+Target not created
+compiling main.c...
+source\main.c(53): error C141: syntax error near 'unsigned'
+source\main.c(53): error C202: 'k': undefined identifier
+source\main.c(54): error C202: 'k': undefined identifier
+source\main.c(68): error C141: syntax error near 'unsigned'
+source\main.c(68): error C202: 'k': undefined identifier
+source\main.c(69): error C202: 'k': undefined identifier
+source\main.c - 6 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=56.0 xdata=162 code=4012
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=56.0 xdata=162 code=4002
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=56.0 xdata=162 code=4012
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=56.0 xdata=162 code=4056
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=56.0 xdata=162 code=4052
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=56.0 xdata=162 code=4052
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=56.0 xdata=162 code=4069
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=56.0 xdata=162 code=4074
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(9): error C247: non-address/-constant initializer
+compiling SelfStepmotor.c...
+Target not created
+compiling main.c...
+source\main.c(9): error C247: non-address/-constant initializer
+source\main.c - 1 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(9): error C247: non-address/-constant initializer
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=57.0 xdata=162 code=4075
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=57.0 xdata=162 code=4075
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 8 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+source\main.c(44): error C202: 'x': undefined identifier
+source\main.c(57): error C202: 'x': undefined identifier
+source\main.c(74): error C202: 'x': undefined identifier
+source\main.c(87): error C202: 'x': undefined identifier
+source\main.c(103): error C202: 'x': undefined identifier
+source\main.c(116): error C202: 'x': undefined identifier
+source\main.c(132): error C202: 'x': undefined identifier
+source\main.c(145): error C202: 'x': undefined identifier
+compiling SelfStepmotor.c...
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR2?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR3?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR4?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=57.0 xdata=162 code=4476
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 11 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR2?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR3?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR4?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=57.0 xdata=162 code=4476
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 11 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling main.c...
+compiling SelfStepmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR2?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR3?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GEAR4?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETADC?ADC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETULTRASONIC?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETBEEPTIMER?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETCCP0?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLRBEEPPIN?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETSYSPERFORMANCE?SYS
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TURN?SELFSTEPMOTOR
+Program Size: data=57.0 xdata=162 code=4404
+creating hex file from ".\output\output"...
+".\output\output" - 0 Error(s), 11 Warning(s).
+compiling main.c...
+source\main.c - 0 Error(s), 0 Warning(s).

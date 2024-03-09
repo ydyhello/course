@@ -1,0 +1,113 @@
+C51 COMPILER V9.51   SELFSTEPMOTOR                                                         10/07/2023 22:38:31 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE SELFSTEPMOTOR
+OBJECT MODULE PLACED IN .\output\SelfStepmotor.obj
+COMPILER INVOKED BY: E:\工训\keil\C51\BIN\C51.EXE source\SelfStepmotor.c BROWSE INCDIR(.\inc) DEBUG OBJECTEXTEND PRINT(.
+                    -\list\SelfStepmotor.lst) TABS(2) OBJECT(.\output\SelfStepmotor.obj)
+
+line level    source
+
+   1          #include "STC15F2K60S2.H"
+   2          #include "SelfStepMotor.h"
+   3          #include "displayer.h"
+   4          #include "beep.h"
+   5          /*
+   6          1、2号为4位LED灯代替的步进电机，3号为真实的步进电机。
+   7          切换控制的操作在main函数中实现
+   8          这里实现加速减速操作和初始化操作
+   9          */
+  10          
+  11          unsigned char num;     //当前控制的机器编号 
+  12          unsigned char direction[3];    //方向（左/右）
+  13          unsigned char speed_level[3];         //挡位
+  14          
+  15          extern code char Spin_table[];      //存储使电机旋转的编码，采用二相磁励方式
+  16          extern code char HighSpeed_Spin_table[];      //存储使电机旋转的编码，采用一-二相磁励方式
+  17            /*
+  18                   a  b  c  d
+  19            Step1  1  1  0  0
+  20            Step2  0  1  1  0
+  21            Step3  0  0  1  1
+  22            Step4  1  0  0  1
+  23            得出四个控制数分别为0xc,0x6,0x3,0x9
+  24            一-二相磁励方式中8个控制数分别为0x8,0xc,0x4,0x6,0x2,0x3,0x1,0x9
+  25            */
+  26          
+  27          char i=0;
+  28          void motorInit(){
+  29   1        //查原理图得，SM接口对应的四个引脚为P41~P44
+  30   1        //1~4分别对应p41~p44
+  31   1        DisplayerInit(); //数码管、led灯的初始化在displayer.h中已经实现
+  32   1        SetDisplayerArea(0,7);
+  33   1        //下面将P41~P44设置为推挽模式
+  34   1        P4 &= 0xe1;   
+  35   1        P4M0 |= 0x1e; 
+  36   1        P4M1 &= 0xe1; 
+  37   1        for(;i<3;i++){
+  38   2          direction[i]=0; //方向初始为左旋（0左1右）
+  39   2          speed_level[i]=0;      //初始为0档（静止）
+  40   2        }
+  41   1        num=0;    //初始化控制1号
+  42   1      }
+  43          
+  44          void speedUp(unsigned char motorInCtrl){//加挡
+  45   1        if(speed_level[motorInCtrl]==3) ;
+  46   1        else {SetBeep(speed_level[motorInCtrl]*1000, 20*speed_level[motorInCtrl]);
+  47   2              speed_level[motorInCtrl]++;
+  48   2        }
+  49   1      }
+  50          
+  51          void speeddown(unsigned char motorInCtrl){//减挡
+  52   1        if(speed_level[motorInCtrl]==0) ;
+  53   1        else speed_level[motorInCtrl]--;
+  54   1      }
+C51 COMPILER V9.51   SELFSTEPMOTOR                                                         10/07/2023 22:38:31 PAGE 2   
+
+  55          
+  56          
+  57          unsigned char Getspeed_level(unsigned char motorInCtrl){//获取对应序号电机的挡位
+  58   1        return speed_level[motorInCtrl];
+  59   1      }
+  60          
+  61          void turn(unsigned char motorInCtrl){//变向
+  62   1        direction[motorInCtrl]= !direction[motorInCtrl];
+  63   1      }
+  64          
+  65          void numUp(){//向上切换
+  66   1        if(num==2) num=0;
+  67   1        else num++;
+  68   1      }
+  69          void numDown(){//向下切换
+  70   1        if(num==0) num=2;
+  71   1        else num--;
+  72   1      }  
+  73          
+  74          unsigned char Getnum(){//获取当前正在控制的电机序号
+  75   1        return num;
+  76   1      }
+  77          
+  78          unsigned char GetDirection(unsigned char motorInCtrl){//获取对应序号电机的方向
+  79   1        return direction[motorInCtrl];
+  80   1      }
+  81          
+  82          void SM_Ctrl(unsigned char SM_val){
+  83   1        P41 = (SM_val>>3)&0x1;
+  84   1        P42 = (SM_val>>2)&0x1;
+  85   1        P43 = (SM_val>>1)&0x1;
+  86   1        P44 = SM_val&0x1; 
+  87   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    184    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

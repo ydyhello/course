@@ -1,0 +1,1 @@
+"source\main.c" BROWSE INCDIR(.\inc) DEBUG OBJECTEXTEND PRINT(.\list\main.lst) TABS (2) OBJECT(.\output\main.obj)

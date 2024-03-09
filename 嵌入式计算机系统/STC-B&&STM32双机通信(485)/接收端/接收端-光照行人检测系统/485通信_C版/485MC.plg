@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\4_STC-B案例\29_485双机通信\485双机通信工程\485通信_C版\485MC.uvproj
+Project File Date:  08/11/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 485MC.c...
+linking...
+Program Size: data=29.1 xdata=0 code=336
+creating hex file from "485MC"...
+"485MC" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling 485MC.c...
+linking...
+Program Size: data=29.1 xdata=0 code=336
+creating hex file from "485MC"...
+"485MC" - 0 Error(s), 0 Warning(s).

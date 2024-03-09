@@ -1,0 +1,484 @@
+C51 COMPILER V9.60.7.0   485MC                                                             12/12/2023 14:41:55 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE 485MC
+OBJECT MODULE PLACED IN 485MC.OBJ
+COMPILER INVOKED BY: D:\Keil_v5_2\C51\BIN\C51.EXE 485MC.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          /**********************
+   2          myM485 485双机通信例程测试
+   3          型号:STC15F2K60S2 主频:11.0592MHz
+   4          ************************/
+   5          #include <STC15F2K60S2.H>
+   6          #include <intrins.h>
+   7          
+   8          #define uint  unsigned int
+   9          #define uchar unsigned char
+  10          #define ulong unsigned long
+  11            
+  12          #define NMAX_KEY 100
+  13          
+  14          /*---------宏定义---------*/
+  15          #define cstUart2Ri  0x01                        //接收中断请求标志位
+  16          #define cstUart2Ti  0x02                        //发送中断请求标志位
+  17          
+  18          #define cstNoneParity           0           //无校验
+  19          #define PARITYBIT cstNoneParity         //定义校验位
+  20          
+  21          /*串口波特率相关*/
+  22          #define cstFosc 11059200L               //系统时钟频率 
+  23          #define cstBaud2    9600                    //串口波特率    
+  24          #define cstT2HL     (65536-(cstFosc/4/cstBaud2))    //定时器初始时间
+  25          
+  26          /*---------引脚别名定义---------*/
+  27          sbit sbtKey1 = P3 ^ 2 ;                 //启动发送
+  28          sbit sbtKey2 = P3 ^ 3 ;                 //数字减少
+  29          sbit sbtKey3 = P1 ^ 7 ;                 //数字增加
+  30          
+  31          sbit sbtSel0 = P2 ^ 0 ;
+  32          sbit sbtSel1 = P2 ^ 1 ;
+  33          sbit sbtSel2 = P2 ^ 2 ;
+  34          sbit sbtLedSel = P2 ^ 3 ;
+  35          
+  36          sbit sbtM485_TRN  = P3 ^ 7 ;   //定义MAX485使能引脚，为1时发送，为0时接收
+  37          
+  38          sbit beep=P3^4;
+  39          
+  40          /*---------变量定义---------*/
+  41          bit btSendBusy ;                            //为1时忙（发送数据），为0时闲
+  42          uchar ucGetDataTmp ;          //接收数据暂存
+  43          uchar ucPutDataTmp ;          //发送数据暂存
+  44          uchar arrSegSelect[] = {0x3f, 0x06, 0x5b, 0x4f, 0x66,
+  45                                  0x6d, 0x7d, 0x07, 0x7f, 0x6f,
+  46                                  0x77, 0x7c, 0x39, 0x5e, 0x79,
+  47                                  0x71, 0x40, 0x00
+  48                                 };   //段选，显示0-f
+  49          
+  50          uint l=0;           
+  51          uint suml=0;        
+  52          uint datelight=0;   
+  53          uint light_old=1;   
+  54          uint light_new=1;   
+  55          
+C51 COMPILER V9.60.7.0   485MC                                                             12/12/2023 14:41:55 PAGE 2   
+
+  56          uint light_bai=0;   
+  57          uint light_shi=0;   
+  58          uint light_ge=0;    
+  59          uint time=0;        
+  60                
+  61          uint light=0;       //?
+  62          uint light_down=20; //????
+  63          uint light_up=100;  //????
+  64          uchar flag_beep=0;                         
+  65          
+  66          uint down_bai=0;    //??
+  67          uint down_shi=0;    //??
+  68          uint down_ge =0;    //??
+  69          
+  70          uint up_bai=0;    //??
+  71          uint up_shi=0;    //??
+  72          uint up_ge =0;    //??
+  73          
+  74          uint flag=0;
+  75          
+  76          uchar G_count;
+  77          uchar display;
+  78          uint Key1_count;
+  79          uint Key2_count;
+  80          uint Key3_count;
+  81          uint Key_count;
+  82          
+  83          bit Key1_C;       //key1?????
+  84          bit Key1_P;       //key1?????
+  85          char segtable[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+  86          
+  87          void Delay(int n);
+  88          void SEG_Display();
+  89          void InitADC_light();
+  90          void date_processlight();
+  91          
+  92          void InitADC_light()
+  93          {
+  94   1        P1ASF=0xff;
+  95   1        ADC_RES=0;
+  96   1        ADC_RESL=0;
+  97   1        ADC_CONTR=0X8C;
+  98   1        CLK_DIV=0X20;
+  99   1      }
+ 100          
+ 101          //??????????
+ 102          void date_processlight()
+ 103          {
+ 104   1        light_bai=datelight%1000/100;
+ 105   1        light_shi=datelight%100/10;
+ 106   1        light_ge=datelight%10;  
+ 107   1      }
+ 108          void date_processlight_down()
+ 109          {
+ 110   1        down_bai=light_down%1000/100;
+ 111   1        down_shi=light_down%100/10;
+ 112   1        down_ge =light_down%10;
+ 113   1      }
+ 114          void date_processlight_up()
+ 115          {
+ 116   1        up_bai=light_up%1000/100;
+ 117   1        up_shi=light_up%100/10;
+C51 COMPILER V9.60.7.0   485MC                                                             12/12/2023 14:41:55 PAGE 3   
+
+ 118   1        up_ge =light_up%10;
+ 119   1      }
+ 120          
+ 121          void check()
+ 122          {
+ 123   1            if(sbtKey1==0)
+ 124   1            Key1_count--;
+ 125   1        
+ 126   1            Key_count--;          //?????1
+ 127   1      
+ 128   1            if(Key_count==0)      //100???
+ 129   1            {
+ 130   2        
+ 131   2              if(Key1_count<0x80)
+ 132   2              {
+ 133   3                Key1_C=0;
+ 134   3                if(Key1_P==1)     //???(?????)
+ 135   3                {
+ 136   4                  Key1_P=0;
+ 137   4                  flag_beep=!flag_beep;
+ 138   4                }
+ 139   3              }
+ 140   2              if(Key1_count>=0x80)
+ 141   2              {
+ 142   3                Key1_C=1;
+ 143   3                if(Key1_P==0)
+ 144   3                   Key1_P=1;      //???(??????????)
+ 145   3              }
+ 146   2        
+ 147   2              //??????
+ 148   2              Key1_count=0x80+NMAX_KEY/3*2;
+ 149   2              Key_count=NMAX_KEY;
+ 150   2            }
+ 151   1      }
+ 152          
+ 153          //AD??
+ 154          void adc_isr() interrupt 5 using 1
+ 155          {
+ 156   1        time++;
+ 157   1        IE=0x00;                      //????
+ 158   1        
+ 159   1        if(time>2500)
+ 160   1        {
+ 161   2            light_new=(suml+l/2)/l;   //????
+ 162   2            suml=0;
+ 163   2            l=0;
+ 164   2            time=0;
+ 165   2          if(ucPutDataTmp%16!=3){
+ 166   3            if((light_old/light_new)>1.30)
+ 167   3            {           
+ 168   4              datelight=datelight+1;
+ 169   4      flag=~flag;       
+ 170   4            }}
+ 171   2            date_processlight();
+ 172   2            if(ucPutDataTmp%16==3){
+ 173   3            date_processlight_down();
+ 174   3            date_processlight_up(); 
+ 175   3            }   
+ 176   2            else time=0;   
+ 177   2            light_old=light_new; 
+ 178   2        }
+ 179   1      
+C51 COMPILER V9.60.7.0   485MC                                                             12/12/2023 14:41:55 PAGE 4   
+
+ 180   1        //????????
+ 181   1        l++;
+ 182   1        suml+=ADC_RES*256+ADC_RESL;   //?l?AD???
+ 183   1      
+ 184   1        ADC_CONTR&=~0X10;            //?????,ADC_FLAG??
+ 185   1        ADC_CONTR|=0X08;             //?????,ADC_START?1
+ 186   1        
+ 187   1        
+ 188   1        //IE=0xa0;                     //????
+ 189   1        if(ucPutDataTmp%16!=3) IE=0xa0;
+ 190   1        else IE=0xa8;
+ 191   1        
+ 192   1      }
+ 193          
+ 194          void Timer1_Routine() interrupt 3 //3????1????
+ 195          {
+ 196   1        IE=0x00;                        //?????
+ 197   1        TR1=0;                          //???1??
+ 198   1        TH1=(65535-100)/256;            //????
+ 199   1        TL1=(65535-100)%256;
+ 200   1      
+ 201   1        check();
+ 202   1        //beep=1;
+ 203   1        
+ 204   1        if(flag_beep==0)
+ 205   1        {
+ 206   2          if(light<light_down)
+ 207   2              beep=~beep;              //???????????
+ 208   2          else beep=0;                 //???????,????0棗?????
+ 209   2        }
+ 210   1        if(flag_beep==1)
+ 211   1        {
+ 212   2          if(light>light_up)
+ 213   2              beep=~beep;             //???????????
+ 214   2          else beep=0;
+ 215   2        }
+ 216   1      
+ 217   1        IE=0xa8;                      //?????
+ 218   1        TR1=1;                        //?????1
+ 219   1      }
+ 220          //???????
+ 221          void weixuan(char i)
+ 222          {
+ 223   1        sbtSel2=i/4;
+ 224   1        sbtSel1=i%4/2;
+ 225   1        sbtSel0=i%2;
+ 226   1      }
+ 227          void SEG_Display()
+ 228          {
+ 229   1        P0=0;
+ 230   1        weixuan(5);
+ 231   1        P0=segtable[light_bai];
+ 232   1        Delay(10);
+ 233   1        P0=0;
+ 234   1        weixuan(6);
+ 235   1        P0=segtable[light_shi];
+ 236   1        Delay(10);
+ 237   1        P0=0;
+ 238   1        weixuan(7);
+ 239   1        P0=segtable[light_ge];
+ 240   1        Delay(10);
+ 241   1      }
+C51 COMPILER V9.60.7.0   485MC                                                             12/12/2023 14:41:55 PAGE 5   
+
+ 242          
+ 243          void SEG_Display_beep()
+ 244          {
+ 245   1        //????????
+ 246   1        P0=0;
+ 247   1        weixuan(5);
+ 248   1        P0=segtable[light_bai];
+ 249   1        Delay(10);
+ 250   1        
+ 251   1        P0=0;
+ 252   1        weixuan(6);
+ 253   1        P0=segtable[light_shi];
+ 254   1        Delay(10);
+ 255   1        
+ 256   1        P0=0;
+ 257   1        weixuan(7);
+ 258   1        P0=segtable[light_ge];
+ 259   1        Delay(10);
+ 260   1        
+ 261   1        if(flag_beep==0)    //flag?0 ????? 020
+ 262   1        {
+ 263   2          P0=0;
+ 264   2          weixuan(0);
+ 265   2          P0=segtable[down_bai];
+ 266   2          Delay(10);
+ 267   2        
+ 268   2          P0=0;
+ 269   2          weixuan(1);
+ 270   2          P0=segtable[down_shi];
+ 271   2          Delay(10);
+ 272   2        
+ 273   2          P0=0;
+ 274   2          weixuan(2);
+ 275   2          P0=segtable[down_ge];
+ 276   2          Delay(10);
+ 277   2        } 
+ 278   1        if(flag_beep==1)   //flag?1 ????? 100
+ 279   1        {
+ 280   2          P0=0;
+ 281   2          weixuan(0);
+ 282   2          P0=segtable[up_bai];
+ 283   2          Delay(10);
+ 284   2        
+ 285   2          P0=0;
+ 286   2          weixuan(1);
+ 287   2          P0=segtable[up_shi];
+ 288   2          Delay(10);
+ 289   2        
+ 290   2          P0=0;
+ 291   2          weixuan(2);
+ 292   2          P0=segtable[up_ge];
+ 293   2          Delay(10);
+ 294   2        }
+ 295   1      }
+ 296          
+ 297          void Delay(int n)
+ 298          {
+ 299   1        int x;
+ 300   1        while(n--)
+ 301   1        {
+ 302   2          x=60;
+ 303   2          while(x--);
+C51 COMPILER V9.60.7.0   485MC                                                             12/12/2023 14:41:55 PAGE 6   
+
+ 304   2        }
+ 305   1      }
+ 306                                 
+ 307          /*---------串口2初始化及波特率发生函数---------*/
+ 308          void Uart2Init( void )
+ 309          {
+ 310   1          S2CON = 0x10 ;      //定义无校验位，允许串行口2接收
+ 311   1          T2L = cstT2HL ;             //设置波特率重装值
+ 312   1          T2H = cstT2HL >> 8 ;
+ 313   1          AUXR |= 0x14 ;      //T2为1T模式，并启动定时器2
+ 314   1      }
+ 315          
+ 316          /*---------系统硬件、变量初始化函数---------*/
+ 317          void Init()
+ 318          {
+ 319   1          P0M0 = 0xff ;       //P0口推挽（放大电流）
+ 320   1          P0M1 = 0x00 ;
+ 321   1          //P2M0 = 0x0f ;       //P2.0—~P2.3口推挽
+ 322   1          P2M0 = 0x08;
+ 323   1        P2M1 = 0x00 ;
+ 324   1          //P3M0 = 0x00 ;
+ 325   1        P3M0 = 0x10 ;
+ 326   1          P3M1 = 0x00 ;
+ 327   1          //P1M0 = 0x00 ;
+ 328   1        P1M0 = 0x80 ;
+ 329   1          P1M1 = 0x00 ;       //P1、P3准双向口
+ 330   1          //外部中断0
+ 331   1          IT0 = 1 ;           //下降沿触发中断（为0则下降沿和上升沿均会触发中断）
+ 332   1          EX0 = 1 ;           //允许外部中断0
+ 333   1          PX0 = 0 ;           //外部中断：低优先级
+ 334   1          //485初始化  波特率生成
+ 335   1          sbtM485_TRN = 0 ;       //初始为接收状态
+ 336   1          P_SW2 |= 0x01 ;     //切换串口2的管脚到P4.6,P4.7
+ 337   1          Uart2Init() ;
+ 338   1          btSendBusy = 1 ;
+ 339   1          IE2 |= 0x01 ;       //开串行口2中断
+ 340   1          IP2 |= 0x01 ;       //设置串行口中断：高优先级
+ 341   1          EA = 1 ;            //开总中断
+ 342   1          //数码管选择
+ 343   1          sbtLedSel = 0 ;     //开启数码管显示
+ 344   1          sbtSel0 = 1 ;
+ 345   1          sbtSel1 = 1 ;
+ 346   1          sbtSel2 = 1 ;           //选择第八位数码管显示
+ 347   1          ucPutDataTmp = 0 ;
+ 348   1      }
+ 349          
+ 350          /*---------延时函数---------*/
+ 351          void delay( void )
+ 352          {
+ 353   1          uchar i, j;
+ 354   1          for( i = 0; i < 255; i++ )
+ 355   1              for( j = 0; j < 255; j++ )
+ 356   1                  ;
+ 357   1      }
+ 358          
+ 359          /*---------串口2中断处理程序---------*/
+ 360          void Uart2_Process( void ) interrupt 8 using 1
+ 361          {
+ 362   1          if( S2CON & cstUart2Ri )
+ 363   1          {
+ 364   2              ucGetDataTmp = S2BUF ;
+ 365   2              ucPutDataTmp = ucGetDataTmp ;
+C51 COMPILER V9.60.7.0   485MC                                                             12/12/2023 14:41:55 PAGE 7   
+
+ 366   2              S2CON &= ~cstUart2Ri;   //接收中断标志位清0
+ 367   2          }
+ 368   1          if( S2CON & cstUart2Ti )
+ 369   1          {
+ 370   2              btSendBusy = 0 ;            //清除忙信号
+ 371   2              S2CON &= ~cstUart2Ti ;      //发送中断标志位清0
+ 372   2          }
+ 373   1      }
+ 374          
+ 375          /*---------外部中断0处理程序---------*/
+ 376          void ExInt0_Process() interrupt 0
+ 377          {
+ 378   1          sbtM485_TRN = 1 ;
+ 379   1          S2BUF = ucPutDataTmp ;
+ 380   1          while( btSendBusy ) ;
+ 381   1          btSendBusy = 1 ;
+ 382   1          sbtM485_TRN = 0 ;
+ 383   1      }
+ 384          
+ 385          /*---------主函数---------*/
+ 386          void main( void )
+ 387          {
+ 388   1          Init() ;
+ 389   1          //P0M1=0x00;            //??P0?????,?????
+ 390   1        //P0M0=0xff;
+ 391   1        //P2M1=0x00;
+ 392   1        //P2M0=0x08;
+ 393   1        //sbtLedSel=0;  
+ 394   1        //IE=0xa0;  
+ 395   1          
+ 396   1        
+ 397   1        
+ 398   1        //beep
+ 399   1        
+ 400   1          Key1_C=1;             //key1?????
+ 401   1        Key1_P=1;             //key1?????
+ 402   1        Key1_count=0x80+NMAX_KEY/3*2;
+ 403   1        Key_count=NMAX_KEY;
+ 404   1        
+ 405   1        IE=0xa8;
+ 406   1        TMOD=0x10;
+ 407   1        TH1=(65535-100)/256;
+ 408   1        TL1=(65535-100)%256;
+ 409   1        TR1=1;
+ 410   1        
+ 411   1        InitADC_light();
+ 412   1        
+ 413   1        //beep
+ 414   1        
+ 415   1          while( 1 )
+ 416   1          {
+ 417   2              ucPutDataTmp %= 16 ;
+ 418   2            if(ucPutDataTmp%16==1) SEG_Display();
+ 419   2            if(ucPutDataTmp%16==2){
+ 420   3                //P0=arrSegSelect[ucPutDataTmp];
+ 421   3              if(flag)
+ 422   3              {
+ 423   4                P0=arrSegSelect[10];
+ 424   4              }}
+ 425   2            if(ucPutDataTmp%16==3) SEG_Display_beep();
+ 426   2              P0 = arrSegSelect[ucPutDataTmp] ;
+ 427   2          /*
+C51 COMPILER V9.60.7.0   485MC                                                             12/12/2023 14:41:55 PAGE 8   
+
+ 428   2              if( sbtKey3 == 0 )
+ 429   2              {
+ 430   2                  delay();
+ 431   2                  if( sbtKey3 == 0 )
+ 432   2                  {
+ 433   2                      while( !sbtKey3 );
+ 434   2                      ucPutDataTmp++ ;
+ 435   2                  }
+ 436   2              }
+ 437   2              if( sbtKey2 == 0 )
+ 438   2              {
+ 439   2                  delay();
+ 440   2                  if( sbtKey2 == 0 )
+ 441   2                  {
+ 442   2                      while( !sbtKey2 );
+ 443   2                      ucPutDataTmp-- ;
+ 444   2                  }
+ 445   2              }*/
+ 446   2          }
+ 447   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1094    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     85    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      3    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

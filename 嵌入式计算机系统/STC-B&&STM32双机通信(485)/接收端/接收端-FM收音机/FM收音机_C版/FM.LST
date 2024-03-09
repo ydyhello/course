@@ -1,0 +1,204 @@
+C51 COMPILER V9.60.7.0   FM                                                                12/12/2023 14:51:32 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE FM
+OBJECT MODULE PLACED IN FM.OBJ
+COMPILER INVOKED BY: D:\Keil_v5_2\C51\BIN\C51.EXE FM.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "FM.h" 
+   2          /*初始化电台函数
+   3          *将电台初始化收听频率设置为87500
+   4          */
+   5          void Init_Radio()
+   6          {
+   7   1        Get_CHAN();
+   8   1        Get_Frequency();  
+   9   1        IIC_Radio_WriteData();
+  10   1        Delay(50);
+  11   1      }
+  12          
+  13          /************************************RDA5807P芯片的IIC操作函数***************************************/
+  14          //IIC通信开始
+  15          void IIC_Radio_Start()
+  16          {
+  17   1        FM_DATA=UP;
+  18   1        FM_CLOCK=UP;
+  19   1        FM_DATA=DOWN;
+  20   1        Delayus(10);
+  21   1        FM_CLOCK=DOWN;
+  22   1        Delayus(10);
+  23   1      }
+  24          //IIC通信结束
+  25          void IIC_Radio_Stop()
+  26          {
+  27   1        FM_DATA=DOWN;
+  28   1        FM_CLOCK=UP;
+  29   1        Delayus(10);
+  30   1        FM_DATA=UP;
+  31   1        Delayus(10);
+  32   1      }
+  33          //主机应答信号
+  34          void IIC_Radio_MACK()
+  35          {
+  36   1         FM_DATA=DOWN;
+  37   1         Delayus(10);
+  38   1         FM_CLOCK=UP;
+  39   1         Delayus(10);
+  40   1         FM_CLOCK=DOWN;
+  41   1         Delayus(10);
+  42   1         FM_DATA=UP;
+  43   1      }
+  44          //从机应答信号
+  45          void IIC_Radio_ACK()
+  46          {
+  47   1        unsigned char i=0;
+  48   1        FM_CLOCK=UP;
+  49   1        while((FM_DATA==1)&&(i<250))  i++;
+  50   1        FM_CLOCK=DOWN;
+  51   1        Delayus(10);  
+  52   1      }
+  53          //写入一字节数据
+  54          void IIC_Radio_WriteByte(unsigned char Data)
+  55          {
+C51 COMPILER V9.60.7.0   FM                                                                12/12/2023 14:51:32 PAGE 2   
+
+  56   1        unsigned char i;
+  57   1      
+  58   1        for(i=0;i!=8;i++)
+  59   1        {
+  60   2          FM_CLOCK=DOWN;
+  61   2          Delayus(10);
+  62   2          FM_DATA=(bit) (Data&0x80);
+  63   2          Data=Data<<1;
+  64   2          Delayus(10);
+  65   2          FM_CLOCK=UP;
+  66   2          Delayus(10);  
+  67   2        } 
+  68   1        FM_CLOCK=DOWN;
+  69   1        Delayus(10);
+  70   1        FM_CLOCK=UP;
+  71   1        Delayus(10);
+  72   1      }
+  73          //往从机一次写入八字节数据
+  74          void IIC_Radio_WriteData()
+  75          {
+  76   1        unsigned char i;
+  77   1        IIC_Radio_Start();        //IIC开始
+  78   1        IIC_Radio_WriteByte(0x20);           //主机向IIC总线上写入从机的地址信息，与从机建立通信
+  79   1        IIC_Radio_ACK();               //从机收到后回应ACK
+  80   1        for(i=0;i<8;i++)                   //连续写入八字节数据
+  81   1        {
+  82   2          IIC_Radio_WriteByte(Radio_Write_Data[i]);
+  83   2          IIC_Radio_MACK();
+  84   2        }
+  85   1        IIC_Radio_Stop();                 //IIC停止
+  86   1      } 
+  87           //获取CHAN值
+  88          void Get_CHAN()
+  89          {
+  90   1        chan = Radio_Write_Data[2];
+  91   1        chan = chan*4 + Radio_Write_Data[3]/64;
+  92   1      }
+  93          //获取电台频率值，即CHAN转频率
+  94          void Get_Frequency()
+  95          {
+  96   1        frequency = 100*chan + 87000;
+  97   1      } 
+  98          //将电台频率转化为PLL值的函数
+  99          void FrequencyToChan(void) //频率转CHAN
+ 100          {
+ 101   1        chan = (frequency-87000)/100;
+ 102   1      }
+ 103          //手动搜台函数，参数flag决定是向上还是向下搜台，每次只能调频100KHZ
+ 104          void Manual_Search(unsigned char flag)
+ 105          {
+ 106   1        if( flag==1 )                //flag==1,表示向上搜台，并且保证电台频率不能超出 87500~108000
+ 107   1        {
+ 108   2          frequency += 100;
+ 109   2          if( frequency>MAX_Frequency )
+ 110   2            frequency = MIN_Frequency;
+ 111   2        }
+ 112   1        else if( flag==-1 )                  //flag==1,表示向下搜台
+ 113   1        {
+ 114   2          frequency -= 100;
+ 115   2          if( frequency<MIN_Frequency )
+ 116   2            frequency = MAX_Frequency;
+ 117   2        }
+C51 COMPILER V9.60.7.0   FM                                                                12/12/2023 14:51:32 PAGE 3   
+
+ 118   1        FrequencyToChan();                      //将频率转化为CHAN
+ 119   1        Radio_Write_Data[2] = chan/4;
+ 120   1        Radio_Write_Data[3] = ((chan%4)<<6)|0x10;
+ 121   1        IIC_Radio_WriteData();                    //然后将CHAN写入收音机芯片的相关寄存器实现手动调频的功能
+ 122   1      }
+ 123          //设置收音机音量，参数flag决定是增大还是减小音量
+ 124          void SetVolume(unsigned char flag)
+ 125          {
+ 126   1        volume = Radio_Write_Data[7] & 0x0f;
+ 127   1        if( flag==1 )         //flag==1增大音量
+ 128   1        {
+ 129   2          if(volume==15)
+ 130   2            volume=0;
+ 131   2          else 
+ 132   2            volume++;
+ 133   2        }
+ 134   1        else 
+ 135   1        {
+ 136   2          if( volume==0 )       //flag==0减少音量
+ 137   2            volume=15;
+ 138   2          else
+ 139   2            volume--;
+ 140   2        }
+ 141   1        Radio_Write_Data[7] = (Radio_Write_Data[7]&0xf0) | (volume&0x0f);
+ 142   1        IIC_Radio_WriteData();                 //将改变后的音量值写入收音机芯片的相关寄存器从而达到调节收音音量的效果
+ 143   1      }
+ 144          //将电台频率和音量值显示到相应的数码管
+ 145          void Frequency_Display()
+ 146          {
+ 147   1      
+ 148   1        unsigned long fre;
+ 149   1        fre = frequency/100;
+ 150   1        volume = Radio_Write_Data[7] & 0x0f;
+ 151   1        
+ 152   1        //音量显示
+ 153   1        if( volume<10 )
+ 154   1          Display_LED_Num( volume,1,0);
+ 155   1        else
+ 156   1        {
+ 157   2          Display_LED_Num( volume/10,1,0);
+ 158   2          Display_LED_Num( volume%10,2,0);
+ 159   2        }
+ 160   1        
+ 161   1        //频率显示
+ 162   1        if(fre/1000)
+ 163   1        {
+ 164   2          Display_LED_Num(fre/1000,5,0);
+ 165   2          Display_LED_Num(fre%1000/100,6,0);
+ 166   2          Display_LED_Num(fre%1000%100/10,7,1);
+ 167   2          Display_LED_Num(fre%1000%100%10,8,0); 
+ 168   2        } 
+ 169   1        else
+ 170   1        {
+ 171   2          Display_LED_Num(fre/100,6,0);
+ 172   2          Display_LED_Num(fre%100/10,7,1);
+ 173   2          Display_LED_Num(fre%100%10,8,0);
+ 174   2        }
+ 175   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    910    ----
+C51 COMPILER V9.60.7.0   FM                                                                12/12/2023 14:51:32 PAGE 4   
+
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

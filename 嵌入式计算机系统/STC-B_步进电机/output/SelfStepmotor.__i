@@ -1,0 +1,1 @@
+"source\SelfStepmotor.c" BROWSE INCDIR(.\inc) DEBUG OBJECTEXTEND PRINT(.\list\SelfStepmotor.lst) TABS (2) OBJECT(.\output\SelfStepmotor.obj)
